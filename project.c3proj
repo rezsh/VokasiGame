@@ -165,6 +165,14 @@
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "sharpen",
+			"name": "Sharpen",
+			"author": "Brad Larson",
+			"version": "r285.3",
+			"bundled": false
 		}
 	],
 	"uniqueId": "lc4u6u4ynz1",

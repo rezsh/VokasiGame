@@ -101,11 +101,18 @@
 							"properties": {}
 						}
 					},
+					"effects": {
+						"Sharpen": {
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
 					"world": {
-						"x": -240,
+						"x": -343,
 						"y": 464,
-						"width": 544,
-						"height": 576,
+						"width": 716.2843239871208,
+						"height": 753.3665338265798,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
