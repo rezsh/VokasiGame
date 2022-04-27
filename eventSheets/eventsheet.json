@@ -1,0 +1,2470 @@
+{
+	"name": "EventSheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Audio"
+		},
+		{
+			"eventType": "comment",
+			"text": "This is an extended example of a JSON dialogue system. \n\nThe project is the same as the basic version but with a few more bells and whistles, including:\n[item]Calling functions from within the JSON file via a function map\n[item]Triggering timelines from a string using a function\n[item]More formatting examples using the Formatting function\n[item]Using the same Formatting function to replace words in the text with Global Variable values\n[item]A very basic example of 'pausing' during the dialogue\n\n\nTo summarise what this project does:\n\n[item] The player can move about using the arrow keys thanks to its tile movement behavior. When the Z key is pressed and the player is overlapping an NPC, a dialogue is initiated. The dialogue layer becomes visible, revealing the text box and the text is set in a typewrite style from the JSON.\n\n\n[item] NPCs have an instance variable SceneId which dictates which 'scene' the dialogue is drawn from in the JSON file. There is also an instance variable to track how many times the player has spoken to the NPC - this is then used to change which scene is picked from the JSON file.\n\n\n[item]When the Z key is pressed again, the next line is displayed - this is achieved by adding 1 to the curDialogue variable before calling the dialogue function. When we've reached the max number of lines in a specific scene, an End function is called. \n\n\n[item]Dialogue lines also have basic formatting thanks to a function that replaces formatting marks in the JSON file with their appropriate replacements (eg. /br to newline)\n"
+		},
+		{
+			"eventType": "variable",
+			"name": "curDialogue",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "The ID number of the current line of dialogue being displayed",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 259566995380522
+		},
+		{
+			"eventType": "variable",
+			"name": "curScene",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "The ID number of the scene from which dialogue is being drawn",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 237050846164997
+		},
+		{
+			"eventType": "variable",
+			"name": "GameState",
+			"type": "string",
+			"initialValue": "",
+			"comment": "The state of the game - used to determine when dialogue is being shown",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 457074409100391
+		},
+		{
+			"eventType": "variable",
+			"name": "NextLine",
+			"type": "string",
+			"initialValue": "",
+			"comment": "Used for debugging - shows what the next line of dialogue will be",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 838002954998180
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerName",
+			"type": "string",
+			"initialValue": "Fred",
+			"comment": "An example variable to demonstrate using a replace expression to show variables in dialogue",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 440307245832633
+		},
+		{
+			"eventType": "variable",
+			"name": "Paused",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 214389007509173
+		},
+		{
+			"eventType": "comment",
+			"text": "When the layout starts, request the JSON project file and load it into the JSON object"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 401129097149099
+				}
+			],
+			"actions": [
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 667695274215237,
+					"parameters": {
+						"tag": "\"loaddialogue\"",
+						"file": "Dialogue.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 706931836474534
+				},
+				{
+					"id": "parse",
+					"objectClass": "JSON",
+					"sid": 154366671600842,
+					"parameters": {
+						"data": "AJAX.LastData"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Mapping functions allows them to be called from a string stored in the JSON file used for dialogue"
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 566833471494626,
+					"parameters": {
+						"name": "\"JSONFunctions\"",
+						"string": "\"MoveHeart\"",
+						"function": "HeartDemo"
+					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 939652704217461,
+					"parameters": {
+						"name": "\"JSONFunctions\"",
+						"string": "\"TakeOrder\"",
+						"function": "Serve"
+					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 647413690516667,
+					"parameters": {
+						"name": "\"JSONFunctions\"",
+						"string": "\"Coming\"",
+						"function": "Coming"
+					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 499737647627060,
+					"parameters": {
+						"name": "\"JSONFunctions\"",
+						"string": "\"Leaving\"",
+						"function": "LeavingNextCustomer"
+					}
+				}
+			],
+			"sid": 106383978476691
+		},
+		{
+			"eventType": "comment",
+			"text": "When the game is in the \"Dialogue\" state, disable TileMovement to stop the player moving during the conversation.\nAs a simple example of 'pausing' while dialogue is being displayed, setting the [b]PauseTest[/b] object's time scale to 0 will stop it moving."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 790743970727524,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Dialogue\""
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 252937131617337,
+					"parameters": {
+						"variable": "Paused"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 368970852306203,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "comment",
+			"text": "When no state is set, enable TileMovement to allow the player to move and restore the [b]PauseTest[/b] object's time scale to normal."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 780743462496089,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Serving\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Sandwich",
+					"sid": 334557629358283,
+					"behaviorType": "DragDrop",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 523486877590781
+		},
+		{
+			"eventType": "comment",
+			"text": "This event block controls the interaction button - used to call and progress dialogue. In this case, the [b]Z key.[/b]"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 613780602914534,
+					"parameters": {
+						"layer": "\"Pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 597358874782102,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap",
+							"objectClass": "Touch",
+							"sid": 327368462003935
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 757991267171479,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 838369192700313,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "When the Z key is pressed and the player is overlapping an NPC object, the dialogue mechanism will be triggered"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 452899784716738,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "When the GameState is not [b]Dialogue[/b] we set the curScene to one of the NPC's SceneId variables to pick the right part of the JSON file to call the text from. Then set the GameState to Dialogue to begin displaying text"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 422496643400275,
+											"parameters": {
+												"variable": "GameState",
+												"comparison": 0,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 634986437665074,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "If the [b]MultiLine[/b] boolean is set to false, we only use the one SceneID variable"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "NPC",
+													"sid": 589686799585405,
+													"parameters": {
+														"instance-variable": "MultiLine"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 577941504077491,
+													"parameters": {
+														"variable": "curScene",
+														"value": "NPC.SceneId"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 899708228855512,
+													"parameters": {
+														"variable": "GameState",
+														"value": "\"Dialogue\""
+													}
+												}
+											],
+											"sid": 797226046714224
+										},
+										{
+											"eventType": "comment",
+											"text": "If [b]MultiLine[/b] is set to true, then the number of times the player has spoken to the NPC dictates which SceneID to use."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "NPC",
+													"sid": 622227005641587,
+													"parameters": {
+														"instance-variable": "MultiLine"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 113599143359704,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "NPC",
+															"sid": 355016714524651,
+															"parameters": {
+																"instance-variable": "TimesSpokenTo",
+																"comparison": 0,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 531038695945437,
+															"parameters": {
+																"variable": "curScene",
+																"value": "NPC.SceneId"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 872128647317868,
+															"parameters": {
+																"variable": "GameState",
+																"value": "\"Dialogue\""
+															}
+														}
+													],
+													"sid": 762142116600775
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "NPC",
+															"sid": 298597998780444,
+															"parameters": {
+																"instance-variable": "TimesSpokenTo",
+																"comparison": 4,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 885434020865446,
+															"parameters": {
+																"variable": "curScene",
+																"value": "NPC.SceneId2"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 313796714635914,
+															"parameters": {
+																"variable": "GameState",
+																"value": "\"Dialogue\""
+															}
+														}
+													],
+													"sid": 474600968170124
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "When in the Dialogue state, add one to curDialogue to get the correct line from the JSON file and call the DisplayDialogue function. By adding the [b]is NOT running typewriter[/b] condition, we ensure that the player cannot skip through all the text by spamming the Z key.\n\n[b]curDialogue's[/b] default value is -1 to ensure that we always started with the line with an ID of 0 (the first line in the scene)"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 193924435748605,
+											"parameters": {
+												"variable": "GameState",
+												"comparison": 0,
+												"value": "\"Dialogue\""
+											}
+										},
+										{
+											"id": "is-running-typewriter-text",
+											"objectClass": "NPCTextBox",
+											"sid": 873587606264430,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 715471473215820,
+											"parameters": {
+												"variable": "curDialogue",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 524578918756959,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "The JSON file now has a key called [b]\"Type\"[/b] this defines what kind of line is being called from the JSON and then calls the correct function"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "JSON",
+													"sid": 605895742779792,
+													"parameters": {
+														"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
+														"cmp": 0,
+														"value": "\"line\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "DisplayLine",
+													"sid": 905926371706978,
+													"parameters": [
+														"curDialogue",
+														"curScene"
+													]
+												}
+											],
+											"sid": 729975314886608
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "JSON",
+													"sid": 862360332013664,
+													"parameters": {
+														"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
+														"cmp": 0,
+														"value": "\"function\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "DisplayFunction",
+													"sid": 101807670425977,
+													"parameters": [
+														"curDialogue",
+														"curScene"
+													]
+												}
+											],
+											"sid": 631202868035142
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "JSON",
+													"sid": 449013448542890,
+													"parameters": {
+														"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
+														"cmp": 0,
+														"value": "\"timeline\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "DisplayTimeline",
+													"sid": 535859539522977,
+													"parameters": [
+														"curDialogue",
+														"curScene"
+													]
+												}
+											],
+											"sid": 616764527950501
+										},
+										{
+											"eventType": "comment",
+											"text": "If the value for curDialogue is one larger than the number of lines in the specific dialogue, call the EndDialogue function"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 330759766423894,
+													"parameters": {
+														"variable": "curDialogue",
+														"comparison": 0,
+														"value": "Functions.GetNumLines+1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "EndDialogue",
+													"sid": 307743419432608,
+													"parameters": [
+														"NPC.UID"
+													]
+												}
+											],
+											"sid": 901294566092789
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 980395427411526,
+					"parameters": {
+						"object": "bell"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 407522815500943,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Ready\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 576326604665804,
+					"parameters": {
+						"variable": "GameState",
+						"value": "\"Dialogue\""
+					}
+				}
+			],
+			"sid": 587777596219459,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "When the Z key is pressed and the player is overlapping an NPC object, the dialogue mechanism will be triggered"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "NPC",
+							"sid": 145503095006178
+						}
+					],
+					"actions": [],
+					"sid": 966683426046396,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "When the GameState is not [b]Dialogue[/b] we set the curScene to one of the NPC's SceneId variables to pick the right part of the JSON file to call the text from. Then set the GameState to Dialogue to begin displaying text"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 323495339691747,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 174821716135188,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If the [b]MultiLine[/b] boolean is set to false, we only use the one SceneID variable"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "NPC",
+											"sid": 194244425976231,
+											"parameters": {
+												"instance-variable": "MultiLine"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 667046882757488,
+											"parameters": {
+												"variable": "curScene",
+												"value": "NPC.SceneId"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 734568202359826,
+											"parameters": {
+												"variable": "GameState",
+												"value": "\"Dialogue\""
+											}
+										}
+									],
+									"sid": 718651321560952
+								},
+								{
+									"eventType": "comment",
+									"text": "If [b]MultiLine[/b] is set to true, then the number of times the player has spoken to the NPC dictates which SceneID to use."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "NPC",
+											"sid": 348979812075351,
+											"parameters": {
+												"instance-variable": "MultiLine"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 492887947956999,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "NPC",
+													"sid": 197379539822633,
+													"parameters": {
+														"instance-variable": "TimesSpokenTo",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 392685615381541,
+													"parameters": {
+														"variable": "curScene",
+														"value": "NPC.SceneId"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 890930011961196,
+													"parameters": {
+														"variable": "GameState",
+														"value": "\"Dialogue\""
+													}
+												}
+											],
+											"sid": 173841679743843
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "NPC",
+													"sid": 491362278328228,
+													"parameters": {
+														"instance-variable": "TimesSpokenTo",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 179265143020216,
+													"parameters": {
+														"variable": "curScene",
+														"value": "NPC.SceneId2"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 971384934275406,
+													"parameters": {
+														"variable": "GameState",
+														"value": "\"Dialogue\""
+													}
+												}
+											],
+											"sid": 960320766015143
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "comment",
+							"text": "When in the Dialogue state, add one to curDialogue to get the correct line from the JSON file and call the DisplayDialogue function. By adding the [b]is NOT running typewriter[/b] condition, we ensure that the player cannot skip through all the text by spamming the Z key.\n\n[b]curDialogue's[/b] default value is -1 to ensure that we always started with the line with an ID of 0 (the first line in the scene)"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 190535604812480,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Dialogue\""
+									}
+								},
+								{
+									"id": "is-running-typewriter-text",
+									"objectClass": "NPCTextBox",
+									"sid": 981090526532309,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 856369267295308,
+									"parameters": {
+										"variable": "curDialogue",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 144826517827526,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "The JSON file now has a key called [b]\"Type\"[/b] this defines what kind of line is being called from the JSON and then calls the correct function"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "JSON",
+											"sid": 915124460252453,
+											"parameters": {
+												"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
+												"cmp": 0,
+												"value": "\"line\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "DisplayLine",
+											"sid": 308052080903532,
+											"parameters": [
+												"curDialogue",
+												"curScene"
+											]
+										}
+									],
+									"sid": 328643787249462
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "JSON",
+											"sid": 384034322293224,
+											"parameters": {
+												"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
+												"cmp": 0,
+												"value": "\"function\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "DisplayFunction",
+											"sid": 870133313513628,
+											"parameters": [
+												"curDialogue",
+												"curScene"
+											]
+										}
+									],
+									"sid": 408552893540655
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "JSON",
+											"sid": 419741817967969,
+											"parameters": {
+												"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
+												"cmp": 0,
+												"value": "\"timeline\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "DisplayTimeline",
+											"sid": 639950087800400,
+											"parameters": [
+												"curDialogue",
+												"curScene"
+											]
+										}
+									],
+									"sid": 968944621265719
+								},
+								{
+									"eventType": "comment",
+									"text": "If the value for curDialogue is one larger than the number of lines in the specific dialogue, call the EndDialogue function"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 657899746659683,
+											"parameters": {
+												"variable": "curDialogue",
+												"comparison": 0,
+												"value": "Functions.GetNumLines+1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "EndDialogue",
+											"sid": 560114565492813,
+											"parameters": [
+												"NPC.UID"
+											]
+										}
+									],
+									"sid": 909755993823189
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Allows the player to display all dialogue using the desired key"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-double-tap",
+					"objectClass": "Touch",
+					"sid": 863292828405210
+				}
+			],
+			"actions": [],
+			"sid": 786029534785203,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "NPC",
+							"sid": 620350635056198
+						}
+					],
+					"actions": [],
+					"sid": 333347038744560,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-running-typewriter-text",
+									"objectClass": "NPCTextBox",
+									"sid": 355049114936781
+								}
+							],
+							"actions": [
+								{
+									"id": "typewriter-finish",
+									"objectClass": "NPCTextBox",
+									"sid": 312216550885365
+								}
+							],
+							"sid": 881308561828158
+						}
+					],
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-typewriter-text-finished",
+					"objectClass": "NPCTextBox",
+					"sid": 565544835225593
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 120984728388729,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Dialogue\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "start-timer",
+					"objectClass": "NPC",
+					"sid": 262480098814276,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "1.0",
+						"type": "once",
+						"tag": "\"cd\""
+					}
+				}
+			],
+			"sid": 290371561528654,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "NPC",
+					"sid": 242082926401879,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"cd\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 696045127105364,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Dialogue\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Advance",
+					"sid": 588275729333603
+				}
+			],
+			"sid": 172168955022202,
+			"disabled": true
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Functions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Return Functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "This function is used to apply formatting and to add variable values to the text strings being displayed. The formatted text is returned as a string to be used in an expression"
+						},
+						{
+							"functionName": "DialogueFormat",
+							"functionDescription": "",
+							"functionCategory": "Return Functions",
+							"functionReturnType": "string",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "ReplaceString",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 298965433405850
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 259517047756556,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "Line",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 219097653548087
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "Parameter \"string\" is passed in a replace() expression that turns any encounter of \"/br\" into a line jump, any \"(b)\" into \"[ b]\" (without the space) and \"(/b)\" into \"[ /b]\" (without the space) etc. This is BBCode that cannot be put as is in the JSON file, and if we put the proper tags into these comments, you'd just see the formatting!"
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 395282978481975,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(ReplaceString,\"/br\",newline)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 311040869881439,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(b)\",\"[b]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 146405672851647,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(/b)\",\"[/b]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 581309612153403,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(color=#ff0000)\",\"[color=#ff0000]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 618428575118152,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(/color)\",\"[/color]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 353546798970699,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(background=#ff0000)\",\"[background=#ff0000]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 304819745738390,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(/background)\",\"[/background]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 990457922374400,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(stroke)\",\"[stroke]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 680887949272733,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(/stroke)\",\"[/stroke]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 344380331694180,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(outline=#ff0000)\",\"[outline=#ff0000]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 215584090037806,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(/outline)\",\"[/outline]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 215405812318732,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(font=Courier New)\",\"[font=Courier New]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 140139864105825,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(/font)\",\"[/font]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 809779162079034,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(size=24)\",\"[size=24]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 320682078434297,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(/size)\",\"[/size]\")"
+											}
+										},
+										{
+											"type": "comment",
+											"text": "Not only can replace() expressions be used for formatting, they can also be used to insert variables into the dialogue. Change the global variable PlayerName to test this."
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 278448287241921,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"PlayerName\",PlayerName)"
+											}
+										},
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 623028587976224,
+											"parameters": {
+												"value": "Line"
+											}
+										}
+									],
+									"sid": 250394858346952
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "This function counts the number of lines in the current scene and returns that number as a value to be used as an expression"
+						},
+						{
+							"functionName": "GetNumLines",
+							"functionDescription": "",
+							"functionCategory": "Return Functions",
+							"functionReturnType": "number",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 797546563176120,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "Variable1",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 443205588998768
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 380357306220054,
+											"parameters": {
+												"path": "\"scene.\" & curScene & \".dialogs\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 673114843428708,
+											"parameters": {
+												"variable": "Variable1",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 562873046684386
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 196934421219120,
+											"parameters": {
+												"value": "Variable1-1"
+											}
+										}
+									],
+									"sid": 716065363962258
+								}
+							]
+						}
+					],
+					"sid": 106007991454475
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Display Functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "This is the standard dialogue function. It displays the dialogue layer, sets the current line and next line according to the parameters dialogueID and sceneID and starts the typewriter text. "
+						},
+						{
+							"functionName": "DisplayLine",
+							"functionDescription": "",
+							"functionCategory": "Display Functions",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "dialogueID",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 728615528499880
+								},
+								{
+									"name": "sceneID",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 113648855584519
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 997690892292395,
+									"parameters": {
+										"layer": "\"Dialogue\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ContinueDialogue",
+									"sid": 752778725407575,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "NPC",
+									"sid": 375742637134489,
+									"parameters": {
+										"frame-number": "JSON.Get(\"scene.\"& curScene & \".dialogs.\" & curDialogue & \".emotion\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 110764586532008,
+									"parameters": {
+										"variable": "NextLine",
+										"value": "JSON.Get(\"scene.\"& curScene & \".dialogs.\" & (curDialogue+1) & \".line\")"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "NPCName",
+									"sid": 869565485889859,
+									"parameters": {
+										"text": "JSON.Get(\"scene.\"& curScene & \".dialogs.\" & curDialogue & \".char\")"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "NPCTextBox",
+									"sid": 463519997353995,
+									"parameters": {
+										"text": "Functions.DialogueFormat(JSON.Get((((\"scene.\" & sceneID) & \".dialogs.\") & dialogueID) & \".line\"))",
+										"duration": "len(JSON.Get(\"scene.\"& sceneID& \".dialogs.\" & dialogueID&\".line\"))/32"
+									}
+								}
+							],
+							"sid": 588613681226323
+						},
+						{
+							"eventType": "comment",
+							"text": "An altered version of the DisplayLine function only called when the JSON [b]\"type\"[/b] equals [b]\"function\"[/b]\n\nDepending on what sort of function you're calling within the dialogue, you may not need to set the [b]Dialogue[/b] layer to invisible. Try toggling that event to disabled and see what works best for your game. "
+						},
+						{
+							"functionName": "DisplayFunction",
+							"functionDescription": "",
+							"functionCategory": "Display Functions",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "dialogueID",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 568977908232837
+								},
+								{
+									"name": "sceneID",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 590051337816832
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 707477840480143,
+									"parameters": {
+										"layer": "\"Dialogue\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "call-mapped-function",
+									"objectClass": "Functions",
+									"sid": 154566850923726,
+									"parameters": {
+										"name": "\"JSONFunctions\"",
+										"string": "JSON.Get(\"scene.\"& sceneID & \".dialogs.\" & dialogueID &\".function\")",
+										"forward-params": "0"
+									}
+								}
+							],
+							"sid": 260006877701008
+						},
+						{
+							"eventType": "comment",
+							"text": "Similar to the above function [b]DisplayFunction[/b], this function will allow you to trigger a [b]Timeline[/b] based on a string stored in the JSON file. "
+						},
+						{
+							"functionName": "DisplayTimeline",
+							"functionDescription": "",
+							"functionCategory": "Display Functions",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "dialogueID",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 801038452988233
+								},
+								{
+									"name": "sceneID",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 596121214308546
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 105504237131676,
+									"parameters": {
+										"layer": "\"Dialogue\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "play-timeline-by-name",
+									"objectClass": "Timeline",
+									"sid": 973761432886991,
+									"parameters": {
+										"timeline-name": "JSON.Get(\"scene.\"& sceneID & \".dialogs.\" & dialogueID &\".timeline\")",
+										"tags": "\"\""
+									}
+								}
+							],
+							"sid": 760233006053395
+						},
+						{
+							"eventType": "comment",
+							"text": "This function ends the dialogue - it hides the dialogue layer, adds one to the TimesSpokenTo variable and resets both the GameState and curDialogue variables"
+						},
+						{
+							"functionName": "EndDialogue",
+							"functionDescription": "",
+							"functionCategory": "Display Functions",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "NPCUID",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 892800758257522
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "NPC",
+									"sid": 338291862436710,
+									"parameters": {
+										"unique-id": "NPCUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 977421829829515,
+									"parameters": {
+										"layer": "\"Dialogue\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "NPC",
+									"sid": 906016242581608,
+									"parameters": {
+										"instance-variable": "TimesSpokenTo",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 449396583464608,
+									"parameters": {
+										"variable": "GameState",
+										"value": "\"\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 749223073063275,
+									"parameters": {
+										"variable": "curDialogue",
+										"value": "-1"
+									}
+								}
+							],
+							"sid": 875228758756877
+						}
+					],
+					"sid": 297204515918049
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Mapped Functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "This function is mapped to the string MoveHeart - it is called during one of the NPC conversations. "
+						},
+						{
+							"functionName": "Advance",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 190004002703510,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-running-typewriter-text",
+											"objectClass": "NPCTextBox",
+											"sid": 789756482799457,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "ContinueDialogue",
+											"sid": 882506888597318,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 833854172174103,
+											"parameters": {
+												"variable": "curDialogue",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 960472516228722,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "The JSON file now has a key called [b]\"Type\"[/b] this defines what kind of line is being called from the JSON and then calls the correct function"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "JSON",
+													"sid": 331168815304998,
+													"parameters": {
+														"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
+														"cmp": 0,
+														"value": "\"line\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "DisplayLine",
+													"sid": 751749512367570,
+													"parameters": [
+														"curDialogue",
+														"curScene"
+													]
+												}
+											],
+											"sid": 900687118433026
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "JSON",
+													"sid": 865306959602064,
+													"parameters": {
+														"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
+														"cmp": 0,
+														"value": "\"function\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "DisplayFunction",
+													"sid": 951517753059888,
+													"parameters": [
+														"curDialogue",
+														"curScene"
+													]
+												}
+											],
+											"sid": 624375583200184
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "JSON",
+													"sid": 135656381302959,
+													"parameters": {
+														"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
+														"cmp": 0,
+														"value": "\"timeline\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "DisplayTimeline",
+													"sid": 714415300108290,
+													"parameters": [
+														"curDialogue",
+														"curScene"
+													]
+												}
+											],
+											"sid": 771267108027146
+										},
+										{
+											"eventType": "comment",
+											"text": "If the value for curDialogue is one larger than the number of lines in the specific dialogue, call the EndDialogue function"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 278913945566139,
+													"parameters": {
+														"variable": "curDialogue",
+														"comparison": 0,
+														"value": "Functions.GetNumLines+1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "EndDialogue",
+													"sid": 129725019734321,
+													"parameters": [
+														"NPC.UID"
+													]
+												}
+											],
+											"sid": 943021914831809
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "HeartDemo",
+							"functionDescription": "",
+							"functionCategory": "Mapped Functions",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 998115709564064,
+									"parameters": {
+										"seconds": "2"
+									}
+								}
+							],
+							"sid": 873500094168919
+						},
+						{
+							"functionName": "Serve",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 614789885566840,
+									"parameters": {
+										"variable": "GameState",
+										"value": "\"Serving\""
+									}
+								}
+							],
+							"sid": 632682390575833
+						},
+						{
+							"functionName": "Coming",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "NPC",
+									"sid": 556080486570097,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"come\"",
+										"property": "position",
+										"end-x": "384",
+										"end-y": "480",
+										"time": "0.7",
+										"ease": "easeinquad",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 132388454330028,
+									"parameters": {
+										"seconds": "1.3"
+									}
+								},
+								{
+									"callFunction": "Advance",
+									"sid": 902194982028375
+								}
+							],
+							"sid": 550705629148395
+						},
+						{
+							"functionName": "LeavingNextCustomer",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "NPC",
+									"sid": 485881293326295,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"come\"",
+										"property": "position",
+										"end-x": "-254",
+										"end-y": "480",
+										"time": "0.7",
+										"ease": "easeinquad",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 483009014331192,
+									"parameters": {
+										"seconds": "1"
+									}
+								}
+							],
+							"sid": 895444378204277
+						},
+						{
+							"functionName": "Customer1",
+							"functionDescription": "",
+							"functionCategory": "Display Functions",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "NPCUID",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 985780321537598
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "NPC",
+									"sid": 350412950247942,
+									"parameters": {
+										"unique-id": "NPCUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "NPC",
+									"sid": 204107365840830,
+									"parameters": {
+										"instance-variable": "SceneId2",
+										"value": "4"
+									}
+								}
+							],
+							"sid": 153617192343011
+						}
+					],
+					"sid": 406797447328452
+				}
+			],
+			"sid": 812192635768209
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 303859737679348,
+					"parameters": {
+						"layer": "\"Pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 798056127875146,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 444950576788400,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 627420428920437,
+									"parameters": {
+										"variable": "GameState",
+										"value": "\"Ready\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 852236203992506,
+									"parameters": {
+										"variable": "curDialogue",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 502490839349983,
+									"parameters": {
+										"variable": "curScene",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 514804605915970,
+							"disabled": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Debug test"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 825687389677564
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "DebugState",
+					"sid": 778404083190477,
+					"parameters": {
+						"text": "GameState"
+					}
+				}
+			],
+			"sid": 383351541263539
+		},
+		{
+			"eventType": "comment",
+			"text": "Textbox Dialog "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-running-typewriter-text",
+					"objectClass": "NPCTextBox",
+					"sid": 211670588696529
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "Bubble9patch",
+					"sid": 681896652112855,
+					"parameters": {
+						"width": "NPCTextBox.TextWidth+40",
+						"height": "NPCTextBox.TextHeight+30"
+					}
+				}
+			],
+			"sid": 552969902276140
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 944380428638218
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 185776528375151,
+					"parameters": {
+						"audio-file": "musicdef",
+						"loop": "not-looping",
+						"volume": "-5",
+						"tag-optional": "\"music\""
+					}
+				}
+			],
+			"sid": 691713940908722,
+			"disabled": true
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Pause",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 244362555576941,
+							"parameters": {
+								"object": "PauseBTN"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 163716429944214,
+							"parameters": {
+								"variable": "Paused",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "PauseBTN",
+							"sid": 916518288450831,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 627221607768008
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-clicked",
+							"objectClass": "Button",
+							"sid": 341070041084439
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 465106425908546,
+							"parameters": {
+								"variable": "Paused",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "PauseBTN",
+							"sid": 556054725545404,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 657378394810298
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 969366535336891,
+							"parameters": {
+								"variable": "Paused"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 486086743842754,
+							"parameters": {
+								"layer": "\"Pause\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 816138235720254
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 374300661365200
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 560977352812776,
+							"parameters": {
+								"layer": "\"Pause\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 863055947908284
+				}
+			],
+			"sid": 930734964448869
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "StackkingSandwich",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 347998874813968,
+							"parameters": {
+								"object": "Isian"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Isian",
+							"sid": 852846961400979,
+							"parameters": {
+								"unique-id": "47"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 891966395798211,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 180489156853702,
+									"parameters": {
+										"object": "Sandwich"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 352611560913904,
+									"parameters": {
+										"object-to-create": "Sandwich",
+										"layer": "1",
+										"x": "Sandwich.ImagePointX(1)",
+										"y": "Sandwich.ImagePointY(1)",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Sandwich",
+									"sid": 124007133605319,
+									"parameters": {
+										"animation": "\"Keju\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 598058333259555
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 726435504854394,
+							"parameters": {
+								"object": "Isian"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Isian",
+							"sid": 773409472884997,
+							"parameters": {
+								"unique-id": "49"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 250139499483355,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 772939441534652,
+									"parameters": {
+										"object": "Sandwich"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 209637734994201,
+									"parameters": {
+										"object-to-create": "Sandwich",
+										"layer": "1",
+										"x": "Sandwich.ImagePointX(1)",
+										"y": "Sandwich.ImagePointY(1)",
+										"create-hierarchy": true
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Sandwich",
+									"sid": 123106912005765,
+									"parameters": {
+										"animation": "\"Sawi\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 329387871183202
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 178803090068505,
+							"parameters": {
+								"object": "Isian"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Isian",
+							"sid": 992627148184550,
+							"parameters": {
+								"unique-id": "50"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 423533362660835,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 785393237660106,
+									"parameters": {
+										"object": "Sandwich"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 824592918056287,
+									"parameters": {
+										"object-to-create": "Sandwich",
+										"layer": "1",
+										"x": "Sandwich.ImagePointX(1)",
+										"y": "Sandwich.ImagePointY(1)",
+										"create-hierarchy": true
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Sandwich",
+									"sid": 641104628559588,
+									"parameters": {
+										"animation": "\"Tomat\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 362933512609006
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 480752795244452,
+							"parameters": {
+								"object": "Isian"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Isian",
+							"sid": 880632364945911,
+							"parameters": {
+								"unique-id": "51"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 430290149647005,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 214093553125028,
+									"parameters": {
+										"object": "Sandwich"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 835855870821028,
+									"parameters": {
+										"object-to-create": "Sandwich",
+										"layer": "1",
+										"x": "Sandwich.ImagePointX(1)",
+										"y": "Sandwich.ImagePointY(1)",
+										"create-hierarchy": true
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Sandwich",
+									"sid": 777823701185048,
+									"parameters": {
+										"animation": "\"Bread\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 597476668546290
+						}
+					]
+				}
+			],
+			"sid": 529870817654698
+		}
+	],
+	"sid": 149368447884591
+}

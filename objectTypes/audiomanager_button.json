@@ -1,0 +1,15 @@
+{
+	"name": "audioManager_button",
+	"plugin-id": "Button",
+	"sid": 837691284661712,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"sid": 564154835324982
+		}
+	],
+	"behaviorTypes": []
+}

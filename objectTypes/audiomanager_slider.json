@@ -1,0 +1,15 @@
+{
+	"name": "audioManager_slider",
+	"plugin-id": "sliderbar",
+	"sid": 236636368126074,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"sid": 383340531762591
+		}
+	],
+	"behaviorTypes": []
+}

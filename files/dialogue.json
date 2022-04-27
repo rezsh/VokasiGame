@@ -1,0 +1,143 @@
+{
+	"scene": [
+		{
+			"id": 0,
+			"dialogs": [
+				{
+					"char": "TYPE1",
+					"type": "function",
+					"function": "Coming"
+				},
+				{
+					"char": "TYPE1",
+					"type": "line",
+					"emotion": "2",
+					"line": "Boss sandvich nya gapake saos please aight."
+				},
+				{
+					"char": "TYPE1",
+					"type": "line",
+					"emotion": "5",
+					"line": "oh ye, tambahin kecap dikit."
+				},
+				{
+					"char": "TYPE1",
+					"type": "line",
+					"emotion": "0",
+					"line": "Gwe tunggu."
+				},
+				{
+					"char": "TYPE1",
+					"type": "function",
+					"function": "TakeOrder"
+				}
+			]
+		},
+		{
+			"id": 1,
+			"dialogs": [
+				{
+					"char": "TYPE1",
+					"type": "line",
+					"emotion": "3",
+					"line": "Thanks Fam."
+				},
+				{
+					"char": "TYPE1",
+					"type": "function",
+					"function": "Leaving"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"dialogs": [
+				{
+					"char": "Steve",
+					"type": "line",
+					"line": "I don't really have much to say."
+				},
+				{
+					"char": "Steve",
+					"type": "line",
+					"line": "I'm just here to show you that different NPCs can have their own conversations. "
+				},
+				{
+					"char": "Steve",
+					"type": "line",
+					"line": "Oh. And to show you some other BBCode bits apparently. Like (stroke)Stroke Text(/stroke) and (outline=#ff0000)Outline effects.(/outline)"
+				},
+				{
+					"char": "Steve",
+					"type": "line",
+					"line": "(size=24)I guess those (stroke)Stroke(/stroke) and (outline=#ff0000)Outline(/outline) effects probably look better in a larger size.(/size)"
+				},
+				{
+					"char": "Steve",
+					"type": "line",
+					"line": "Anyway, that's all from me. Unlike Jessie over there, I've only got one set of lines to say."
+				}
+			]
+		},
+		{
+			"id": 3,
+			"dialogs": [
+				{
+					"char": "FunctionGuy",
+					"type": "line",
+					"line": "Oh hey! Want to talk about functions?!"
+				},
+				{
+					"char": "FunctionGuy",
+					"type": "line",
+					"line": "Cool! Well, did you know, that if you map a function using a string, you can then store that string in a JSON file like the one we're using for dialogue. Then you can use another function to call the mapped function and trigger the action!"
+				},
+				{
+					"char": "FunctionGuy",
+					"type": "line",
+					"line": "As an example, I'll call a function that'll show an emote above my head when you finish this line."
+				},				
+				{
+					"char": "FunctionGuy",
+					"type": "function",
+					"function": "MoveHeart"
+				},
+				{
+					"char": "FunctionGuy",
+					"type": "line",
+					"line": "See?! Cool huh?"
+				}
+			]
+		},
+		{
+			"id": 4,
+			"dialogs": [
+				{
+					"char": "FunctionGuy",
+					"type": "line",
+					"line": "Back for more? Well, how about instead of functions, we talk about timelines?!"
+				},
+				{
+					"char": "FunctionGuy",
+					"type": "line",
+					"line": "Just like with the function, you can store the name of a timeline in the JSON file and then call that specific timeline using a function."
+				},
+				{
+					"char": "FunctionGuy",
+					"type": "line",
+					"line": "How about I go for a little walk?"
+				},				
+				{
+					"char": "FunctionGuy",
+					"type": "timeline",
+					"timeline": "NPCWalkTest"
+				},
+				{
+					"char": "FunctionGuy",
+					"type": "line",
+					"line": "Tada! Now you can really start to do cool stuff during dialogues!"
+				}
+			]
+		}
+	]
+}

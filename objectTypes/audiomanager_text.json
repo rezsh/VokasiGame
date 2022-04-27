@@ -1,0 +1,16 @@
+{
+	"name": "audioManager_text",
+	"plugin-id": "Text",
+	"sid": 100726206981689,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"sid": 987305262358663
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

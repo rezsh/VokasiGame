@@ -1,0 +1,330 @@
+{
+	"name": "Sandwich",
+	"plugin-id": "Sprite",
+	"sid": 613644692817456,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 937400034599920
+		},
+		{
+			"behaviorId": "DragnDrop",
+			"name": "DragDrop",
+			"sid": 112293629344477
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 597844668996144
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 105,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6533472,
+						"collisionPoly": {
+							"points": [
+								0.05714285714285714,
+								0.17142857142857143,
+								0.5,
+								0.02857142857142857,
+								0.8952380952380953,
+								0.2857142857142857,
+								0.9809523809523809,
+								0.5,
+								0.8666666666666667,
+								0.6,
+								0.5,
+								0.9714285714285714,
+								0.0761904761904762,
+								0.7428571428571429,
+								0.009523809523809525,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Toppings",
+								"x": 0.49523809523809526,
+								"y": 0.2571428571428571
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 369363668673754,
+				"name": "Bread",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 82,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8578634,
+						"collisionPoly": {
+							"points": [
+								0.0975609756097561,
+								0.22857142857142856,
+								0.5,
+								0.17142857142857143,
+								0.8780487804878049,
+								0.2571428571428571,
+								0.975609756097561,
+								0.5,
+								0.8414634146341463,
+								0.6285714285714286,
+								0.5,
+								0.7714285714285715,
+								0.0975609756097561,
+								0.7428571428571429,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Toppings",
+								"x": 0.49523809523809526,
+								"y": 0.2571428571428571
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 385237244589394,
+				"name": "Sawi",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 95,
+						"height": 31,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6996378,
+						"collisionPoly": {
+							"points": [
+								0.0975609756097561,
+								0.22857142857142856,
+								0.5,
+								0.17142857142857143,
+								0.8780487804878049,
+								0.2571428571428571,
+								0.975609756097561,
+								0.5,
+								0.8414634146341463,
+								0.6285714285714286,
+								0.5,
+								0.7714285714285715,
+								0.0975609756097561,
+								0.7428571428571429,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Toppings",
+								"x": 0.49523809523809526,
+								"y": 0.2571428571428571
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 660180772224818,
+				"name": "Keju",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 69,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7838292,
+						"collisionPoly": {
+							"points": [
+								0.0975609756097561,
+								0.22857142857142856,
+								0.5,
+								0.17142857142857143,
+								0.8780487804878049,
+								0.2571428571428571,
+								0.975609756097561,
+								0.5,
+								0.8414634146341463,
+								0.6285714285714286,
+								0.5,
+								0.7714285714285715,
+								0.0975609756097561,
+								0.7428571428571429,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Toppings",
+								"x": 0.49523809523809526,
+								"y": 0.2571428571428571
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 803406296357139,
+				"name": "Tomat",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 78,
+						"height": 31,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1098499,
+						"collisionPoly": {
+							"points": [
+								0.0975609756097561,
+								0.22857142857142856,
+								0.5,
+								0.17142857142857143,
+								0.8780487804878049,
+								0.2571428571428571,
+								0.975609756097561,
+								0.5,
+								0.8414634146341463,
+								0.6285714285714286,
+								0.5,
+								0.7714285714285715,
+								0.0975609756097561,
+								0.7428571428571429,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Toppings",
+								"x": 0.49523809523809526,
+								"y": 0.2571428571428571
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 355035893336228,
+				"name": "Bawang",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 75,
+						"height": 21,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 640495,
+						"collisionPoly": {
+							"points": [
+								0.0975609756097561,
+								0.22857142857142856,
+								0.5,
+								0.17142857142857143,
+								0.8780487804878049,
+								0.2571428571428571,
+								0.975609756097561,
+								0.5,
+								0.8414634146341463,
+								0.6285714285714286,
+								0.5,
+								0.7714285714285715,
+								0.0975609756097561,
+								0.7428571428571429,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Toppings",
+								"x": 0.49523809523809526,
+								"y": 0.2571428571428571
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 565759255425456,
+				"name": "SauceTomat",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

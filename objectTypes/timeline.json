@@ -1,0 +1,10 @@
+{
+	"name": "Timeline",
+	"plugin-id": "Timeline",
+	"sid": 315118366315817,
+	"singleglobal-inst": {
+		"type": "Timeline",
+		"properties": {},
+		"uid": 15
+	}
+}

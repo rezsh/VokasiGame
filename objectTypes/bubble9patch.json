@@ -1,0 +1,20 @@
+{
+	"name": "Bubble9patch",
+	"plugin-id": "NinePatch",
+	"sid": 431872654809820,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 300,
+		"height": 190,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 9831338,
+		"useCollisionPoly": true
+	}
+}

@@ -1,0 +1,47 @@
+{
+	"name": "Audio",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "music_volume",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 846127179154919
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 773295816100358
+				}
+			],
+			"actions": [
+				{
+					"id": "set-volume",
+					"objectClass": "Audio",
+					"sid": 156799124140721,
+					"parameters": {
+						"tag": "\"music\"",
+						"db": "music_volume"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 436138018259739,
+					"parameters": {
+						"variable": "music_volume",
+						"value": "SliderBar.Value"
+					}
+				}
+			],
+			"sid": 656172309484802
+		}
+	],
+	"sid": 779031521875488
+}
