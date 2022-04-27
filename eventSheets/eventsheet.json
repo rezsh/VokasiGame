@@ -178,7 +178,17 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Sandwich",
+					"sid": 489968424507591,
+					"behaviorType": "DragDrop",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
 			"sid": 368970852306203,
 			"isOrBlock": true
 		},
@@ -2061,6 +2071,10 @@
 				}
 			],
 			"sid": 552969902276140
+		},
+		{
+			"eventType": "comment",
+			"text": "Music"
 		},
 		{
 			"eventType": "block",
