@@ -695,7 +695,7 @@
 					"type": "Sandwich",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Bread",
+						"initial-animation": "Keju",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -755,8 +755,8 @@
 					"world": {
 						"x": -129,
 						"y": 31,
-						"width": 173.352242558324,
-						"height": 57.784080852774665,
+						"width": 156.84250517181695,
+						"height": 51.180185898171835,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
