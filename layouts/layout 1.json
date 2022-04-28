@@ -1146,6 +1146,35 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "pngwingcom",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 52,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 206,
+						"y": 1472,
+						"width": 451.78243793816483,
+						"height": 754.8185108292041,
+						"originX": 0.5010224948875256,
+						"originY": 0.4834761321909425,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Sprite2",
 					"properties": {
 						"initially-visible": true,
@@ -1158,8 +1187,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 203.35565328891155,
-						"y": 1472.3352955645703,
+						"x": 205,
+						"y": 1473,
 						"width": 312.0190359703043,
 						"height": 554.7005083916521,
 						"originX": 0.5,
@@ -1175,24 +1204,78 @@
 					}
 				},
 				{
-					"type": "pngwingcom",
+					"type": "TopAndroid",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Default",
+						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 52,
+					"uid": 53,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
 					"world": {
-						"x": 204,
-						"y": 1471,
-						"width": 451.78243793816483,
-						"height": 754.8185108292041,
-						"originX": 0.5010224948875256,
-						"originY": 0.4834761321909425,
+						"x": 206,
+						"y": 1207,
+						"width": 312.46793194646176,
+						"height": 19.900002468501043,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CurrentTime",
+					"properties": {
+						"text": "CurrentTime",
+						"enable-bbcode": true,
+						"font": "Silver",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 54,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 127,
+						"y": 1190,
+						"width": 172.86933398983263,
+						"height": 28.95601656798738,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,

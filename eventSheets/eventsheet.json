@@ -11,6 +11,56 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "dividerCharacter",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 965753525519478
+		},
+		{
+			"eventType": "variable",
+			"name": "timeString",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 505698216156408
+		},
+		{
+			"eventType": "variable",
+			"name": "Second",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 467480991364449
+		},
+		{
+			"eventType": "variable",
+			"name": "Hour",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 641088495070018
+		},
+		{
+			"eventType": "variable",
+			"name": "Minutes",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 248457452343765
+		},
+		{
+			"eventType": "variable",
 			"name": "curDialogue",
 			"type": "number",
 			"initialValue": "-1",
@@ -2829,36 +2879,104 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-clicked",
-					"objectClass": "Button",
-					"sid": 551889722601990
+					"id": "on-created",
+					"objectClass": "pngwingcom",
+					"sid": 673838211006158
 				}
 			],
-			"actions": [],
-			"sid": 709900356609124
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "TopAndroid",
+					"sid": 160996334218108,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "pngwingcom",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "CurrentTime",
+					"sid": 764168555324405,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "CurrentTime",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				}
+			],
+			"sid": 339353839595952
 		},
 		{
 			"eventType": "block",
 			"conditions": [],
-			"actions": [],
-			"sid": 616611905592815
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+			"actions": [
 				{
-					"id": "for",
+					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 666064819249252,
+					"sid": 292399183133889,
 					"parameters": {
-						"name": "\"\"",
-						"start-index": "1",
-						"end-index": "10"
+						"variable": "Hour",
+						"value": "int(unixtime/2600000)%24"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 532879951162119,
+					"parameters": {
+						"variable": "Minutes",
+						"value": "int(unixtime/60000)%60"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 713676512989094,
+					"parameters": {
+						"variable": "Second",
+						"value": "int(unixtime/1000)%60"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "CurrentTime",
+					"sid": 422614713085713,
+					"parameters": {
+						"text": "timeString"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 780333456554478,
+					"parameters": {
+						"variable": "dividerCharacter",
+						"value": "(Second%2 ? \":\" : \" \")"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 369681780889148,
+					"parameters": {
+						"variable": "timeString",
+						"value": "zeropad(Hour,2) & dividerCharacter & zeropad(Minutes,2)"
 					}
 				}
 			],
-			"actions": [],
-			"sid": 768920844339724
+			"sid": 789514828453173
 		}
 	],
 	"sid": 149368447884591
