@@ -1,0 +1,49 @@
+{
+	"name": "ModernRippedPaperBlissBallRecipeCard",
+	"plugin-id": "Sprite",
+	"sid": 922483641040735,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 802,
+						"height": 1202,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1645709,
+						"collisionPoly": {
+							"points": [
+								0.0012468827930174563,
+								0.0008319467554076539,
+								0.9987531172069826,
+								0.0008319467554076539,
+								0.9987531172069826,
+								0.9991680532445923,
+								0.0012468827930174563,
+								0.9991680532445923
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 148825653583546,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
