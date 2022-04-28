@@ -1,0 +1,109 @@
+{
+	"name": "Sprite2",
+	"plugin-id": "Sprite",
+	"sid": 999971594798983,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1080,
+						"height": 1920,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8042782,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 1080,
+						"height": 1920,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1153067,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 1080,
+						"height": 1920,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3840206,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 1080,
+						"height": 1920,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9972717,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 1080,
+						"height": 1920,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6494479,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 1080,
+						"height": 1920,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4486441,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 1080,
+						"height": 1920,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 778583,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 831069754011649,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

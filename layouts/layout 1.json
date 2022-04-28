@@ -1175,7 +1175,7 @@
 					}
 				},
 				{
-					"type": "PM2",
+					"type": "Sprite2",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
@@ -1187,10 +1187,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 204,
-						"y": 1472,
-						"width": 310.6497792048758,
-						"height": 551.9388634730899,
+						"x": 1044,
+						"y": 2062,
+						"width": 1080,
+						"height": 1920,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
