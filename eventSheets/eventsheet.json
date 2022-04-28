@@ -53,7 +53,7 @@
 			"eventType": "variable",
 			"name": "PlayerName",
 			"type": "string",
-			"initialValue": "Fred",
+			"initialValue": "",
 			"comment": "An example variable to demonstrate using a replace expression to show variables in dialogue",
 			"isStatic": false,
 			"isConstant": false,
@@ -148,6 +148,16 @@
 						"string": "\"Leaving\"",
 						"function": "LeavingNextCustomer"
 					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 463588614193879,
+					"parameters": {
+						"name": "\"JSONFunctions\"",
+						"string": "\"Name\"",
+						"function": "NameInput"
+					}
 				}
 			],
 			"sid": 106383978476691
@@ -233,9 +243,18 @@
 				{
 					"id": "layer-is-visible",
 					"objectClass": "System",
-					"sid": 613780602914534,
+					"sid": 103070548830939,
 					"parameters": {
 						"layer": "\"Pause\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 243689419284654,
+					"parameters": {
+						"layer": "\"NameInput\""
 					},
 					"isInverted": true
 				}
@@ -1195,6 +1214,15 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
+											"sid": 520390449585663,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"(color=#eafd41)\",\"[color=#eafd41]\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
 											"sid": 618428575118152,
 											"parameters": {
 												"variable": "Line",
@@ -1945,6 +1973,28 @@
 							"sid": 895444378204277
 						},
 						{
+							"functionName": "NameInput",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 949229710557304,
+									"parameters": {
+										"layer": "\"NameInput\"",
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 243156891847290
+						},
+						{
 							"functionName": "Customer1",
 							"functionDescription": "",
 							"functionCategory": "Display Functions",
@@ -2470,14 +2520,69 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 962628084112857,
+							"sid": 191493048540588,
+							"parameters": {
+								"animation": "\"Bawang\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 430290149647005
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 783413689823849,
+							"parameters": {
+								"object": "RotiSelect"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "RotiSelect",
+							"sid": 784234558291824,
+							"parameters": {
+								"unique-id": "29"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 348810910174034,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 505593774528682,
+							"parameters": {
+								"object-to-create": "Sandwich",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 786021437619637,
 							"parameters": {
 								"animation": "\"Bread\"",
 								"from": "beginning"
 							}
 						}
 					],
-					"sid": 430290149647005
+					"sid": 221621222683142
 				},
 				{
 					"eventType": "block",
@@ -2559,9 +2664,9 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-collision-with-another-object",
+							"id": "is-overlapping-another-object",
 							"objectClass": "Sandwich",
-							"sid": 809465399465697,
+							"sid": 589609807576388,
 							"parameters": {
 								"object": "SpriteFamilies"
 							}
@@ -2571,7 +2676,7 @@
 						{
 							"id": "add-child",
 							"objectClass": "Bread",
-							"sid": 840932096563456,
+							"sid": 710243706552035,
 							"parameters": {
 								"child": "Sandwich",
 								"transform-x": true,
@@ -2605,6 +2710,128 @@
 				}
 			],
 			"sid": 529870817654698
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "InputName",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 388138052200588
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 329183905841045,
+							"parameters": {
+								"layer": "\"NameInput\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 422784036114281
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-text-changed",
+							"objectClass": "TextInput",
+							"sid": 816104271672023
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 236373461581412,
+							"parameters": {
+								"variable": "PlayerName",
+								"value": "TextInput.Text"
+							}
+						}
+					],
+					"sid": 413545925848982
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 444044241841542,
+							"parameters": {
+								"key": 13
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 635702876926855,
+							"parameters": {
+								"layer": "\"NameInput\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 228871917065472,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-text",
+									"objectClass": "TextInput",
+									"sid": 999072955246568,
+									"parameters": {
+										"text": "\"\"",
+										"case": "case-insensitive"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Advance",
+									"sid": 724045675960106
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 149016822417140,
+									"parameters": {
+										"layer": "\"NameInput\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 554317695852479
+						}
+					]
+				}
+			],
+			"sid": 888119713366245
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 790022573069651
+				}
+			],
+			"actions": [],
+			"sid": 241455341420865
 		}
 	],
 	"sid": 149368447884591

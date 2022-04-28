@@ -127,6 +127,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -168,16 +184,16 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Pin",
-			"name": "Pin",
+			"id": "Physics",
+			"name": "Physics",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Physics",
-			"name": "Physics",
+			"id": "Pin",
+			"name": "Pin",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -192,9 +208,25 @@
 		},
 		{
 			"type": "effect",
+			"id": "outline",
+			"name": "Outline",
+			"author": "Richard Lems",
+			"version": "1.0.0.0",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "sharpen",
 			"name": "Sharpen",
 			"author": "Brad Larson",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "darken",
+			"name": "Darken",
+			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
 		}
@@ -228,7 +260,15 @@
 			"Isian",
 			"Mouse",
 			"Bread",
-			"TextInput"
+			"TextInput",
+			"PixelOver_20220428_142131_waifu2x_art_noise3_scale_tta_",
+			"Bubble9patch2",
+			"Browser",
+			"Name",
+			"RotiSelect",
+			"Changeroti",
+			"ChooseBreadBg",
+			"SandwichHitbox"
 		],
 		"subfolders": [
 			{
@@ -304,7 +344,13 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "Silver.ttf",
+					"type": "application/font-sfnt",
+					"sid": 661442434627357
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {

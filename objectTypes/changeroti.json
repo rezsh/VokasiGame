@@ -1,16 +1,10 @@
 {
-	"name": "TextBox",
+	"name": "Changeroti",
 	"plugin-id": "Sprite",
-	"sid": 938328484216773,
-	"isGlobal": true,
+	"sid": 146029694092286,
+	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "DragnDrop",
-			"name": "DragDrop",
-			"sid": 339663016618444
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -19,17 +13,17 @@
 					{
 						"width": 250,
 						"height": 250,
-						"originX": 0,
-						"originY": 0,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4,
+						"imageSpriteId": 470898,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 930505893140744,
+				"sid": 791382725225678,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

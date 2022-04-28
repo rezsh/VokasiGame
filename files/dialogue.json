@@ -12,22 +12,35 @@
 					"char": "Iana",
 					"type": "line",
 					"emotion": "2",
-					"line": "Boss sandvich nya gapake saos please aight."
+					"line": "Hi, so youre the new recruit."
 				},
 				{
 					"char": "Iana",
 					"type": "line",
 					"emotion": "5",
-					"line": "oh ye, tambahin kecap dikit."
+					"line": "whats your name?.."
 				},
 				{
 					"char": "Iana",
-					"type": "line",
-					"emotion": "0",
-					"line": "Gwe tunggu."
+					"type": "function",
+					"function": "Name"
 				},
 				{
-					"char": "Ianan",
+								
+					"char": "Iana",
+					"type": "line",
+					"emotion": "5",
+					"line": "I see (color=#eafd41)PlayerName(/color) huh."
+				},
+				{
+								
+					"char": "Iana",
+					"type": "line",
+					"emotion": "5",
+					"line": "Welcome to epic sandvich shop."
+				},
+				{
+					"char": "Iana",
 					"type": "function",
 					"function": "TakeOrder"
 				}

@@ -48,8 +48,8 @@
 	],
 	"effectTypes": [
 		{
-			"effectId": "sharpen",
-			"name": "Sharpen"
+			"effectId": "outline",
+			"name": "Outline"
 		}
 	],
 	"animations": {

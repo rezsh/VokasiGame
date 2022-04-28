@@ -1,14 +1,14 @@
 {
-	"name": "TextBox",
+	"name": "SandwichHitbox",
 	"plugin-id": "Sprite",
-	"sid": 938328484216773,
-	"isGlobal": true,
+	"sid": 918732641419155,
+	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "DragnDrop",
 			"name": "DragDrop",
-			"sid": 339663016618444
+			"sid": 589236714037647
 		}
 	],
 	"effectTypes": [],
@@ -19,17 +19,17 @@
 					{
 						"width": 250,
 						"height": 250,
-						"originX": 0,
-						"originY": 0,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4,
+						"imageSpriteId": 3621004,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 930505893140744,
+				"sid": 490224293411023,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

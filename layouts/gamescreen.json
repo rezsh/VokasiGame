@@ -40,6 +40,39 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "Bubble9patch2",
+					"properties": {
+						"left-margin": 20,
+						"right-margin": 20,
+						"top-margin": 20,
+						"bottom-margin": 20,
+						"edges": "tile",
+						"fill": "tile",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 25,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 566,
+						"y": 352,
+						"width": 99.2089655027246,
+						"height": 128.83489481195545,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Bubble9patch",
 					"properties": {
 						"left-margin": 20,
@@ -77,15 +110,15 @@
 					"properties": {
 						"text": "Text",
 						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 22,
+						"font": "Silver",
+						"size": 32,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
 						"color": [
-							0,
-							0,
-							0,
+							1,
+							1,
+							1,
 							1
 						],
 						"horizontal-alignment": "left",
@@ -99,7 +132,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 586,
-						"y": 427,
+						"y": 420,
 						"width": 828,
 						"height": 239,
 						"originX": 0,
@@ -119,15 +152,15 @@
 					"properties": {
 						"text": "Text",
 						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 22,
-						"line-height": 0,
-						"bold": true,
+						"font": "Silver",
+						"size": 34,
+						"line-height": -1,
+						"bold": false,
 						"italic": false,
 						"color": [
 							1,
-							1,
-							1,
+							0.8784313725490196,
+							0.25882352941176473,
 							1
 						],
 						"horizontal-alignment": "left",
@@ -140,10 +173,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 586,
-						"y": 358,
+						"x": 584,
+						"y": 348,
 						"width": 200,
-						"height": 30,
+						"height": 68,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -199,38 +232,6 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
-				{
-					"type": "TextInput",
-					"properties": {
-						"text": "Nama ",
-						"placeholder": "",
-						"tooltip": "",
-						"initially-visible": true,
-						"enabled": true,
-						"read-only": false,
-						"spell-check": false,
-						"type": "text",
-						"auto-font-size": false,
-						"id": ""
-					},
-					"uid": 13,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 660,
-						"y": -140,
-						"width": 640,
-						"height": 64,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						]
-					}
 				}
 			],
 			"sid": 828167712423732,
@@ -260,6 +261,216 @@
 			"blendMode": "normal",
 			"zElevation": 0,
 			"global": true
+		},
+		{
+			"name": "NameInput",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "PAUSEBG",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 27,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 960.5,
+						"y": 543,
+						"width": 1929,
+						"height": 1120,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.45
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TextInput",
+					"properties": {
+						"text": "",
+						"placeholder": "",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"read-only": false,
+						"spell-check": false,
+						"type": "text",
+						"auto-font-size": false,
+						"id": ""
+					},
+					"uid": 13,
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 776.5,
+						"y": 497,
+						"width": 366.75714475089194,
+						"height": 74.26467799865365,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "Name",
+					"properties": {
+						"text": "Siapa Namamu?",
+						"enable-bbcode": true,
+						"font": "Silver",
+						"size": 42,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.9058823529411765,
+							1,
+							0.2,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 28,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 821,
+						"y": 386,
+						"width": 278,
+						"height": 94,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 794291686669297,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": true
+		},
+		{
+			"name": "ChooseBread",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "ChooseBreadBg",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 32,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 433,
+						"y": 268,
+						"width": 1008,
+						"height": 521,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 973159054572845,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
 		},
 		{
 			"name": "Pause",
@@ -598,39 +809,6 @@
 			"blendMode": "normal",
 			"zElevation": 0,
 			"global": true
-		},
-		{
-			"name": "Layer 1",
-			"overriden": 0,
-			"subLayers": [],
-			"instances": [],
-			"sid": 794291686669297,
-			"effectTypes": [],
-			"isInitiallyVisible": true,
-			"isInitiallyInteractive": true,
-			"color": [
-				1,
-				1,
-				1,
-				1
-			],
-			"backgroundColor": [
-				0.3686274509803922,
-				0.3686274509803922,
-				0.3686274509803922,
-				1
-			],
-			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
-			"forceOwnTexture": false,
-			"renderingMode": "3d",
-			"drawOrder": "z-order",
-			"useRenderCells": false,
-			"blendMode": "normal",
-			"zElevation": 0,
-			"global": false
 		}
 	],
 	"sid": 826455152263343,

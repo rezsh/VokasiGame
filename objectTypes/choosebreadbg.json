@@ -1,20 +1,20 @@
 {
-	"name": "Bubble9patch",
-	"plugin-id": "NinePatch",
-	"sid": 431872654809820,
+	"name": "ChooseBreadBg",
+	"plugin-id": "TiledBg",
+	"sid": 289122928521449,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 300,
-		"height": 190,
+		"width": 250,
+		"height": 250,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "png",
 		"exportQuality": 0.8,
-		"imageSpriteId": 6958398,
+		"imageSpriteId": 4303045,
 		"useCollisionPoly": true
 	}
 }
