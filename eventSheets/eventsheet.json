@@ -972,7 +972,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Allows the player to display all dialogue using the desired key"
+			"text": "Allows the player to display all dialogue using the desired key (SKIP DIALOGUE"
 		},
 		{
 			"eventType": "block",
@@ -1051,6 +1051,10 @@
 				}
 			],
 			"sid": 132453874528131
+		},
+		{
+			"eventType": "comment",
+			"text": "Auto Dialog"
 		},
 		{
 			"eventType": "block",
@@ -2820,18 +2824,6 @@
 				}
 			],
 			"sid": 888119713366245
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 790022573069651
-				}
-			],
-			"actions": [],
-			"sid": 241455341420865
 		}
 	],
 	"sid": 149368447884591

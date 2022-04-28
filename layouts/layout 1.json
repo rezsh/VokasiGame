@@ -70,7 +70,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "PixelOver_20220428_142131_waifu2x_art_noise3_scale_tta_",
+					"type": "Background",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
