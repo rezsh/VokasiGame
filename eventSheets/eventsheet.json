@@ -1008,6 +1008,37 @@
 				{
 					"id": "on-typewriter-text-finished",
 					"objectClass": "NPCTextBox",
+					"sid": 217262336964647
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 661123987968405,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Dialogue\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ContinueDialogue",
+					"sid": 667847885508485,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 132453874528131
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-typewriter-text-finished",
+					"objectClass": "NPCTextBox",
 					"sid": 565544835225593
 				},
 				{
@@ -2246,49 +2277,42 @@
 							"parameters": {
 								"unique-id": "47"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 919185189402289,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 891966395798211,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-last-created",
-									"objectClass": "System",
-									"sid": 180489156853702,
-									"parameters": {
-										"object": "Sandwich"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 352611560913904,
-									"parameters": {
-										"object-to-create": "Sandwich",
-										"layer": "1",
-										"x": "Sandwich.ImagePointX(1)",
-										"y": "Sandwich.ImagePointY(1)",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Sandwich",
-									"sid": 124007133605319,
-									"parameters": {
-										"animation": "\"Keju\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 598058333259555
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 329339694506607,
+							"parameters": {
+								"object-to-create": "Sandwich",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 211546375631345,
+							"parameters": {
+								"animation": "\"Keju\"",
+								"from": "beginning"
+							}
 						}
-					]
+					],
+					"sid": 891966395798211
 				},
 				{
 					"eventType": "block",
@@ -2308,49 +2332,42 @@
 							"parameters": {
 								"unique-id": "49"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 287784696906354,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 250139499483355,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-last-created",
-									"objectClass": "System",
-									"sid": 772939441534652,
-									"parameters": {
-										"object": "Sandwich"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 209637734994201,
-									"parameters": {
-										"object-to-create": "Sandwich",
-										"layer": "1",
-										"x": "Sandwich.ImagePointX(1)",
-										"y": "Sandwich.ImagePointY(1)",
-										"create-hierarchy": true
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Sandwich",
-									"sid": 123106912005765,
-									"parameters": {
-										"animation": "\"Sawi\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 329387871183202
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 521783851863201,
+							"parameters": {
+								"object-to-create": "Sandwich",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 679815557706439,
+							"parameters": {
+								"animation": "\"Sawi\"",
+								"from": "beginning"
+							}
 						}
-					]
+					],
+					"sid": 250139499483355
 				},
 				{
 					"eventType": "block",
@@ -2370,49 +2387,42 @@
 							"parameters": {
 								"unique-id": "50"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 752028558904309,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 423533362660835,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-last-created",
-									"objectClass": "System",
-									"sid": 785393237660106,
-									"parameters": {
-										"object": "Sandwich"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 824592918056287,
-									"parameters": {
-										"object-to-create": "Sandwich",
-										"layer": "1",
-										"x": "Sandwich.ImagePointX(1)",
-										"y": "Sandwich.ImagePointY(1)",
-										"create-hierarchy": true
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Sandwich",
-									"sid": 641104628559588,
-									"parameters": {
-										"animation": "\"Tomat\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 362933512609006
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 609431714589552,
+							"parameters": {
+								"object-to-create": "Sandwich",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 531491401122387,
+							"parameters": {
+								"animation": "\"Tomat\"",
+								"from": "beginning"
+							}
 						}
-					]
+					],
+					"sid": 423533362660835
 				},
 				{
 					"eventType": "block",
@@ -2432,10 +2442,64 @@
 							"parameters": {
 								"unique-id": "51"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 341549114182179,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 430290149647005,
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 303643236311390,
+							"parameters": {
+								"object-to-create": "Sandwich",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 962628084112857,
+							"parameters": {
+								"animation": "\"Bread\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 430290149647005
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 671330238068933,
+							"parameters": {
+								"mouse-button": "right",
+								"click-type": "clicked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Bread",
+							"sid": 834968418538743
+						}
+					],
+					"sid": 340124981826206,
 					"children": [
 						{
 							"eventType": "block",
@@ -2443,36 +2507,99 @@
 								{
 									"id": "pick-last-created",
 									"objectClass": "System",
-									"sid": 214093553125028,
+									"sid": 545961614375233,
 									"parameters": {
 										"object": "Sandwich"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 418675560633287,
+							"children": [
 								{
-									"id": "create-object",
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 245303568163073
+										}
+									],
+									"actions": [
+										{
+											"id": "set-fade-out-time",
+											"objectClass": "Sandwich",
+											"sid": 760862658730028,
+											"behaviorType": "Fade",
+											"parameters": {
+												"fade-out-time": "1"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 807608643912997,
+											"parameters": {
+												"seconds": "1"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Sandwich",
+											"sid": 623779664738974
+										}
+									],
+									"sid": 306025931543648
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Sandwich",
+							"sid": 809465399465697,
+							"parameters": {
+								"object": "SpriteFamilies"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-child",
+							"objectClass": "Bread",
+							"sid": 840932096563456,
+							"parameters": {
+								"child": "Sandwich",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-a": true,
+								"transform-z-elevation": true,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 520182212348497,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
 									"objectClass": "System",
-									"sid": 835855870821028,
+									"sid": 101323033430051,
 									"parameters": {
-										"object-to-create": "Sandwich",
-										"layer": "1",
-										"x": "Sandwich.ImagePointX(1)",
-										"y": "Sandwich.ImagePointY(1)",
-										"create-hierarchy": true
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Sandwich",
-									"sid": 777823701185048,
-									"parameters": {
-										"animation": "\"Bread\"",
-										"from": "beginning"
+										"object": "Sandwich"
 									}
 								}
 							],
-							"sid": 597476668546290
+							"actions": [],
+							"sid": 503837027095107
 						}
 					]
 				}

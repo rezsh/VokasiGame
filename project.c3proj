@@ -119,6 +119,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -167,6 +175,22 @@
 			"bundled": false
 		},
 		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "effect",
 			"id": "sharpen",
 			"name": "Sharpen",
@@ -203,7 +227,8 @@
 			"Sandwich",
 			"Isian",
 			"Mouse",
-			"Bread"
+			"Bread",
+			"TextInput"
 		],
 		"subfolders": [
 			{
@@ -225,7 +250,9 @@
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"SpriteFamilies"
+		],
 		"subfolders": []
 	},
 	"layouts": {

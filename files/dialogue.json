@@ -4,30 +4,30 @@
 			"id": 0,
 			"dialogs": [
 				{
-					"char": "TYPE1",
+					"char": "Iana",
 					"type": "function",
 					"function": "Coming"
 				},
 				{
-					"char": "TYPE1",
+					"char": "Iana",
 					"type": "line",
 					"emotion": "2",
 					"line": "Boss sandvich nya gapake saos please aight."
 				},
 				{
-					"char": "TYPE1",
+					"char": "Iana",
 					"type": "line",
 					"emotion": "5",
 					"line": "oh ye, tambahin kecap dikit."
 				},
 				{
-					"char": "TYPE1",
+					"char": "Iana",
 					"type": "line",
 					"emotion": "0",
 					"line": "Gwe tunggu."
 				},
 				{
-					"char": "TYPE1",
+					"char": "Ianan",
 					"type": "function",
 					"function": "TakeOrder"
 				}
