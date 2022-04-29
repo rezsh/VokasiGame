@@ -2622,6 +2622,61 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 350834534339901,
+							"parameters": {
+								"object": "RotiSelect"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "RotiSelect",
+							"sid": 731084426894716,
+							"parameters": {
+								"unique-id": "30"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 425522542603589,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 737218654605353,
+							"parameters": {
+								"object-to-create": "Bread",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 577475849755226,
+							"parameters": {
+								"animation": "\"Bread\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 340829210006634
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-click",
 							"objectClass": "Mouse",
 							"sid": 671330238068933,
@@ -2732,23 +2787,6 @@
 						}
 					],
 					"sid": 520182212348497,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-last-created",
-									"objectClass": "System",
-									"sid": 101323033430051,
-									"parameters": {
-										"object": "Sandwich"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 503837027095107
-						}
-					],
 					"isOrBlock": true
 				}
 			],
