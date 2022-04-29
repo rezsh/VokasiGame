@@ -728,6 +728,26 @@
 			"properties": {},
 			"uid": 35,
 			"instanceVariables": {}
+		},
+		{
+			"type": "StanWich",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 43,
+			"instanceVariables": {}
+		},
+		{
+			"type": "CurrentSandwich",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 44,
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],

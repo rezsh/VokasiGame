@@ -1,0 +1,55 @@
+{
+	"name": "PBattery",
+	"plugin-id": "Sprite",
+	"sid": 410144030640259,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 758891103935908
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 514,
+						"height": 258,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 663407,
+						"collisionPoly": {
+							"points": [
+								0.0019455252918287938,
+								0,
+								0.9980544747081712,
+								0,
+								0.9980544747081712,
+								1,
+								0.0019455252918287938,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 143758366446867,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

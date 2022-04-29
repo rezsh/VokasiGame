@@ -72,6 +72,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -268,7 +276,12 @@
 			"CurrentTime",
 			"Ui",
 			"Happiness",
-			"Ui2"
+			"Ui2",
+			"PWifi",
+			"PSignal",
+			"PBattery",
+			"Text",
+			"CurrentSandwich"
 		],
 		"subfolders": [
 			{
@@ -291,6 +304,13 @@
 				],
 				"subfolders": [],
 				"name": "MenuPopup"
+			},
+			{
+				"items": [
+					"StanWich"
+				],
+				"subfolders": [],
+				"name": "Resep"
 			}
 		]
 	},
@@ -427,6 +447,16 @@
 					"name": "Dialogue.json",
 					"type": "application/json",
 					"sid": 321770849492846
+				},
+				{
+					"name": "CurrentSandwich.json",
+					"type": "application/json",
+					"sid": 573272375858840
+				},
+				{
+					"name": "StanWich.json",
+					"type": "application/json",
+					"sid": 915615969369553
 				}
 			],
 			"subfolders": []

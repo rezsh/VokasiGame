@@ -2349,7 +2349,7 @@
 						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
-							"sid": 347998874813968,
+							"sid": 761472505317666,
 							"parameters": {
 								"object": "Isian"
 							}
@@ -2357,7 +2357,7 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "Isian",
-							"sid": 852846961400979,
+							"sid": 506317170892780,
 							"parameters": {
 								"unique-id": "47"
 							}
@@ -2365,7 +2365,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 919185189402289,
+							"sid": 766375410446686,
 							"parameters": {
 								"variable": "GameState",
 								"comparison": 0,
@@ -2377,7 +2377,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 329339694506607,
+							"sid": 329676027120711,
 							"parameters": {
 								"object-to-create": "Sandwich",
 								"layer": "1",
@@ -2389,14 +2389,24 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 211546375631345,
+							"sid": 705116377579120,
 							"parameters": {
 								"animation": "\"Keju\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"id": "insert",
+							"objectClass": "StanWich",
+							"sid": 987104426946828,
+							"parameters": {
+								"value": "\"Keju\"",
+								"index": "CurrentSandwich.CurY",
+								"axis": "y"
+							}
 						}
 					],
-					"sid": 891966395798211
+					"sid": 948498035053766
 				},
 				{
 					"eventType": "block",
@@ -2404,7 +2414,7 @@
 						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
-							"sid": 726435504854394,
+							"sid": 839735980370728,
 							"parameters": {
 								"object": "Isian"
 							}
@@ -2412,7 +2422,7 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "Isian",
-							"sid": 773409472884997,
+							"sid": 652939720645461,
 							"parameters": {
 								"unique-id": "49"
 							}
@@ -2420,7 +2430,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 287784696906354,
+							"sid": 835144057148834,
 							"parameters": {
 								"variable": "GameState",
 								"comparison": 0,
@@ -2432,7 +2442,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 521783851863201,
+							"sid": 882285133870646,
 							"parameters": {
 								"object-to-create": "Sandwich",
 								"layer": "1",
@@ -2444,14 +2454,24 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 679815557706439,
+							"sid": 252076223492469,
 							"parameters": {
 								"animation": "\"Sawi\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"id": "insert",
+							"objectClass": "StanWich",
+							"sid": 409714344143646,
+							"parameters": {
+								"value": "\"Sawi\"",
+								"index": "CurrentSandwich.CurY",
+								"axis": "y"
+							}
 						}
 					],
-					"sid": 250139499483355
+					"sid": 704749360342758
 				},
 				{
 					"eventType": "block",
@@ -2459,7 +2479,7 @@
 						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
-							"sid": 178803090068505,
+							"sid": 605072770809680,
 							"parameters": {
 								"object": "Isian"
 							}
@@ -2467,7 +2487,7 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "Isian",
-							"sid": 992627148184550,
+							"sid": 892698316170379,
 							"parameters": {
 								"unique-id": "50"
 							}
@@ -2475,7 +2495,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 752028558904309,
+							"sid": 408639455946127,
 							"parameters": {
 								"variable": "GameState",
 								"comparison": 0,
@@ -2487,7 +2507,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 609431714589552,
+							"sid": 150970332622080,
 							"parameters": {
 								"object-to-create": "Sandwich",
 								"layer": "1",
@@ -2499,14 +2519,24 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 982178469334367,
+							"sid": 537443647117391,
 							"parameters": {
-								"animation": "\"Telor\"",
+								"animation": "\"Tomat\"",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "insert",
+							"objectClass": "StanWich",
+							"sid": 310483978553922,
+							"parameters": {
+								"value": "\"Tomat\"",
+								"index": "CurrentSandwich.CurY",
+								"axis": "y"
 							}
 						}
 					],
-					"sid": 423533362660835
+					"sid": 943917573769213
 				},
 				{
 					"eventType": "block",
@@ -2514,7 +2544,7 @@
 						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
-							"sid": 480752795244452,
+							"sid": 588971637249127,
 							"parameters": {
 								"object": "Isian"
 							}
@@ -2522,7 +2552,7 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "Isian",
-							"sid": 880632364945911,
+							"sid": 560278731665394,
 							"parameters": {
 								"unique-id": "51"
 							}
@@ -2530,7 +2560,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 341549114182179,
+							"sid": 532270699380180,
 							"parameters": {
 								"variable": "GameState",
 								"comparison": 0,
@@ -2542,7 +2572,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 303643236311390,
+							"sid": 796411946227468,
 							"parameters": {
 								"object-to-create": "Sandwich",
 								"layer": "1",
@@ -2554,14 +2584,24 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 191493048540588,
+							"sid": 542490691857118,
 							"parameters": {
 								"animation": "\"Bawang\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"id": "insert",
+							"objectClass": "StanWich",
+							"sid": 746704747371583,
+							"parameters": {
+								"value": "\"Bawang\"",
+								"index": "CurrentSandwich.CurY",
+								"axis": "y"
+							}
 						}
 					],
-					"sid": 430290149647005
+					"sid": 749735271669069
 				},
 				{
 					"eventType": "block",
@@ -2569,7 +2609,7 @@
 						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
-							"sid": 783413689823849,
+							"sid": 433437915165183,
 							"parameters": {
 								"object": "RotiSelect"
 							}
@@ -2577,7 +2617,7 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "RotiSelect",
-							"sid": 784234558291824,
+							"sid": 387740781322311,
 							"parameters": {
 								"unique-id": "29"
 							}
@@ -2585,7 +2625,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 348810910174034,
+							"sid": 601687965793625,
 							"parameters": {
 								"variable": "GameState",
 								"comparison": 0,
@@ -2597,7 +2637,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 505593774528682,
+							"sid": 972236034760999,
 							"parameters": {
 								"object-to-create": "Sandwich",
 								"layer": "1",
@@ -2609,14 +2649,24 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 786021437619637,
+							"sid": 758406133284282,
 							"parameters": {
 								"animation": "\"Bread\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"id": "insert",
+							"objectClass": "StanWich",
+							"sid": 231191565629885,
+							"parameters": {
+								"value": "\"Roti Tawar\"",
+								"index": "CurrentSandwich.CurY",
+								"axis": "y"
+							}
 						}
 					],
-					"sid": 221621222683142
+					"sid": 372128593601052
 				},
 				{
 					"eventType": "block",
@@ -2750,6 +2800,62 @@
 						}
 					],
 					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-at-xy",
+							"objectClass": "StanWich",
+							"sid": 723508750248069,
+							"parameters": {
+								"x": "CurrentSandwich.CurX",
+								"y": "CurrentSandwich.CurY",
+								"comparison": 1,
+								"value": "StanWich.CurY"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 908807249068598,
+							"parameters": {
+								"text": "\"Isian Salah\""
+							}
+						}
+					],
+					"sid": 259700619149265,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-at-xy",
+									"objectClass": "StanWich",
+									"sid": 229855549690910,
+									"parameters": {
+										"x": "CurrentSandwich.CurX",
+										"y": "CurrentSandwich.CurY",
+										"comparison": 0,
+										"value": "StanWich.CurY"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 490647377271135,
+									"parameters": {
+										"text": "\"Isian Benar\""
+									}
+								}
+							],
+							"sid": 212450365531513
+						}
+					]
 				}
 			],
 			"sid": 529870817654698
