@@ -2773,15 +2773,15 @@
 						{
 							"id": "add-child",
 							"objectClass": "Bread",
-							"sid": 710243706552035,
+							"sid": 536584840175079,
 							"parameters": {
 								"child": "Sandwich",
 								"transform-x": true,
 								"transform-y": true,
-								"transform-w": true,
-								"transform-h": true,
-								"transform-a": true,
-								"transform-z-elevation": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-z-elevation": false,
 								"destroy-with-parent": true
 							}
 						}
