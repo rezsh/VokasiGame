@@ -3,14 +3,7 @@
 	"plugin-id": "Sprite",
 	"sid": 175837705114337,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "number",
-			"type": "number",
-			"desc": "",
-			"sid": 975901725755702
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Pin",
@@ -50,13 +43,13 @@
 						"collisionPoly": {
 							"points": [
 								0,
-								0.6451612903225806,
+								0.5142857142857142,
 								1,
-								0.6451612903225806,
+								0.5142857142857142,
 								1,
-								0.8571428571428571,
+								0.8,
 								0,
-								0.8571428571428571
+								0.8
 							]
 						},
 						"useCollisionPoly": true,

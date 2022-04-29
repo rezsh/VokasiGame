@@ -140,25 +140,11 @@
 							"properties": {}
 						}
 					},
-					"effects": {
-						"Outline": {
-							"parameters": {
-								"width": 3,
-								"cl": [
-									0,
-									0,
-									0,
-									1
-								],
-								"diag": 0.7071
-							}
-						}
-					},
 					"world": {
 						"x": -343,
 						"y": 464,
-						"width": 716.2843239871208,
-						"height": 753.3665338265798,
+						"width": 663.4799917506352,
+						"height": 629.58506442147,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -239,7 +225,9 @@
 						"live-preview": false
 					},
 					"uid": 24,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"CheckSandwinch": ""
+					},
 					"behaviors": {
 						"Physics": {
 							"properties": {
@@ -638,9 +626,7 @@
 						"live-preview": false
 					},
 					"uid": 11,
-					"instanceVariables": {
-						"number": 0
-					},
+					"instanceVariables": {},
 					"behaviors": {
 						"Pin": {
 							"properties": {
@@ -708,12 +694,6 @@
 						"Pin": {
 							"properties": {
 								"destroy": false
-							}
-						},
-						"DragDrop": {
-							"properties": {
-								"axes": "both",
-								"enabled": true
 							}
 						},
 						"Tween": {

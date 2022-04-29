@@ -3,7 +3,14 @@
 	"plugin-id": "Sprite",
 	"sid": 591623563781973,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "CheckSandwinch",
+			"type": "string",
+			"desc": "",
+			"sid": 133639845366885
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Physics",

@@ -238,17 +238,7 @@
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "set-enabled",
-					"objectClass": "Sandwich",
-					"sid": 489968424507591,
-					"behaviorType": "DragDrop",
-					"parameters": {
-						"state": "disabled"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 368970852306203,
 			"isOrBlock": true
 		},
@@ -270,17 +260,7 @@
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "set-enabled",
-					"objectClass": "Sandwich",
-					"sid": 334557629358283,
-					"behaviorType": "DragDrop",
-					"parameters": {
-						"state": "enabled"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 523486877590781
 		},
 		{
@@ -2718,9 +2698,17 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Sandwich",
+							"sid": 401045645805532,
+							"parameters": {
+								"object": "SpriteFamilies"
+							}
+						},
+						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Sandwich",
-							"sid": 589609807576388,
+							"sid": 228332783649194,
 							"parameters": {
 								"object": "SpriteFamilies"
 							}
@@ -2760,7 +2748,8 @@
 							"actions": [],
 							"sid": 503837027095107
 						}
-					]
+					],
+					"isOrBlock": true
 				}
 			],
 			"sid": 529870817654698
@@ -2876,107 +2865,117 @@
 			"sid": 888119713366245
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Handphone",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-created",
-					"objectClass": "pngwingcom",
-					"sid": 673838211006158
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "pngwingcom",
+							"sid": 631323770956425
+						}
+					],
+					"actions": [
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "TopAndroid",
+							"sid": 377720330868451,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "pngwingcom",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "CurrentTime",
+							"sid": 790310449606359,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "CurrentTime",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 122756248284886
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 544438037499407,
+							"parameters": {
+								"variable": "Hour",
+								"value": "int(unixtime/2600000)%24"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 951137265179851,
+							"parameters": {
+								"variable": "Minutes",
+								"value": "int(unixtime/60000)%60"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 550992256807570,
+							"parameters": {
+								"variable": "Second",
+								"value": "int(unixtime/1000)%60"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "CurrentTime",
+							"sid": 802210502203079,
+							"parameters": {
+								"text": "timeString"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 434077973700765,
+							"parameters": {
+								"variable": "dividerCharacter",
+								"value": "(Second%2 ? \":\" : \" \")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 799442531989437,
+							"parameters": {
+								"variable": "timeString",
+								"value": "zeropad(Hour,2) & dividerCharacter & zeropad(Minutes,2)"
+							}
+						}
+					],
+					"sid": 234525245786251
 				}
 			],
-			"actions": [
-				{
-					"id": "pin-to-object-properties",
-					"objectClass": "TopAndroid",
-					"sid": 160996334218108,
-					"behaviorType": "Pin",
-					"parameters": {
-						"pin-to": "pngwingcom",
-						"x": true,
-						"y": true,
-						"angle": true,
-						"width-type": "no",
-						"height-type": "no",
-						"z": false
-					}
-				},
-				{
-					"id": "pin-to-object-properties",
-					"objectClass": "CurrentTime",
-					"sid": 764168555324405,
-					"behaviorType": "Pin",
-					"parameters": {
-						"pin-to": "CurrentTime",
-						"x": true,
-						"y": true,
-						"angle": true,
-						"width-type": "no",
-						"height-type": "no",
-						"z": false
-					}
-				}
-			],
-			"sid": 339353839595952
-		},
-		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 292399183133889,
-					"parameters": {
-						"variable": "Hour",
-						"value": "int(unixtime/2600000)%24"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 532879951162119,
-					"parameters": {
-						"variable": "Minutes",
-						"value": "int(unixtime/60000)%60"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 713676512989094,
-					"parameters": {
-						"variable": "Second",
-						"value": "int(unixtime/1000)%60"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "CurrentTime",
-					"sid": 422614713085713,
-					"parameters": {
-						"text": "timeString"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 780333456554478,
-					"parameters": {
-						"variable": "dividerCharacter",
-						"value": "(Second%2 ? \":\" : \" \")"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 369681780889148,
-					"parameters": {
-						"variable": "timeString",
-						"value": "zeropad(Hour,2) & dividerCharacter & zeropad(Minutes,2)"
-					}
-				}
-			],
-			"sid": 789514828453173
+			"sid": 704100326348157
 		}
 	],
 	"sid": 149368447884591

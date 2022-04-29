@@ -208,14 +208,6 @@
 		},
 		{
 			"type": "effect",
-			"id": "outline",
-			"name": "Outline",
-			"author": "Richard Lems",
-			"version": "1.0.0.0",
-			"bundled": false
-		},
-		{
-			"type": "effect",
 			"id": "sharpen",
 			"name": "Sharpen",
 			"author": "Brad Larson",
@@ -273,8 +265,6 @@
 			"pngwingcom",
 			"ModernRippedPaperBlissBallRecipeCard",
 			"ModernRippedPaperBlissBallRecipeCard2",
-			"PM",
-			"PM2",
 			"Sprite2",
 			"TopAndroid",
 			"CurrentTime"
