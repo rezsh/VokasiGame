@@ -2712,6 +2712,15 @@
 							}
 						},
 						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 372846108562228,
+							"parameters": {
+								"animation": "\"Bread\"",
+								"from": "beginning"
+							}
+						},
+						{
 							"id": "insert",
 							"objectClass": "StanWich",
 							"sid": 886326402922146,
@@ -2824,15 +2833,15 @@
 						{
 							"id": "add-child",
 							"objectClass": "Bread",
-							"sid": 710243706552035,
+							"sid": 968655582756303,
 							"parameters": {
 								"child": "Sandwich",
 								"transform-x": true,
 								"transform-y": true,
 								"transform-w": true,
-								"transform-h": true,
-								"transform-a": true,
-								"transform-z-elevation": true,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-z-elevation": false,
 								"destroy-with-parent": true
 							}
 						},
@@ -2855,13 +2864,14 @@
 						{
 							"id": "pin-to-object-properties",
 							"objectClass": "Sandwich",
-							"sid": 486853959124408,
+							"sid": 892758903686979,
+							"disabled": true,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "Sandwich",
 								"x": true,
 								"y": true,
-								"angle": true,
+								"angle": false,
 								"width-type": "no",
 								"height-type": "no",
 								"z": false
@@ -2869,23 +2879,6 @@
 						}
 					],
 					"sid": 520182212348497,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-last-created",
-									"objectClass": "System",
-									"sid": 101323033430051,
-									"parameters": {
-										"object": "Sandwich"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 503837027095107
-						}
-					],
 					"isOrBlock": true
 				},
 				{
