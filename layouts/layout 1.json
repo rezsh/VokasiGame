@@ -245,7 +245,7 @@
 						}
 					},
 					"world": {
-						"x": 408,
+						"x": 398,
 						"y": 874,
 						"width": 196.46882704388497,
 						"height": 196.46882704388497,
@@ -293,35 +293,6 @@
 						"height": 69,
 						"originX": 0,
 						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "PauseBTN",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 46,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1824,
-						"y": 96,
-						"width": 62.55397669213365,
-						"height": 62.55397669213365,
-						"originX": 0.5,
-						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -650,8 +621,8 @@
 								"immovable": false,
 								"collision-mask": "use-collision-polygon",
 								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
+								"density": 5,
+								"friction": 0,
 								"elasticity": 0.2,
 								"linear-damping": 0,
 								"angular-damping": 0.01,
@@ -661,10 +632,10 @@
 						}
 					},
 					"world": {
-						"x": 413,
-						"y": 744,
-						"width": 175.7974795244377,
-						"height": 58.599159841479235,
+						"x": 405,
+						"y": 785,
+						"width": 196.26804112467306,
+						"height": 75.36692779187447,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -713,8 +684,8 @@
 								"collision-mask": "use-collision-polygon",
 								"prevent-rotation": true,
 								"density": 5,
-								"friction": 1,
-								"elasticity": 0.2,
+								"friction": 0,
+								"elasticity": 0.1,
 								"linear-damping": 1,
 								"angular-damping": 0.01,
 								"bullet": false,
@@ -735,10 +706,10 @@
 					"world": {
 						"x": -129,
 						"y": 31,
-						"width": 156.84250517181695,
-						"height": 51.180185898171835,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 143.21324906605633,
+						"height": 51.23851799918897,
+						"originX": 0.5027149321266968,
+						"originY": 0.4898989898989899,
 						"color": [
 							1,
 							1,
@@ -1055,11 +1026,11 @@
 			"global": false
 		},
 		{
-			"name": "Pause",
+			"name": "NameInput",
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 704280712909139,
+			"sid": 625348987588740,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -1088,11 +1059,11 @@
 			"global": false
 		},
 		{
-			"name": "NameInput",
+			"name": "UI Game",
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 625348987588740,
+			"sid": 269877334065839,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -1268,6 +1239,39 @@
 				}
 			],
 			"sid": 951242631522133,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Pause",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 704280712909139,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,

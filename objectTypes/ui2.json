@@ -1,7 +1,7 @@
 {
-	"name": "PauseOverlay",
+	"name": "Ui2",
 	"plugin-id": "Sprite",
-	"sid": 550177654273317,
+	"sid": 575607807325942,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -13,12 +13,12 @@
 					{
 						"width": 453,
 						"height": 364,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 1.009933774834437,
+						"originY": 0.17994505494505494,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5500543,
+						"imageSpriteId": 2646702,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -27,23 +27,23 @@
 								0,
 								1,
 								0,
-								0.9933774834437086,
-								0.17994505494505494,
+								1,
+								1,
+								1,
+								1,
+								1,
 								1,
 								0,
 								1,
 								0,
-								0.059602649006622516,
-								0.5164835164835165,
-								0,
-								0.17994505494505494
+								1
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 842089569007783,
+				"sid": 388354852043045,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -32,14 +32,14 @@
 			{
 				"frames": [
 					{
-						"width": 105,
-						"height": 35,
+						"width": 500,
+						"height": 192,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2887875,
+						"imageSpriteId": 6139539,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -47,9 +47,9 @@
 								1,
 								0.5142857142857142,
 								1,
-								0.8,
+								0.7383966244725738,
 								0,
-								0.8
+								0.7383966244725738
 							]
 						},
 						"useCollisionPoly": true,
@@ -81,7 +81,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7800198,
+						"imageSpriteId": 58346,
 						"collisionPoly": {
 							"points": [
 								0,

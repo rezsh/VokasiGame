@@ -263,11 +263,12 @@
 			"SandwichHitbox",
 			"Sprite",
 			"pngwingcom",
-			"ModernRippedPaperBlissBallRecipeCard",
-			"ModernRippedPaperBlissBallRecipeCard2",
 			"Sprite2",
 			"TopAndroid",
-			"CurrentTime"
+			"CurrentTime",
+			"Ui",
+			"Happiness",
+			"Ui2"
 		],
 		"subfolders": [
 			{
@@ -454,7 +455,7 @@
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
-		"fullscreenQuality": "high",
+		"fullscreenQuality": "low",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,

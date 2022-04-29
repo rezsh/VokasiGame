@@ -37,14 +37,14 @@
 			{
 				"frames": [
 					{
-						"width": 105,
-						"height": 35,
+						"width": 574,
+						"height": 219,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6533472,
+						"imageSpriteId": 4070537,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -79,14 +79,14 @@
 			{
 				"frames": [
 					{
-						"width": 82,
-						"height": 35,
+						"width": 450,
+						"height": 217,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8578634,
+						"imageSpriteId": 957975,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -121,32 +121,32 @@
 			{
 				"frames": [
 					{
-						"width": 95,
-						"height": 31,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 450,
+						"height": 161,
+						"originX": 0.5027149321266968,
+						"originY": 0.4898989898989899,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6996378,
+						"imageSpriteId": 7607556,
 						"collisionPoly": {
 							"points": [
 								0,
-								0.45161290322580644,
+								0.4361355490387749,
 								1,
-								0.45161290322580644,
+								0.4361355490387749,
 								1,
-								0.5806451612903226,
+								0.579504724666015,
 								0,
-								0.5806451612903226
+								0.579504724666015
 							]
 						},
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "Toppings",
-								"x": 0.49523809523809526,
-								"y": 0.2571428571428571
+								"x": 0.49780650721827197,
+								"y": 0.22005772005772004
 							}
 						],
 						"duration": 1
@@ -163,24 +163,24 @@
 			{
 				"frames": [
 					{
-						"width": 69,
-						"height": 25,
+						"width": 444,
+						"height": 222,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7838292,
+						"imageSpriteId": 3657926,
 						"collisionPoly": {
 							"points": [
 								0,
-								0.48,
+								0.36036036036036034,
 								1,
-								0.48,
+								0.36036036036036034,
 								1,
-								0.6,
+								0.4954954954954955,
 								0,
-								0.6
+								0.4954954954954955
 							]
 						},
 						"useCollisionPoly": true,
@@ -195,7 +195,7 @@
 					}
 				],
 				"sid": 803406296357139,
-				"name": "Tomat",
+				"name": "Telor",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -205,14 +205,14 @@
 			{
 				"frames": [
 					{
-						"width": 78,
-						"height": 31,
+						"width": 450,
+						"height": 199,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1098499,
+						"imageSpriteId": 1090852,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -254,7 +254,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 640495,
+						"imageSpriteId": 1478916,
 						"collisionPoly": {
 							"points": [
 								0.0975609756097561,

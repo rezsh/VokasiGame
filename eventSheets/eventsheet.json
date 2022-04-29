@@ -2204,11 +2204,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 185776528375151,
+					"sid": 894558317133510,
 					"parameters": {
 						"audio-file": "musicdef",
 						"loop": "not-looping",
-						"volume": "-5",
+						"volume": "-15",
 						"tag-optional": "\"music\""
 					}
 				}
@@ -2499,9 +2499,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 531491401122387,
+							"sid": 982178469334367,
 							"parameters": {
-								"animation": "\"Tomat\"",
+								"animation": "\"Telor\"",
 								"from": "beginning"
 							}
 						}
