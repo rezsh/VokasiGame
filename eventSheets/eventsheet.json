@@ -2377,13 +2377,13 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 329676027120711,
+							"sid": 600103461668205,
 							"parameters": {
 								"object-to-create": "Sandwich",
 								"layer": "1",
 								"x": "402",
 								"y": "665",
-								"create-hierarchy": false
+								"create-hierarchy": true
 							}
 						},
 						{
@@ -2672,6 +2672,62 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 620105986912531,
+							"parameters": {
+								"object": "RotiSelect"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "RotiSelect",
+							"sid": 466803094233560,
+							"parameters": {
+								"unique-id": "30"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 289884899487752,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 548709709815002,
+							"parameters": {
+								"object-to-create": "Bread",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "insert",
+							"objectClass": "StanWich",
+							"sid": 886326402922146,
+							"parameters": {
+								"value": "\"Roti Tawar\"",
+								"index": "CurrentSandwich.CurY",
+								"axis": "y"
+							}
+						}
+					],
+					"sid": 649323341762956
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-click",
 							"objectClass": "Mouse",
 							"sid": 671330238068933,
@@ -2779,6 +2835,37 @@
 								"transform-z-elevation": true,
 								"destroy-with-parent": true
 							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "Sandwich",
+							"sid": 798839388646696,
+							"disabled": true,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Bread",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "Sandwich",
+							"sid": 486853959124408,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Sandwich",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
 						}
 					],
 					"sid": 520182212348497,
@@ -2807,12 +2894,12 @@
 						{
 							"id": "compare-at-xy",
 							"objectClass": "StanWich",
-							"sid": 723508750248069,
+							"sid": 400488816543372,
 							"parameters": {
 								"x": "CurrentSandwich.CurX",
 								"y": "CurrentSandwich.CurY",
 								"comparison": 1,
-								"value": "StanWich.CurY"
+								"value": "StanWich.CurValue"
 							}
 						}
 					],
@@ -2834,12 +2921,12 @@
 								{
 									"id": "compare-at-xy",
 									"objectClass": "StanWich",
-									"sid": 229855549690910,
+									"sid": 949083246615488,
 									"parameters": {
 										"x": "CurrentSandwich.CurX",
 										"y": "CurrentSandwich.CurY",
 										"comparison": 0,
-										"value": "StanWich.CurY"
+										"value": "StanWich.CurValue"
 									}
 								}
 							],
