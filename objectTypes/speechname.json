@@ -1,20 +1,20 @@
 {
-	"name": "ChooseBreadBg",
-	"plugin-id": "TiledBg",
-	"sid": 289122928521449,
+	"name": "SpeechName",
+	"plugin-id": "NinePatch",
+	"sid": 783177394544960,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 250,
-		"height": 250,
+		"width": 300,
+		"height": 190,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "png",
 		"exportQuality": 0.8,
-		"imageSpriteId": 4303045,
+		"imageSpriteId": 4641067,
 		"useCollisionPoly": true
 	}
 }

@@ -1,0 +1,54 @@
+{
+	"name": "Sauce",
+	"plugin-id": "Sprite",
+	"sid": 733251965664054,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "sharpen",
+			"name": "Sharpen"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1567,
+						"height": 487,
+						"originX": 0.5,
+						"originY": 0.9219712525667351,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3590859,
+						"collisionPoly": {
+							"points": [
+								0.07817485641352903,
+								0.07802874743326489,
+								0.9218251435864709,
+								0.07802874743326489,
+								0.9218251435864709,
+								0.9219712525667351,
+								0.07817485641352903,
+								0.9219712525667351
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 364471067702129,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

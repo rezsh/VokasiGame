@@ -5,38 +5,43 @@
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "outline",
+			"name": "Outline"
+		}
+	],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 453,
-						"height": 364,
+						"width": 480,
+						"height": 385,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5500543,
+						"imageSpriteId": 2274461,
 						"collisionPoly": {
 							"points": [
-								0,
-								0,
-								1,
-								0,
-								1,
-								0,
-								0.9933774834437086,
-								0.17994505494505494,
-								1,
-								0,
-								1,
-								0,
-								0.059602649006622516,
-								0.5164835164835165,
-								0,
-								0.17994505494505494
+								0.028125,
+								0.02727272727272727,
+								0.971875,
+								0.02727272727272727,
+								0.971875,
+								0.02727272727272727,
+								0.965625,
+								0.1974025974025974,
+								0.971875,
+								0.02727272727272727,
+								0.971875,
+								0.02727272727272727,
+								0.084375,
+								0.5155844155844157,
+								0.028125,
+								0.1974025974025974
 							]
 						},
 						"useCollisionPoly": true,

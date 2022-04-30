@@ -1,7 +1,7 @@
 {
-	"name": "pngwingcom",
+	"name": "PauseBtns",
 	"plugin-id": "Sprite",
-	"sid": 763726733511058,
+	"sid": 186923790739374,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,20 +11,20 @@
 			{
 				"frames": [
 					{
-						"width": 489,
-						"height": 817,
-						"originX": 0.5010224948875256,
-						"originY": 0.4834761321909425,
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 241152,
+						"imageSpriteId": 7516533,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 209975025427960,
-				"name": "Default",
+				"sid": 569248425342658,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

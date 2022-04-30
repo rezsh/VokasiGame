@@ -646,7 +646,7 @@
 					"objectClass": "Touch",
 					"sid": 980395427411526,
 					"parameters": {
-						"object": "bell"
+						"object": "Kasir"
 					}
 				},
 				{
@@ -1248,10 +1248,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 520390449585663,
+											"sid": 257949646293584,
 											"parameters": {
 												"variable": "Line",
-												"value": "replace(Line,\"(color=#eafd41)\",\"[color=#eafd41]\")"
+												"value": "replace(Line,\"(color=#ef7d57)\",\"[color=#ef7d57]\")"
 											}
 										},
 										{
@@ -1939,13 +1939,13 @@
 								{
 									"id": "tween-two-properties",
 									"objectClass": "NPC",
-									"sid": 556080486570097,
+									"sid": 728736597617278,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"come\"",
 										"property": "position",
-										"end-x": "384",
-										"end-y": "480",
+										"end-x": "460",
+										"end-y": "795",
 										"time": "0.7",
 										"ease": "easeinquad",
 										"destroy-on-complete": "no",
@@ -2177,7 +2177,7 @@
 			"actions": [
 				{
 					"id": "set-size",
-					"objectClass": "Bubble9patch",
+					"objectClass": "SpeechDialog",
 					"sid": 681896652112855,
 					"parameters": {
 						"width": "NPCTextBox.TextWidth+40",
@@ -2260,9 +2260,12 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-clicked",
-							"objectClass": "Button",
-							"sid": 341070041084439
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 319531399005308,
+							"parameters": {
+								"object": "PauseBtns"
+							}
 						}
 					],
 					"actions": [
@@ -2519,9 +2522,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 537443647117391,
+							"sid": 492360652411213,
 							"parameters": {
-								"animation": "\"Tomat\"",
+								"animation": "\"Bawang\"",
 								"from": "beginning"
 							}
 						},
@@ -2584,9 +2587,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 542490691857118,
+							"sid": 611820596919266,
 							"parameters": {
-								"animation": "\"Bawang\"",
+								"animation": "\"Telor\"",
 								"from": "beginning"
 							}
 						},
@@ -3062,7 +3065,7 @@
 					"conditions": [
 						{
 							"id": "on-created",
-							"objectClass": "pngwingcom",
+							"objectClass": "Phone",
 							"sid": 631323770956425
 						}
 					],
@@ -3073,7 +3076,7 @@
 							"sid": 377720330868451,
 							"behaviorType": "Pin",
 							"parameters": {
-								"pin-to": "pngwingcom",
+								"pin-to": "Phone",
 								"x": true,
 								"y": true,
 								"angle": true,
@@ -3162,6 +3165,148 @@
 				}
 			],
 			"sid": 704100326348157
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ScrollingLayout",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 427384714557978
+						}
+					],
+					"actions": [],
+					"sid": 830466657064547,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 133951065585152,
+									"parameters": {
+										"object": "ScrollingHB"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ScrollingHB",
+									"sid": 914213427701776,
+									"parameters": {
+										"unique-id": "60"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Camera",
+									"sid": 140796699163034,
+									"parameters": {
+										"angle": "360",
+										"distance": "15"
+									}
+								}
+							],
+							"sid": 307941488997894
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 815970346701180,
+									"parameters": {
+										"object": "ScrollingHB"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ScrollingHB",
+									"sid": 296596359912397,
+									"parameters": {
+										"unique-id": "61"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Camera",
+									"sid": 703488639064764,
+									"parameters": {
+										"angle": "180",
+										"distance": "15"
+									}
+								}
+							],
+							"sid": 575746268540358
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Camera",
+									"sid": 600163339916239,
+									"parameters": {
+										"comparison": 3,
+										"x-co-ordinate": "920"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Camera",
+									"sid": 946801581836874,
+									"parameters": {
+										"angle": "360",
+										"distance": "15"
+									}
+								}
+							],
+							"sid": 469955160368834
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Camera",
+									"sid": 845692203241900,
+									"parameters": {
+										"comparison": 5,
+										"x-co-ordinate": "1560"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Camera",
+									"sid": 500510381209292,
+									"parameters": {
+										"angle": "180",
+										"distance": "15"
+									}
+								}
+							],
+							"sid": 863662512782557
+						}
+					]
+				}
+			],
+			"sid": 685171681020554
 		}
 	],
 	"sid": 149368447884591

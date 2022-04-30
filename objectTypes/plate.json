@@ -18,7 +18,12 @@
 			"sid": 345171000453055
 		}
 	],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "dropshad",
+			"name": "dropshad"
+		}
+	],
 	"animations": {
 		"items": [
 			{
@@ -26,12 +31,12 @@
 					{
 						"width": 500,
 						"height": 500,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.482,
+						"originY": 0.678,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7734204,
+						"imageSpriteId": 8136294,
 						"collisionPoly": {
 							"points": [
 								0,

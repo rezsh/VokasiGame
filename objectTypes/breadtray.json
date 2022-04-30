@@ -1,0 +1,42 @@
+{
+	"name": "BreadTray",
+	"plugin-id": "Sprite",
+	"sid": 704855666904063,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "sharpen",
+			"name": "Sharpen"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1217,
+						"height": 326,
+						"originX": 0.49465899753492193,
+						"originY": 0.44631901840490795,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5639806,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 122341252749208,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
