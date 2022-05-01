@@ -168,7 +168,22 @@
 					},
 					"uid": 16,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 1271.5,
 						"y": 1095.5275513061704,
@@ -1303,10 +1318,22 @@
 					},
 					"uid": 52,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
 					"world": {
-						"x": 206,
-						"y": 1472,
+						"x": 198,
+						"y": 1462,
 						"width": 451.78243793816483,
 						"height": 754.8185108292041,
 						"originX": 0.5010224948875256,
@@ -1334,8 +1361,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 205,
-						"y": 1473,
+						"x": 197,
+						"y": 1463,
 						"width": 312.0190359703043,
 						"height": 554.7005083916521,
 						"originX": 0.5,
@@ -1369,8 +1396,8 @@
 						}
 					},
 					"world": {
-						"x": 206,
-						"y": 1207,
+						"x": 198,
+						"y": 1197,
 						"width": 312.46793194646176,
 						"height": 19.900002468501043,
 						"originX": 0.5,
@@ -1417,8 +1444,8 @@
 						}
 					},
 					"world": {
-						"x": 127,
-						"y": 1190,
+						"x": 119,
+						"y": 1180,
 						"width": 172.86933398983263,
 						"height": 28.95601656798738,
 						"originX": 0,
@@ -1452,8 +1479,8 @@
 						}
 					},
 					"world": {
-						"x": 345.98730938652454,
-						"y": 1207.2440263618023,
+						"x": 338,
+						"y": 1197,
 						"width": 27.463842853133986,
 						"height": 13.785353027448577,
 						"originX": 0.5,
@@ -1487,8 +1514,8 @@
 						}
 					},
 					"world": {
-						"x": 303.0759651536214,
-						"y": 1207.4322314936462,
+						"x": 295,
+						"y": 1197,
 						"width": 16.62164603389577,
 						"height": 16.62164603389577,
 						"originX": 0.5,
@@ -1522,8 +1549,8 @@
 						}
 					},
 					"world": {
-						"x": 321.50944285751723,
-						"y": 1208.0244950217755,
+						"x": 314,
+						"y": 1198,
 						"width": 15.033346149610212,
 						"height": 15.033346149610212,
 						"originX": 0.5,
@@ -1556,8 +1583,8 @@
 				1
 			],
 			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",

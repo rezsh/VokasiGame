@@ -4,7 +4,13 @@
 	"sid": 769194848562190,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 529613280788740
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -22,11 +28,9 @@
 						"collisionPoly": {
 							"points": [
 								0,
-								0,
-								0.5,
-								0,
-								0.9992570579494799,
-								0,
+								0.32335328484723647,
+								1,
+								0.3233532848472366,
 								0.9992570579494799,
 								0.8053892215568862,
 								0.9992570579494799,

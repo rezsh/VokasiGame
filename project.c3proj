@@ -208,6 +208,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
@@ -295,7 +303,6 @@
 			"PWifi",
 			"PSignal",
 			"PBattery",
-			"Text",
 			"CurrentSandwich",
 			"BreadTray",
 			"Sauce",
@@ -306,7 +313,9 @@
 			"PauseUI",
 			"Happiness2",
 			"PauseBtns",
-			"CursorStyle"
+			"CursorStyle",
+			"Text",
+			"TestArray"
 		],
 		"subfolders": [
 			{
