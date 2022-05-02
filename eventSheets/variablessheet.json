@@ -1,0 +1,36 @@
+{
+	"name": "variablesSheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "play",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 215595532139364
+		},
+		{
+			"eventType": "variable",
+			"name": "win",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 707113629423110
+		},
+		{
+			"eventType": "variable",
+			"name": "lose",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 439517153175613
+		}
+	],
+	"sid": 553467715515648
+}

@@ -1,0 +1,76 @@
+{
+	"name": "levelButton",
+	"plugin-id": "Sprite",
+	"sid": 904113205410818,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "levelINST",
+			"type": "number",
+			"desc": "",
+			"sid": 187965314740189
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 130,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 325811,
+						"collisionPoly": {
+							"points": [
+								0.3076923076923077,
+								0.3076923076923077,
+								0.5,
+								0.11538461538461539,
+								0.6846153846153846,
+								0.3076923076923077,
+								0.7846153846153846,
+								0.5,
+								0.7846153846153846,
+								0.7846153846153846,
+								0.5,
+								0.8461538461538461,
+								0.2076923076923077,
+								0.7846153846153846,
+								0.2076923076923077,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 180,
+						"height": 180,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4120332,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 162520154628632,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

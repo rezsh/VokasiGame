@@ -1,0 +1,13 @@
+{
+	"name": "winLoseDrawFamily",
+	"plugin-id": "Sprite",
+	"sid": 439944998819353,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"spr_lose",
+		"spr_win",
+		"spr_menu"
+	]
+}

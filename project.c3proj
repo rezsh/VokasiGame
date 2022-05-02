@@ -315,7 +315,19 @@
 			"PauseBtns",
 			"CursorStyle",
 			"Text",
-			"TestArray"
+			"TestArray",
+			"LevelNumber",
+			"btn_GoToMenu",
+			"btn_clear",
+			"levelButton",
+			"spr_win",
+			"spr_lose",
+			"spr_menu",
+			"spr_gameStartSprite",
+			"spr_winAlert",
+			"spr_loseAlert",
+			"spr_background",
+			"btn_Gotohome"
 		],
 		"subfolders": [
 			{
@@ -349,10 +361,19 @@
 		]
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"levelButton",
+				"LevelNumber"
+			],
+			"selectMode": "normal"
+		}
+	],
 	"families": {
 		"items": [
-			"SpriteFamilies"
+			"SpriteFamilies",
+			"winLoseDrawFamily"
 		],
 		"subfolders": []
 	},
@@ -362,14 +383,38 @@
 			"Layout 1",
 			"ItemRepo"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"home",
+					"menu",
+					"game",
+					"storage"
+				],
+				"subfolders": [],
+				"name": "Saving"
+			}
+		]
 	},
 	"eventSheets": {
 		"items": [
 			"EventSheet",
 			"Audio"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"variablesSheet",
+					"menuSheet",
+					"levelsSheet",
+					"homeSheet",
+					"gameSheet",
+					"functionSheet"
+				],
+				"subfolders": [],
+				"name": "Saving"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {

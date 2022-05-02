@@ -1,0 +1,320 @@
+{
+	"name": "gameSheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "functionSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "gameSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "variablesSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "levelsSheet"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "menuSheet"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 713040697066062
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 738402334535724,
+					"parameters": {
+						"variable": "play",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 512713622689806
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 719205982118021
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 756542752085495,
+					"parameters": {
+						"object": "spr_gameStartSprite"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 675731133960882,
+					"parameters": {
+						"layer": "\"Pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 558755142958764,
+					"parameters": {
+						"variable": "play",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "spr_gameStartSprite",
+					"sid": 962745904077727
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "winLoseDrawFamily",
+					"sid": 548871881356699,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 470222611732232
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 540457277686322,
+					"parameters": {
+						"object": "spr_menu"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 457383270330195,
+					"parameters": {
+						"layer": "\"Pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 781763728999038,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 198544800299929
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 338525966924315,
+					"parameters": {
+						"object": "spr_lose"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 615635220916156,
+					"parameters": {
+						"layer": "\"Pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 340299775622990,
+					"parameters": {
+						"object-to-create": "spr_loseAlert",
+						"layer": "\"UI Game\"",
+						"x": "1005",
+						"y": "542",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "winLoseDrawFamily",
+					"sid": 849916775738612
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 467091907777959,
+					"parameters": {
+						"variable": "play",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 752460160164185
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 451900780624810,
+					"parameters": {
+						"object": "spr_loseAlert"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 707457141299102,
+					"parameters": {
+						"layer": "\"Pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 992706818344986,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 158451390972706
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 151037478212099,
+					"parameters": {
+						"object": "spr_win"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 993755233138549,
+					"parameters": {
+						"layer": "\"Pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 835697328958161,
+					"parameters": {
+						"object-to-create": "spr_winAlert",
+						"layer": "\"UI Game\"",
+						"x": "1005",
+						"y": "542",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 388954180420293,
+					"parameters": {
+						"variable": "maxLevel",
+						"value": "max(currentLevel+1, maxLevel)"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 412759933099566,
+					"parameters": {
+						"key": "\"Maximum Level\"",
+						"value": "maxLevel"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "winLoseDrawFamily",
+					"sid": 391610262478629
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 597843083168970,
+					"parameters": {
+						"variable": "play",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 306915682179473
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 864348476727936,
+					"parameters": {
+						"object": "spr_winAlert"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 483004381700897,
+					"parameters": {
+						"layer": "\"Pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 710727207931727,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 623705705008911
+		}
+	],
+	"sid": 582243188195984
+}

@@ -1,0 +1,339 @@
+{
+	"name": "menuSheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "homeSheet"
+		},
+		{
+			"eventType": "variable",
+			"name": "maxLevel",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 981419915736523
+		},
+		{
+			"eventType": "variable",
+			"name": "currentLevel",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 104927982032021
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 335379319084895,
+					"parameters": {
+						"object": "levelButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 194016483762724,
+					"parameters": {
+						"variable": "currentLevel",
+						"value": "levelButton.levelInst"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 316684588661648,
+					"parameters": {
+						"key": "\"Current Level\"",
+						"value": "currentLevel"
+					}
+				}
+			],
+			"sid": 216288507581072,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "levelButton",
+							"sid": 532467169271175,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 551235889786263,
+							"parameters": {
+								"layout": "Layout 1"
+							}
+						}
+					],
+					"sid": 450568757676046
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 572404010472005
+				}
+			],
+			"actions": [],
+			"sid": 666461165346959,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "levelButton",
+							"sid": 626279705386815,
+							"parameters": {
+								"instance-variable": "levelINST",
+								"comparison": 4,
+								"value": "maxLevel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "levelButton",
+							"sid": 553450765268069,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "LevelNumber",
+							"sid": 350057738875600,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 898895428475614
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "levelButton",
+							"sid": 753485334168070,
+							"parameters": {
+								"instance-variable": "levelINST",
+								"comparison": 3,
+								"value": "maxLevel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "levelButton",
+							"sid": 480609566796065,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "LevelNumber",
+							"sid": 818718607770012,
+							"parameters": {
+								"text": "levelButton.levelINST"
+							}
+						}
+					],
+					"sid": 618320622454957
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 850994642971671
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 345136708554425,
+					"parameters": {
+						"key": "\"Maximum Level\""
+					}
+				}
+			],
+			"sid": 401274771044851
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 898588007145509,
+					"parameters": {
+						"key": "\"Maximum Level\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 216734427078940,
+					"parameters": {
+						"key": "\"Maximum Level\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 101727308021987,
+					"parameters": {
+						"variable": "maxLevel",
+						"value": "LocalStorage.ItemValue"
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 136689506318497,
+					"parameters": {
+						"key": "\"Current Level\""
+					}
+				}
+			],
+			"sid": 867927914608018
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 963949452669936,
+					"parameters": {
+						"key": "\"Current Level\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 120657094715568,
+					"parameters": {
+						"key": "\"Current Level\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 214949890849060,
+					"parameters": {
+						"variable": "currentLevel",
+						"value": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 138406411893497
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 589139776601995,
+					"parameters": {
+						"object": "btn_clear"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "clear-storage",
+					"objectClass": "LocalStorage",
+					"sid": 842910383502986
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "btn_clear",
+					"sid": 692936165554324,
+					"parameters": {
+						"animation": "\"cleared\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 515179150213542,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "btn_clear",
+					"sid": 158031558483533,
+					"parameters": {
+						"animation": "\"clear\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 142796457057806
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 835494641676930,
+					"parameters": {
+						"object": "btn_Gotohome"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 831486952321462,
+					"parameters": {
+						"layout": "home"
+					}
+				}
+			],
+			"sid": 613098437495609
+		}
+	],
+	"sid": 426922688688513
+}

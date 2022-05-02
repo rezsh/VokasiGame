@@ -1,0 +1,34 @@
+{
+	"name": "homeSheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "menuSheet"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 154741412144327,
+					"parameters": {
+						"object": "btn_GoToMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 122461488034365,
+					"parameters": {
+						"layout": "menu"
+					}
+				}
+			],
+			"sid": 364984231463686
+		}
+	],
+	"sid": 285868986059166
+}

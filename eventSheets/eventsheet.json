@@ -3,6 +3,10 @@
 	"events": [
 		{
 			"eventType": "include",
+			"includeSheet": "gameSheet"
+		},
+		{
+			"eventType": "include",
 			"includeSheet": "Audio"
 		},
 		{
@@ -2546,6 +2550,14 @@
 							"parameters": {
 								"object": "PauseBtns"
 							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "PauseBtns",
+							"sid": 802182395119251,
+							"parameters": {
+								"unique-id": "68"
+							}
 						}
 					],
 					"actions": [
@@ -2568,6 +2580,47 @@
 						}
 					],
 					"sid": 657378394810298
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 354427741881533,
+							"parameters": {
+								"object": "PauseBtns"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "PauseBtns",
+							"sid": 296724158780486,
+							"parameters": {
+								"unique-id": "103"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 413985246590800,
+							"parameters": {
+								"variable": "Paused",
+								"value": "false"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 346924559334613,
+							"parameters": {
+								"layout": "home"
+							}
+						}
+					],
+					"sid": 548147149584520
 				},
 				{
 					"eventType": "block",
