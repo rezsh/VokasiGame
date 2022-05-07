@@ -173,7 +173,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Simpler Solutions",
+			"text": "MECHANIC",
 			"text-color": [
 				1,
 				1,
@@ -755,380 +755,6 @@
 							"isOrBlock": true
 						}
 					]
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 980395427411526,
-					"parameters": {
-						"object": "Kasir"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 253119108248395,
-					"parameters": {
-						"variable": "CurrentRecipe",
-						"comparison": 0,
-						"value": "CorrectRecipe"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 903594990709253,
-					"parameters": {
-						"variable": "GameState",
-						"value": "\"Dialogue\""
-					}
-				}
-			],
-			"sid": 587777596219459,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "When the Z key is pressed and the player is overlapping an NPC object, the dialogue mechanism will be triggered"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-on-screen",
-							"objectClass": "NPC",
-							"sid": 145503095006178
-						}
-					],
-					"actions": [],
-					"sid": 966683426046396,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "When the GameState is not [b]Dialogue[/b] we set the curScene to one of the NPC's SceneId variables to pick the right part of the JSON file to call the text from. Then set the GameState to Dialogue to begin displaying text"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 323495339691747,
-									"parameters": {
-										"variable": "GameState",
-										"comparison": 0,
-										"value": "\"\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 174821716135188,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "If the [b]MultiLine[/b] boolean is set to false, we only use the one SceneID variable"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "NPC",
-											"sid": 194244425976231,
-											"parameters": {
-												"instance-variable": "MultiLine"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 667046882757488,
-											"parameters": {
-												"variable": "curScene",
-												"value": "NPC.SceneId"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 734568202359826,
-											"parameters": {
-												"variable": "GameState",
-												"value": "\"Dialogue\""
-											}
-										}
-									],
-									"sid": 718651321560952,
-									"disabled": true
-								},
-								{
-									"eventType": "comment",
-									"text": "If [b]MultiLine[/b] is set to true, then the number of times the player has spoken to the NPC dictates which SceneID to use."
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "NPC",
-											"sid": 348979812075351,
-											"parameters": {
-												"instance-variable": "MultiLine"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 492887947956999,
-									"disabled": true,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "NPC",
-													"sid": 197379539822633,
-													"parameters": {
-														"instance-variable": "TimesSpokenTo",
-														"comparison": 0,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 392685615381541,
-													"parameters": {
-														"variable": "curScene",
-														"value": "NPC.SceneId"
-													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 890930011961196,
-													"parameters": {
-														"variable": "GameState",
-														"value": "\"Dialogue\""
-													}
-												}
-											],
-											"sid": 173841679743843,
-											"disabled": true
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "NPC",
-													"sid": 491362278328228,
-													"parameters": {
-														"instance-variable": "TimesSpokenTo",
-														"comparison": 4,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 179265143020216,
-													"parameters": {
-														"variable": "curScene",
-														"value": "NPC.SceneId2"
-													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 971384934275406,
-													"parameters": {
-														"variable": "GameState",
-														"value": "\"Dialogue\""
-													}
-												}
-											],
-											"sid": 960320766015143,
-											"disabled": true
-										}
-									]
-								}
-							],
-							"isOrBlock": true
-						},
-						{
-							"eventType": "comment",
-							"text": "When in the Dialogue state, add one to curDialogue to get the correct line from the JSON file and call the DisplayDialogue function. By adding the [b]is NOT running typewriter[/b] condition, we ensure that the player cannot skip through all the text by spamming the Z key.\n\n[b]curDialogue's[/b] default value is -1 to ensure that we always started with the line with an ID of 0 (the first line in the scene)"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 190535604812480,
-									"parameters": {
-										"variable": "GameState",
-										"comparison": 0,
-										"value": "\"Dialogue\""
-									}
-								},
-								{
-									"id": "is-running-typewriter-text",
-									"objectClass": "NPCTextBox",
-									"sid": 981090526532309,
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 856369267295308,
-									"parameters": {
-										"variable": "curDialogue",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 144826517827526,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "The JSON file now has a key called [b]\"Type\"[/b] this defines what kind of line is being called from the JSON and then calls the correct function"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-value",
-											"objectClass": "JSON",
-											"sid": 915124460252453,
-											"parameters": {
-												"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
-												"cmp": 0,
-												"value": "\"line\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "DisplayLine",
-											"sid": 308052080903532,
-											"parameters": [
-												"curDialogue",
-												"curScene"
-											]
-										}
-									],
-									"sid": 328643787249462,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-value",
-											"objectClass": "JSON",
-											"sid": 384034322293224,
-											"parameters": {
-												"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
-												"cmp": 0,
-												"value": "\"function\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "DisplayFunction",
-											"sid": 870133313513628,
-											"parameters": [
-												"curDialogue",
-												"curScene"
-											]
-										}
-									],
-									"sid": 408552893540655,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-value",
-											"objectClass": "JSON",
-											"sid": 419741817967969,
-											"parameters": {
-												"path": "\"scene.\"& curScene & \".dialogs.\" & curDialogue &\".type\"",
-												"cmp": 0,
-												"value": "\"timeline\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "DisplayTimeline",
-											"sid": 639950087800400,
-											"parameters": [
-												"curDialogue",
-												"curScene"
-											]
-										}
-									],
-									"sid": 968944621265719,
-									"disabled": true
-								},
-								{
-									"eventType": "comment",
-									"text": "If the value for curDialogue is one larger than the number of lines in the specific dialogue, call the EndDialogue function"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 657899746659683,
-											"parameters": {
-												"variable": "curDialogue",
-												"comparison": 0,
-												"value": "Functions.GetNumLines+1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "EndDialogue",
-											"sid": 560114565492813,
-											"parameters": [
-												"NPC.UID"
-											]
-										}
-									],
-									"sid": 909755993823189,
-									"disabled": true
-								}
-							]
-						}
-					],
-					"isOrBlock": true
 				}
 			]
 		},
@@ -2610,69 +2236,6 @@
 			"sid": 812192635768209
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "layer-is-visible",
-					"objectClass": "System",
-					"sid": 303859737679348,
-					"parameters": {
-						"layer": "\"Pause\""
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [],
-			"sid": 798056127875146,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 444950576788400,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 627420428920437,
-									"parameters": {
-										"variable": "GameState",
-										"value": "\"Ready\""
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 852236203992506,
-									"parameters": {
-										"variable": "curDialogue",
-										"value": "-1"
-									}
-								},
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 502490839349983,
-									"parameters": {
-										"variable": "curScene",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 514804605915970,
-							"disabled": true
-						}
-					]
-				}
-			]
-		},
-		{
 			"eventType": "comment",
 			"text": "Debug test"
 		},
@@ -2751,6 +2314,69 @@
 			],
 			"sid": 691713940908722,
 			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 840506926875939,
+					"parameters": {
+						"layer": "\"Pause\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 105299479559409,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 771454601691461,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 670396469201232,
+									"parameters": {
+										"variable": "GameState",
+										"value": "\"Ready\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 333004667766268,
+									"parameters": {
+										"variable": "curDialogue",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 972442757024417,
+									"parameters": {
+										"variable": "curScene",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 614058067402509,
+							"disabled": true
+						}
+					]
+				}
+			]
 		},
 		{
 			"eventType": "group",
@@ -3863,141 +3489,6 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "UrutanOrder",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 739908484104203,
-							"parameters": {
-								"variable": "OrderanKe",
-								"comparison": 0,
-								"value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 834406466184066,
-							"parameters": {
-								"variable": "CorrectRecipe",
-								"value": "\"Regular Sandwich\""
-							}
-						}
-					],
-					"sid": 558534672166372
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 795365299321370,
-							"parameters": {
-								"variable": "OrderanKe",
-								"comparison": 0,
-								"value": "2"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 450383028484833,
-							"parameters": {
-								"variable": "CorrectRecipe",
-								"value": "\"Jumbo Sandwich\""
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 506637750172873,
-							"parameters": {
-								"seconds": "1"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "NPC",
-							"sid": 400829785741780,
-							"parameters": {
-								"animation": "\"Botak\"",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 958595072214354
-				}
-			],
-			"sid": 357061128199613
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 145429382100472,
-					"parameters": {
-						"variable": "CurrentRecipe",
-						"comparison": 0,
-						"value": "\"134521\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 960275053736810,
-					"parameters": {
-						"variable": "CurrentRecipe",
-						"value": "\"Regular Sandwich\""
-					}
-				}
-			],
-			"sid": 223866473534454
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 500975662984888,
-					"parameters": {
-						"variable": "CurrentRecipe",
-						"comparison": 0,
-						"value": "\"13453451\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 601338447247505,
-					"parameters": {
-						"variable": "CurrentRecipe",
-						"value": "\"Jumbo Sandwich\""
-					}
-				}
-			],
-			"sid": 845231872130196
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
 			"title": "Handphone",
 			"description": "",
 			"isActiveOnStart": true,
@@ -4272,6 +3763,151 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "UrutanOrder",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 595403126324911,
+							"parameters": {
+								"variable": "OrderanKe",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 561074846018345,
+							"parameters": {
+								"variable": "CorrectRecipe",
+								"value": "\"Regular Sandwich\""
+							}
+						}
+					],
+					"sid": 769992070460232
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 974516538906734,
+							"parameters": {
+								"variable": "OrderanKe",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 344214582716529,
+							"parameters": {
+								"variable": "CorrectRecipe",
+								"value": "\"Jumbo Sandwich\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 958997340254397,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NPC",
+							"sid": 928822903415910,
+							"parameters": {
+								"animation": "\"Botak\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 578650044704710
+				}
+			],
+			"sid": 603952973819848
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "OrderRecipe",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 699774757075854,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"comparison": 0,
+								"value": "\"134521\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 150999870494616,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"value": "\"Regular Sandwich\""
+							}
+						}
+					],
+					"sid": 402118117542572
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 532569906579388,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"comparison": 0,
+								"value": "\"13453451\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 396549894537637,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"value": "\"Jumbo Sandwich\""
+							}
+						}
+					],
+					"sid": 386104873151053
+				}
+			],
+			"sid": 105594138850051
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Mechanics",
 			"description": "",
 			"isActiveOnStart": true,
@@ -4426,50 +4062,60 @@
 			"sid": 822396864818403
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Score",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 622307527387354
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 863410107497547
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 798796825159741,
+							"parameters": {
+								"text": "TotalScore"
+							}
+						}
+					],
+					"sid": 610808359141829
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "Score",
+							"sid": 831830605182811,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"v\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 839450954842665,
+							"parameters": {
+								"text": "round(Self.Tween.Value(\"v\"))"
+							}
+						}
+					],
+					"sid": 765048562589412
 				}
 			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "Score",
-					"sid": 758305811769224,
-					"parameters": {
-						"text": "TotalScore"
-					}
-				}
-			],
-			"sid": 150535168776698
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-playing",
-					"objectClass": "Score",
-					"sid": 712916447877530,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"v\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "Score",
-					"sid": 364472498865166,
-					"parameters": {
-						"text": "round(Self.Tween.Value(\"v\"))"
-					}
-				}
-			],
-			"sid": 326404541182051
+			"sid": 499779753669244
 		}
 	],
 	"sid": 149368447884591
