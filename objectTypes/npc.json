@@ -44,6 +44,11 @@
 			"behaviorId": "Timer",
 			"name": "Timer",
 			"sid": 483740377840339
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 414522669603179
 		}
 	],
 	"effectTypes": [],
@@ -54,12 +59,12 @@
 					{
 						"width": 1128,
 						"height": 1112,
-						"originX": 0.5,
-						"originY": 1,
+						"originX": 0.5460992907801419,
+						"originY": 0.9928057553956835,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5232330,
+						"imageSpriteId": 2911722,
 						"collisionPoly": {
 							"points": [
 								0.2866666666666666,
@@ -85,12 +90,55 @@
 					}
 				],
 				"sid": 575542973222494,
-				"name": "Animation 1",
+				"name": "Yumi",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
 				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 659,
+						"height": 1083,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1842210,
+						"collisionPoly": {
+							"points": [
+								0.30941368390749446,
+								0.16601280663780665,
+								0.5179445350734094,
+								0.0005805826118326125,
+								0.7298387870645812,
+								0.16192806036556037,
+								0.9955474522598599,
+								0.48462301587301587,
+								0.8374676134727953,
+								0.8706315386002885,
+								0.5179445350734094,
+								0.9931739267676768,
+								0.17824105172248342,
+								0.8808434042809042,
+								0.036978217061702325,
+								0.48462301587301587
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 598137086664845,
+				"name": "Botak",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
 			}
 		],
 		"subfolders": []

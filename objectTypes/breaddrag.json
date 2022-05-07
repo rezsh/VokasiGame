@@ -1,34 +1,34 @@
 {
-	"name": "Bread",
+	"name": "BreadDrag",
 	"plugin-id": "Sprite",
-	"sid": 175837705114337,
+	"sid": 817290028167825,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Pin",
 			"name": "Pin",
-			"sid": 488427357013720
+			"sid": 679122422499118
 		},
 		{
 			"behaviorId": "DragnDrop",
 			"name": "DragDrop",
-			"sid": 305253027490466
+			"sid": 515751632229780
 		},
 		{
 			"behaviorId": "solid",
 			"name": "Solid",
-			"sid": 924075627436935
+			"sid": 273013351098479
 		},
 		{
 			"behaviorId": "Physics",
 			"name": "Physics",
-			"sid": 878893204009588
+			"sid": 560940261142057
 		},
 		{
 			"behaviorId": "MoveTo",
 			"name": "MoveTo",
-			"sid": 857740947535602
+			"sid": 456964619862152
 		}
 	],
 	"effectTypes": [],
@@ -44,7 +44,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6139539,
+						"imageSpriteId": 1904539,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -68,7 +68,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 830313508844909,
+				"sid": 615986117381779,
 				"name": "1",
 				"isLooping": false,
 				"isPingPong": false,
@@ -86,7 +86,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 58346,
+						"imageSpriteId": 4495310,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -103,7 +103,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 964281555633797,
+				"sid": 721682182939718,
 				"name": "11",
 				"isLooping": false,
 				"isPingPong": false,

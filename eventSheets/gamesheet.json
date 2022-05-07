@@ -53,12 +53,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
+					"id": "on-tap",
 					"objectClass": "Touch",
-					"sid": 756542752085495,
-					"parameters": {
-						"object": "spr_gameStartSprite"
-					}
+					"sid": 331023861732367
 				},
 				{
 					"id": "layer-is-visible",
@@ -160,7 +157,8 @@
 						"layer": "\"UI Game\"",
 						"x": "1005",
 						"y": "542",
-						"create-hierarchy": false
+						"create-hierarchy": false,
+						"template-name": "\"\""
 					}
 				},
 				{
@@ -244,7 +242,8 @@
 						"layer": "\"UI Game\"",
 						"x": "1005",
 						"y": "542",
-						"create-hierarchy": false
+						"create-hierarchy": false,
+						"template-name": "\"\""
 					}
 				},
 				{

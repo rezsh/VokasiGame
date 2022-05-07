@@ -4,59 +4,103 @@
 			"id": 0,
 			"dialogs": [
 				{
-					"char": "Iana",
+					"char": "Yumi",
 					"type": "function",
 					"function": "Coming"
 				},
 				{
-					"char": "Iana",
+					"char": "Yumi",
 					"type": "line",
 					"emotion": "2",
 					"line": "Hi, so youre the new recruit."
 				},
 				{
-					"char": "Iana",
+					"char": "Yumi",
 					"type": "line",
 					"emotion": "5",
 					"line": "whats your name?.."
 				},
 				{
-					"char": "Iana",
+					"char": "Yumi",
 					"type": "function",
 					"function": "Name"
 				},
-				{
-								
-					"char": "Iana",
+				{		
+					"char": "Yumi",
 					"type": "line",
 					"emotion": "5",
 					"line": "I see (color=#ef7d57)PlayerName(/color) huh."
 				},
 				{
 								
-					"char": "Iana",
+					"char": "Yumi",
 					"type": "line",
 					"emotion": "5",
 					"line": "Welcome to epic sandvich shop."
 				},
 				{
-					"char": "Iana",
+								
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "5",
+					"line": "lets try actually make something bruh."
+				},
+				{
+								
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "5",
+					"line": "can you make me a (color=#ef7d57)CorrectRecipe?(/color)."
+				},
+				{
+					"char": "Yumi",
 					"type": "function",
 					"function": "TakeOrder"
-				}
-			]
-		},
-		{
-			"id": 1,
-			"dialogs": [
+				},
 				{
-					"char": "TYPE1",
+					"char": "Yumi",
 					"type": "line",
 					"emotion": "3",
 					"line": "Thanks Fam."
 				},
 				{
-					"char": "TYPE1",
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "3",
+					"line": "Lets Try different order."
+				},
+				{
+					"char": "Yumi",
+					"type": "function",
+					"function": "Leaving"
+				},
+				{
+					"char": "Botak",
+					"type": "function",
+					"function": "Coming"
+				},
+				{
+					"char": "Botak",
+					"type": "line",
+					"line": "Alright i wanna a (color=#ef7d57)CorrectRecipe.(/color)"
+				},
+				{
+					"char": "Botak",
+					"type": "line",
+					"line": "Better hurry dumbass. "
+				},
+				{
+					"char": "Yumi",
+					"type": "function",
+					"function": "TakeOrder"
+				},
+				{
+					"char": "Botak",
+					"type": "line",
+					"line": "Damn that sandwich bussin."
+				},
+				{
+					"char": "Botak",
 					"type": "function",
 					"function": "Leaving"
 				}
@@ -66,29 +110,19 @@
 			"id": 2,
 			"dialogs": [
 				{
-					"char": "Steve",
+					"char": "Botak",
 					"type": "line",
-					"line": "I don't really have much to say."
+					"line": "Alright i wanna a (color=#ef7d57)CorrectRecipe.(/color)"
 				},
 				{
-					"char": "Steve",
+					"char": "Botak",
 					"type": "line",
-					"line": "I'm just here to show you that different NPCs can have their own conversations. "
+					"line": "Better hurry dumbass. "
 				},
 				{
-					"char": "Steve",
-					"type": "line",
-					"line": "Oh. And to show you some other BBCode bits apparently. Like (stroke)Stroke Text(/stroke) and (outline=#ff0000)Outline effects.(/outline)"
-				},
-				{
-					"char": "Steve",
-					"type": "line",
-					"line": "(size=24)I guess those (stroke)Stroke(/stroke) and (outline=#ff0000)Outline(/outline) effects probably look better in a larger size.(/size)"
-				},
-				{
-					"char": "Steve",
-					"type": "line",
-					"line": "Anyway, that's all from me. Unlike Jessie over there, I've only got one set of lines to say."
+					"char": "Yumi",
+					"type": "function",
+					"function": "TakeOrder"
 				}
 			]
 		},
@@ -96,29 +130,14 @@
 			"id": 3,
 			"dialogs": [
 				{
-					"char": "FunctionGuy",
+					"char": "Botak",
 					"type": "line",
-					"line": "Oh hey! Want to talk about functions?!"
+					"line": "Damn that sandwich bussin."
 				},
 				{
-					"char": "FunctionGuy",
-					"type": "line",
-					"line": "Cool! Well, did you know, that if you map a function using a string, you can then store that string in a JSON file like the one we're using for dialogue. Then you can use another function to call the mapped function and trigger the action!"
-				},
-				{
-					"char": "FunctionGuy",
-					"type": "line",
-					"line": "As an example, I'll call a function that'll show an emote above my head when you finish this line."
-				},				
-				{
-					"char": "FunctionGuy",
+					"char": "Botak",
 					"type": "function",
-					"function": "MoveHeart"
-				},
-				{
-					"char": "FunctionGuy",
-					"type": "line",
-					"line": "See?! Cool huh?"
+					"function": "Leaving"
 				}
 			]
 		},

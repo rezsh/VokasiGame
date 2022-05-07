@@ -328,7 +328,7 @@
 					"type": "NPC",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "Yumi",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -354,6 +354,20 @@
 						},
 						"Timer": {
 							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
 						}
 					},
 					"world": {
@@ -361,8 +375,8 @@
 						"y": 1178,
 						"width": 1061.0276454084435,
 						"height": 1006.8233658785325,
-						"originX": 0.5,
-						"originY": 1,
+						"originX": 0.5460992907801419,
+						"originY": 0.9928057553956835,
 						"color": [
 							1,
 							1,

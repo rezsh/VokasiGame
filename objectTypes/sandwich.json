@@ -69,7 +69,7 @@
 					}
 				],
 				"sid": 369363668673754,
-				"name": "Bread",
+				"name": "1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -111,7 +111,7 @@
 					}
 				],
 				"sid": 385237244589394,
-				"name": "Sawi",
+				"name": "2",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -153,7 +153,7 @@
 					}
 				],
 				"sid": 660180772224818,
-				"name": "Keju",
+				"name": "3",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -195,7 +195,7 @@
 					}
 				],
 				"sid": 803406296357139,
-				"name": "Telor",
+				"name": "4",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -237,7 +237,7 @@
 					}
 				],
 				"sid": 355035893336228,
-				"name": "Bawang",
+				"name": "5",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -287,7 +287,7 @@
 					}
 				],
 				"sid": 565759255425456,
-				"name": "SauceTomat",
+				"name": "6",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

@@ -14,6 +14,22 @@
 			"text": "This is an extended example of a JSON dialogue system. \n\nThe project is the same as the basic version but with a few more bells and whistles, including:\n[item]Calling functions from within the JSON file via a function map\n[item]Triggering timelines from a string using a function\n[item]More formatting examples using the Formatting function\n[item]Using the same Formatting function to replace words in the text with Global Variable values\n[item]A very basic example of 'pausing' during the dialogue\n\n\nTo summarise what this project does:\n\n[item] The player can move about using the arrow keys thanks to its tile movement behavior. When the Z key is pressed and the player is overlapping an NPC, a dialogue is initiated. The dialogue layer becomes visible, revealing the text box and the text is set in a typewrite style from the JSON.\n\n\n[item] NPCs have an instance variable SceneId which dictates which 'scene' the dialogue is drawn from in the JSON file. There is also an instance variable to track how many times the player has spoken to the NPC - this is then used to change which scene is picked from the JSON file.\n\n\n[item]When the Z key is pressed again, the next line is displayed - this is achieved by adding 1 to the curDialogue variable before calling the dialogue function. When we've reached the max number of lines in a specific scene, an End function is called. \n\n\n[item]Dialogue lines also have basic formatting thanks to a function that replaces formatting marks in the JSON file with their appropriate replacements (eg. /br to newline)\n"
 		},
 		{
+			"eventType": "comment",
+			"text": "JAM",
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.5019607843137255,
+				0.5019607843137255,
+				1
+			]
+		},
+		{
 			"eventType": "variable",
 			"name": "dividerCharacter",
 			"type": "string",
@@ -64,6 +80,22 @@
 			"sid": 248457452343765
 		},
 		{
+			"eventType": "comment",
+			"text": "DIALOGUE",
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.5019607843137255,
+				0.5019607843137255,
+				1
+			]
+		},
+		{
 			"eventType": "variable",
 			"name": "curDialogue",
 			"type": "number",
@@ -81,7 +113,27 @@
 			"comment": "The ID number of the scene from which dialogue is being drawn",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 237050846164997
+			"sid": 928621922781012
+		},
+		{
+			"eventType": "variable",
+			"name": "NextLine",
+			"type": "string",
+			"initialValue": "",
+			"comment": "Used for debugging - shows what the next line of dialogue will be",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 208469478412146
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerName",
+			"type": "string",
+			"initialValue": "",
+			"comment": "An example variable to demonstrate using a replace expression to show variables in dialogue",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 291963192133663
 		},
 		{
 			"eventType": "comment",
@@ -103,31 +155,11 @@
 			"eventType": "variable",
 			"name": "GameState",
 			"type": "string",
-			"initialValue": "Serving",
+			"initialValue": "",
 			"comment": "The state of the game - used to determine when dialogue is being shown",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 457074409100391
-		},
-		{
-			"eventType": "variable",
-			"name": "NextLine",
-			"type": "string",
-			"initialValue": "",
-			"comment": "Used for debugging - shows what the next line of dialogue will be",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 838002954998180
-		},
-		{
-			"eventType": "variable",
-			"name": "PlayerName",
-			"type": "string",
-			"initialValue": "",
-			"comment": "An example variable to demonstrate using a replace expression to show variables in dialogue",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 440307245832633
 		},
 		{
 			"eventType": "variable",
@@ -138,6 +170,62 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 214389007509173
+		},
+		{
+			"eventType": "comment",
+			"text": "Simpler Solutions",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0,
+				0.7019607843137254,
+				1,
+				1
+			]
+		},
+		{
+			"eventType": "variable",
+			"name": "CorrectRecipe",
+			"type": "string",
+			"initialValue": "ABC123",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 666490039923024
+		},
+		{
+			"eventType": "variable",
+			"name": "CurrentRecipe",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 451781795647531
+		},
+		{
+			"eventType": "variable",
+			"name": "OrderanKe",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 796076542447734
+		},
+		{
+			"eventType": "variable",
+			"name": "TotalScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 748069474449611
 		},
 		{
 			"eventType": "comment",
@@ -182,16 +270,6 @@
 				{
 					"id": "map-function",
 					"objectClass": "Functions",
-					"sid": 566833471494626,
-					"parameters": {
-						"name": "\"JSONFunctions\"",
-						"string": "\"MoveHeart\"",
-						"function": "HeartDemo"
-					}
-				},
-				{
-					"id": "map-function",
-					"objectClass": "Functions",
 					"sid": 939652704217461,
 					"parameters": {
 						"name": "\"JSONFunctions\"",
@@ -227,6 +305,16 @@
 						"name": "\"JSONFunctions\"",
 						"string": "\"Name\"",
 						"function": "NameInput"
+					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 531791320102735,
+					"parameters": {
+						"name": "\"JSONFunctions\"",
+						"string": "\"RegularSandwich\"",
+						"function": "RegularSandwich"
 					}
 				}
 			],
@@ -684,11 +772,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 407522815500943,
+					"sid": 253119108248395,
 					"parameters": {
-						"variable": "GameState",
+						"variable": "CurrentRecipe",
 						"comparison": 0,
-						"value": "\"Ready\""
+						"value": "CorrectRecipe"
 					}
 				}
 			],
@@ -696,7 +784,7 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 576326604665804,
+					"sid": 903594990709253,
 					"parameters": {
 						"variable": "GameState",
 						"value": "\"Dialogue\""
@@ -704,6 +792,7 @@
 				}
 			],
 			"sid": 587777596219459,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "comment",
@@ -720,6 +809,7 @@
 					],
 					"actions": [],
 					"sid": 966683426046396,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "comment",
@@ -741,6 +831,7 @@
 							],
 							"actions": [],
 							"sid": 174821716135188,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "comment",
@@ -779,7 +870,8 @@
 											}
 										}
 									],
-									"sid": 718651321560952
+									"sid": 718651321560952,
+									"disabled": true
 								},
 								{
 									"eventType": "comment",
@@ -799,6 +891,7 @@
 									],
 									"actions": [],
 									"sid": 492887947956999,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -834,7 +927,8 @@
 													}
 												}
 											],
-											"sid": 173841679743843
+											"sid": 173841679743843,
+											"disabled": true
 										},
 										{
 											"eventType": "block",
@@ -870,7 +964,8 @@
 													}
 												}
 											],
-											"sid": 960320766015143
+											"sid": 960320766015143,
+											"disabled": true
 										}
 									]
 								}
@@ -913,6 +1008,7 @@
 								}
 							],
 							"sid": 144826517827526,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "comment",
@@ -942,7 +1038,8 @@
 											]
 										}
 									],
-									"sid": 328643787249462
+									"sid": 328643787249462,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -968,7 +1065,8 @@
 											]
 										}
 									],
-									"sid": 408552893540655
+									"sid": 408552893540655,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -994,7 +1092,8 @@
 											]
 										}
 									],
-									"sid": 968944621265719
+									"sid": 968944621265719,
+									"disabled": true
 								},
 								{
 									"eventType": "comment",
@@ -1023,12 +1122,114 @@
 											]
 										}
 									],
-									"sid": 909755993823189
+									"sid": 909755993823189,
+									"disabled": true
 								}
 							]
 						}
 					],
 					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 718811479232958,
+					"parameters": {
+						"object": "Kasir"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 257610094103170,
+					"parameters": {
+						"variable": "CurrentRecipe",
+						"comparison": 0,
+						"value": "CorrectRecipe"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 579203422620724,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 937167559309070
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-value",
+							"objectClass": "Score",
+							"sid": 390872503595842,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"v\"",
+								"start-value": "TotalScore",
+								"end-value": "TotalScore + (100)",
+								"time": "2",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 606543755166921,
+							"parameters": {
+								"variable": "TotalScore",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 668120879453964,
+							"parameters": {
+								"variable": "CorrectRecipe",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 847554141764356,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 613920542475499,
+							"parameters": {
+								"variable": "GameState",
+								"value": "\"Dialogue\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bread",
+							"sid": 939083548871705
+						},
+						{
+							"callFunction": "Advance",
+							"sid": 215086236867729
+						}
+					],
+					"sid": 143381364190354
 				}
 			]
 		},
@@ -1116,7 +1317,13 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Auto Dialog"
+			"text": "Auto Dialog",
+			"background-color": [
+				0,
+				1,
+				0.6666666666666666,
+				1
+			]
 		},
 		{
 			"eventType": "block",
@@ -1396,6 +1603,15 @@
 											"parameters": {
 												"variable": "Line",
 												"value": "replace(Line,\"PlayerName\",PlayerName)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 295079308663600,
+											"parameters": {
+												"variable": "Line",
+												"value": "replace(Line,\"CorrectRecipe\",CorrectRecipe)"
 											}
 										},
 										{
@@ -1796,6 +2012,15 @@
 									}
 								},
 								{
+									"id": "set-animation",
+									"objectClass": "NPC",
+									"sid": 688020370353524,
+									"parameters": {
+										"animation": "JSON.Get(\"scene.\"& curScene & \".dialogs.\" & curDialogue & \".char\")",
+										"from": "beginning"
+									}
+								},
+								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
 									"sid": 110764586532008,
@@ -2168,27 +2393,6 @@
 							]
 						},
 						{
-							"functionName": "HeartDemo",
-							"functionDescription": "",
-							"functionCategory": "Mapped Functions",
-							"functionReturnType": "none",
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 998115709564064,
-									"parameters": {
-										"seconds": "2"
-									}
-								}
-							],
-							"sid": 873500094168919
-						},
-						{
 							"functionName": "Serve",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -2240,14 +2444,10 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 132388454330028,
+									"sid": 730849004899860,
 									"parameters": {
-										"seconds": "1.3"
+										"seconds": "1"
 									}
-								},
-								{
-									"callFunction": "Advance",
-									"sid": 902194982028375
 								}
 							],
 							"sid": 550705629148395
@@ -2265,18 +2465,27 @@
 								{
 									"id": "tween-two-properties",
 									"objectClass": "NPC",
-									"sid": 485881293326295,
+									"sid": 953749184704394,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"come\"",
 										"property": "position",
-										"end-x": "-254",
-										"end-y": "480",
+										"end-x": "-330",
+										"end-y": "797",
 										"time": "0.7",
 										"ease": "easeinquad",
 										"destroy-on-complete": "no",
 										"loop": "no",
 										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 192447894524442,
+									"parameters": {
+										"variable": "OrderanKe",
+										"value": "1"
 									}
 								},
 								{
@@ -2286,6 +2495,14 @@
 									"parameters": {
 										"seconds": "1"
 									}
+								},
+								{
+									"callFunction": "Advance",
+									"sid": 574635468136975
+								},
+								{
+									"callFunction": "Coming",
+									"sid": 454012967506706
 								}
 							],
 							"sid": 895444378204277
@@ -2350,6 +2567,41 @@
 								}
 							],
 							"sid": 153617192343011
+						},
+						{
+							"eventType": "comment",
+							"text": "RESEP ORDER"
+						},
+						{
+							"functionName": "RegularSandwich",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 901777771162656,
+									"parameters": {
+										"variable": "GameState",
+										"value": "\"Serving\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 530439317567518,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Regular Sandwich\""
+									}
+								}
+							],
+							"sid": 758066618297442
 						}
 					],
 					"sid": 406797447328452
@@ -2683,6 +2935,35 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 508252405898467
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "TestMechanic",
+							"sid": 752534224002221,
+							"parameters": {
+								"text": "CurrentRecipe"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 850436635030404,
+							"parameters": {
+								"text": "CorrectRecipe"
+							}
+						}
+					],
+					"sid": 978152743532744
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
 							"sid": 761472505317666,
@@ -2719,30 +3000,53 @@
 								"layer": "1",
 								"x": "402",
 								"y": "665",
-								"create-hierarchy": true
+								"create-hierarchy": true,
+								"template-name": "\"\""
 							}
 						},
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 705116377579120,
+							"sid": 365082699706853,
 							"parameters": {
-								"animation": "\"Keju\"",
+								"animation": "\"2\"",
 								"from": "beginning"
-							}
-						},
-						{
-							"id": "push",
-							"objectClass": "CurrentSandwich",
-							"sid": 864598540243115,
-							"parameters": {
-								"where": "front",
-								"value": "\"Keju\"",
-								"axis": "x"
 							}
 						}
 					],
-					"sid": 948498035053766
+					"sid": 948498035053766,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 628299533217948
+								}
+							],
+							"actions": [],
+							"sid": 506990103638089,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 236444785024385,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Sandwich.AnimationName"
+											}
+										}
+									],
+									"sid": 771934609096665
+								}
+							]
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -2784,30 +3088,53 @@
 								"layer": "1",
 								"x": "402",
 								"y": "665",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 252076223492469,
+							"sid": 517605333911470,
 							"parameters": {
-								"animation": "\"Sawi\"",
+								"animation": "\"3\"",
 								"from": "beginning"
-							}
-						},
-						{
-							"id": "push",
-							"objectClass": "CurrentSandwich",
-							"sid": 416978661400642,
-							"parameters": {
-								"where": "front",
-								"value": "\"Sawi\"",
-								"axis": "x"
 							}
 						}
 					],
-					"sid": 704749360342758
+					"sid": 704749360342758,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 446580373038493
+								}
+							],
+							"actions": [],
+							"sid": 496703675587446,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 831030945873876,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Sandwich.AnimationName"
+											}
+										}
+									],
+									"sid": 887406669414764
+								}
+							]
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -2849,30 +3176,53 @@
 								"layer": "1",
 								"x": "402",
 								"y": "665",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 492360652411213,
+							"sid": 792552156597862,
 							"parameters": {
-								"animation": "\"Bawang\"",
+								"animation": "\"4\"",
 								"from": "beginning"
-							}
-						},
-						{
-							"id": "push",
-							"objectClass": "CurrentSandwich",
-							"sid": 385380454961971,
-							"parameters": {
-								"where": "front",
-								"value": "\"Bawang\"",
-								"axis": "x"
 							}
 						}
 					],
-					"sid": 943917573769213
+					"sid": 943917573769213,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 144147280715384
+								}
+							],
+							"actions": [],
+							"sid": 714427986074102,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 510521493343184,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Sandwich.AnimationName"
+											}
+										}
+									],
+									"sid": 232674639409188
+								}
+							]
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -2914,30 +3264,53 @@
 								"layer": "1",
 								"x": "402",
 								"y": "665",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 611820596919266,
+							"sid": 808338872577280,
 							"parameters": {
-								"animation": "\"Telor\"",
+								"animation": "\"5\"",
 								"from": "beginning"
-							}
-						},
-						{
-							"id": "push",
-							"objectClass": "CurrentSandwich",
-							"sid": 271517016696584,
-							"parameters": {
-								"where": "front",
-								"value": "\"Telor\"",
-								"axis": "x"
 							}
 						}
 					],
-					"sid": 749735271669069
+					"sid": 749735271669069,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 442791687951441
+								}
+							],
+							"actions": [],
+							"sid": 125835821553224,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 810732049675411,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Sandwich.AnimationName"
+											}
+										}
+									],
+									"sid": 683351881352596
+								}
+							]
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -2979,30 +3352,53 @@
 								"layer": "1",
 								"x": "402",
 								"y": "665",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 758406133284282,
+							"sid": 955565597531239,
 							"parameters": {
-								"animation": "\"Bread\"",
+								"animation": "\"1\"",
 								"from": "beginning"
-							}
-						},
-						{
-							"id": "push",
-							"objectClass": "CurrentSandwich",
-							"sid": 755411750895083,
-							"parameters": {
-								"where": "front",
-								"value": "\"RotiAtas\"",
-								"axis": "x"
 							}
 						}
 					],
-					"sid": 372128593601052
+					"sid": 372128593601052,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 799016308092880
+								}
+							],
+							"actions": [],
+							"sid": 549390750880496,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 412863651062601,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Sandwich.AnimationName"
+											}
+										}
+									],
+									"sid": 978070464769013
+								}
+							]
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -3044,30 +3440,53 @@
 								"layer": "1",
 								"x": "402",
 								"y": "665",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
 							"id": "set-animation",
 							"objectClass": "Bread",
-							"sid": 372846108562228,
+							"sid": 906244419322148,
 							"parameters": {
-								"animation": "\"Bread\"",
+								"animation": "\"1\"",
 								"from": "beginning"
-							}
-						},
-						{
-							"id": "push",
-							"objectClass": "CurrentSandwich",
-							"sid": 913965888354741,
-							"parameters": {
-								"where": "front",
-								"value": "\"RotiBawah\"",
-								"axis": "x"
 							}
 						}
 					],
-					"sid": 649323341762956
+					"sid": 649323341762956,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 997935766027953
+								}
+							],
+							"actions": [],
+							"sid": 669930391239184,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 745397347452051,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Bread.AnimationName"
+											}
+										}
+									],
+									"sid": 130110608839206
+								}
+							]
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -3089,20 +3508,12 @@
 							"sid": 834968418538743
 						},
 						{
-							"id": "clear",
-							"objectClass": "CurrentSandwich",
-							"sid": 853024820709907,
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 454065068234288,
 							"parameters": {
-								"value": "0"
-							}
-						},
-						{
-							"id": "delete",
-							"objectClass": "CurrentSandwich",
-							"sid": 842216279377244,
-							"parameters": {
-								"index": "0",
-								"axis": "x"
+								"variable": "CurrentRecipe",
+								"value": "\"\""
 							}
 						}
 					],
@@ -3112,62 +3523,36 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-last-created",
+									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 545961614375233,
+									"sid": 702808968901920
+								}
+							],
+							"actions": [
+								{
+									"id": "set-fade-out-time",
+									"objectClass": "Sandwich",
+									"sid": 574325750797459,
+									"behaviorType": "Fade",
 									"parameters": {
-										"object": "Sandwich"
+										"fade-out-time": "1"
 									}
 								},
 								{
-									"id": "pick-last-created",
+									"id": "wait",
 									"objectClass": "System",
-									"sid": 980723739975322,
+									"sid": 926447925560698,
 									"parameters": {
-										"object": "Bread"
+										"seconds": "1"
 									}
-								}
-							],
-							"actions": [],
-							"sid": 418675560633287,
-							"children": [
+								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 245303568163073
-										}
-									],
-									"actions": [
-										{
-											"id": "set-fade-out-time",
-											"objectClass": "Sandwich",
-											"sid": 760862658730028,
-											"behaviorType": "Fade",
-											"parameters": {
-												"fade-out-time": "1"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 807608643912997,
-											"parameters": {
-												"seconds": "1"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Sandwich",
-											"sid": 623779664738974
-										}
-									],
-									"sid": 306025931543648
+									"id": "destroy",
+									"objectClass": "Sandwich",
+									"sid": 136658115382884
 								}
 							],
-							"isOrBlock": true
+							"sid": 208979822434080
 						}
 					]
 				},
@@ -3267,7 +3652,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "TestArray",
+									"objectClass": "TestMechanic",
 									"sid": 418783773920393,
 									"parameters": {
 										"text": "\"Topping Salah\""
@@ -3294,7 +3679,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "TestArray",
+											"objectClass": "TestMechanic",
 											"sid": 633621594121395,
 											"parameters": {
 												"text": "\"Topping Benar\""
@@ -3341,7 +3726,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "TestArray",
+											"objectClass": "TestMechanic",
 											"sid": 930333645652422,
 											"parameters": {
 												"text": "\"Topping Salah\""
@@ -3368,7 +3753,7 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "TestArray",
+													"objectClass": "TestMechanic",
 													"sid": 478110417842139,
 													"parameters": {
 														"text": "\"Topping Benar\""
@@ -3412,6 +3797,7 @@
 						}
 					],
 					"sid": 432295090364801,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -3430,7 +3816,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "TestArray",
+									"objectClass": "TestMechanic",
 									"sid": 275459062051345,
 									"parameters": {
 										"text": "\"Topping Salah\""
@@ -3438,6 +3824,7 @@
 								}
 							],
 							"sid": 442258396610776,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -3456,14 +3843,15 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "TestArray",
+											"objectClass": "TestMechanic",
 											"sid": 205116120921474,
 											"parameters": {
 												"text": "\"Topping Benar\""
 											}
 										}
 									],
-									"sid": 836486878171269
+									"sid": 836486878171269,
+									"disabled": true
 								}
 							]
 						}
@@ -3471,6 +3859,141 @@
 				}
 			],
 			"sid": 529870817654698
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "UrutanOrder",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 739908484104203,
+							"parameters": {
+								"variable": "OrderanKe",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 834406466184066,
+							"parameters": {
+								"variable": "CorrectRecipe",
+								"value": "\"Regular Sandwich\""
+							}
+						}
+					],
+					"sid": 558534672166372
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 795365299321370,
+							"parameters": {
+								"variable": "OrderanKe",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 450383028484833,
+							"parameters": {
+								"variable": "CorrectRecipe",
+								"value": "\"Jumbo Sandwich\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 506637750172873,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NPC",
+							"sid": 400829785741780,
+							"parameters": {
+								"animation": "\"Botak\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 958595072214354
+				}
+			],
+			"sid": 357061128199613
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 145429382100472,
+					"parameters": {
+						"variable": "CurrentRecipe",
+						"comparison": 0,
+						"value": "\"134521\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 960275053736810,
+					"parameters": {
+						"variable": "CurrentRecipe",
+						"value": "\"Regular Sandwich\""
+					}
+				}
+			],
+			"sid": 223866473534454
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 500975662984888,
+					"parameters": {
+						"variable": "CurrentRecipe",
+						"comparison": 0,
+						"value": "\"13453451\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 601338447247505,
+					"parameters": {
+						"variable": "CurrentRecipe",
+						"value": "\"Jumbo Sandwich\""
+					}
+				}
+			],
+			"sid": 845231872130196
 		},
 		{
 			"eventType": "group",
@@ -3676,6 +4199,277 @@
 				}
 			],
 			"sid": 150268126434701
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "NPC",
+					"sid": 644585074249851,
+					"parameters": {
+						"animation": "\"Botak\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 927030965889121,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 423382418373006
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "NPC",
+							"sid": 401879378841125,
+							"parameters": {
+								"instance-variable": "SceneId",
+								"value": "2"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "NPC",
+							"sid": 335273284814432,
+							"parameters": {
+								"instance-variable": "TimesSpokenTo",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "NPC",
+							"sid": 572591703603787,
+							"parameters": {
+								"instance-variable": "SceneId2",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 738718157383198,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "variable",
+			"name": "Drag",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 174898004318516
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Mechanics",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-hold-over-object",
+							"objectClass": "Touch",
+							"sid": 744715440998876,
+							"parameters": {
+								"object": "RotiSelect"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "RotiSelect",
+							"sid": 414925626976969,
+							"parameters": {
+								"unique-id": "30"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 862272808465927,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 554506537982850,
+							"parameters": {
+								"object-to-create": "BreadDrag",
+								"layer": "\"Game\"",
+								"x": "Mouse.X",
+								"y": "Mouse.Y",
+								"create-hierarchy": false,
+								"template-name": "\"Dragged\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 818658343238782,
+							"parameters": {
+								"variable": "Drag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 661757200058390
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 972417441864226,
+							"parameters": {
+								"variable": "Drag"
+							}
+						},
+						{
+							"id": "is-in-touch",
+							"objectClass": "Touch",
+							"sid": 154230031385255
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "BreadDrag",
+							"sid": 245284737338319,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 849866885349695,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-drop",
+									"objectClass": "BreadDrag",
+									"sid": 199675726056136,
+									"behaviorType": "DragDrop"
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "BreadDrag",
+									"sid": 453374923263569,
+									"parameters": {
+										"object": "Toaster"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 593333233064990
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 988549821626759
+						}
+					],
+					"actions": [],
+					"sid": 612636098866424,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 167342651358020,
+									"parameters": {
+										"object": "BreadDrag"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "BreadDrag",
+									"sid": 330926995809536
+								}
+							],
+							"sid": 180256864014685
+						}
+					]
+				}
+			],
+			"sid": 822396864818403
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 622307527387354
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Score",
+					"sid": 758305811769224,
+					"parameters": {
+						"text": "TotalScore"
+					}
+				}
+			],
+			"sid": 150535168776698
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "Score",
+					"sid": 712916447877530,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"v\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Score",
+					"sid": 364472498865166,
+					"parameters": {
+						"text": "round(Self.Tween.Value(\"v\"))"
+					}
+				}
+			],
+			"sid": 326404541182051
 		}
 	],
 	"sid": 149368447884591

@@ -1,20 +1,20 @@
 {
-	"name": "SpeechName",
+	"name": "ss",
 	"plugin-id": "NinePatch",
-	"sid": 783177394544960,
+	"sid": 589043505201376,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 300,
-		"height": 190,
+		"width": 250,
+		"height": 250,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "png",
 		"exportQuality": 0.8,
-		"imageSpriteId": 7254943,
+		"imageSpriteId": 6674154,
 		"useCollisionPoly": true
 	}
 }

@@ -7,22 +7,34 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Gamebg",
+					"type": "Background",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "Default",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 48,
+					"uid": 14,
 					"instanceVariables": {},
 					"behaviors": {},
+					"effects": {
+						"Sharpen": {
+							"parameters": {
+								"intensity": 0.25
+							}
+						},
+						"Contrast": {
+							"parameters": {
+								"contrast": 0.9
+							}
+						}
+					},
 					"world": {
-						"x": 1271,
-						"y": 484.5,
-						"width": 2532,
-						"height": 1141,
+						"x": 1258,
+						"y": 460,
+						"width": 2534.550272990429,
+						"height": 1080.428269910049,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -70,49 +82,10 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Background",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Default",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 14,
-					"instanceVariables": {},
-					"behaviors": {},
-					"effects": {
-						"Sharpen": {
-							"parameters": {
-								"intensity": 1
-							}
-						},
-						"Darken": {
-							"parameters": {}
-						}
-					},
-					"world": {
-						"x": 1270.5,
-						"y": 453,
-						"width": 2529,
-						"height": 1080,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "NPC",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "Yumi",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -121,8 +94,8 @@
 					"instanceVariables": {
 						"SceneId": 0,
 						"TimesSpokenTo": 0,
-						"SceneId2": 1,
-						"MultiLine": true
+						"SceneId2": 2,
+						"MultiLine": false
 					},
 					"behaviors": {
 						"Solid": {
@@ -138,6 +111,20 @@
 						},
 						"Timer": {
 							"properties": {}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "height",
+								"wave": "sine",
+								"period": 5,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
 						}
 					},
 					"world": {
@@ -145,8 +132,8 @@
 						"y": 797,
 						"width": 663.4799917506352,
 						"height": 629.58506442147,
-						"originX": 0.5,
-						"originY": 1,
+						"originX": 0.5460992907801419,
+						"originY": 0.9928057553956835,
 						"color": [
 							1,
 							1,
@@ -183,6 +170,44 @@
 								"enabled": true
 							}
 						}
+					},
+					"mesh": {
+						"cols": 2,
+						"rows": 2,
+						"points": [
+							[
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0,
+									"u": 0,
+									"v": 0
+								},
+								{
+									"x": 1,
+									"y": 0,
+									"z": 0,
+									"u": 1,
+									"v": 0
+								}
+							],
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 0,
+									"u": 0,
+									"v": 1
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 0,
+									"u": 1,
+									"v": 1
+								}
+							]
+						]
 					},
 					"world": {
 						"x": 1271.5,
@@ -445,12 +470,12 @@
 						}
 					},
 					"world": {
-						"x": 1539,
+						"x": 1439,
 						"y": 783,
-						"width": 587.5054607625473,
-						"height": 167.97123375547034,
+						"width": 160.0924261299347,
+						"height": 137.27423210405996,
 						"originX": 0.5,
-						"originY": 0.9219712525667351,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -547,10 +572,10 @@
 						]
 					},
 					"world": {
-						"x": 1868,
-						"y": 772,
-						"width": 137.82175642410948,
-						"height": 124.36386726740233,
+						"x": 1617,
+						"y": 742,
+						"width": 159.15484162181906,
+						"height": 143.61383943992382,
 						"originX": 0.37176470588235294,
 						"originY": 0.5,
 						"color": [
@@ -1044,6 +1069,148 @@
 						"y": 787,
 						"width": 250,
 						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Isian",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 5,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 109,
+					"instanceVariables": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"mesh": {
+						"cols": 2,
+						"rows": 2,
+						"points": [
+							[
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0,
+									"u": 0,
+									"v": 0
+								},
+								{
+									"x": 1,
+									"y": 0,
+									"z": 0,
+									"u": 1,
+									"v": 0
+								}
+							],
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 0,
+									"u": 0,
+									"v": 1
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 0,
+									"u": 1,
+									"v": 1
+								}
+							]
+						]
+					},
+					"world": {
+						"x": 1031,
+						"y": 882,
+						"width": 120.68437813388778,
+						"height": 58,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Isian",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 5,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 110,
+					"instanceVariables": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"mesh": {
+						"cols": 2,
+						"rows": 2,
+						"points": [
+							[
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0,
+									"u": 0,
+									"v": 0
+								},
+								{
+									"x": 1,
+									"y": 0,
+									"z": 0,
+									"u": 1,
+									"v": 0
+								}
+							],
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 0,
+									"u": 0,
+									"v": 1
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 0,
+									"u": 1,
+									"v": 1
+								}
+							]
+						]
+					},
+					"world": {
+						"x": 1173,
+						"y": 882,
+						"width": 120.68437813388778,
+						"height": 58,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

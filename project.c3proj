@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 28503,
+	"savedWithRelease": 29303,
 	"name": "VokasiProto",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -11,7 +11,7 @@
 			"id": "AJAX",
 			"name": "AJAX",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Audio",
 			"name": "Audio",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Button",
 			"name": "Button",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Dictionary",
 			"name": "Dictionary",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "sliderbar",
 			"name": "Slider bar",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -59,15 +59,15 @@
 			"id": "LocalStorage",
 			"name": "Local storage",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Timeline",
-			"name": "Timeline",
+			"name": "Timeline controller",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -75,7 +75,7 @@
 			"id": "Arr",
 			"name": "Array",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -83,7 +83,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -91,7 +91,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -99,7 +99,7 @@
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -107,7 +107,7 @@
 			"id": "NinePatch",
 			"name": "9-patch",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -115,7 +115,7 @@
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -123,7 +123,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -131,7 +131,7 @@
 			"id": "TextBox",
 			"name": "Text input",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -139,7 +139,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -147,7 +147,7 @@
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -155,7 +155,7 @@
 			"id": "Tween",
 			"name": "Tween",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -163,7 +163,7 @@
 			"id": "Timer",
 			"name": "Timer",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -171,7 +171,7 @@
 			"id": "Sin",
 			"name": "Sine",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -179,7 +179,7 @@
 			"id": "DragnDrop",
 			"name": "Drag & Drop",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -187,7 +187,7 @@
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -195,7 +195,7 @@
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -203,7 +203,7 @@
 			"id": "Fade",
 			"name": "Fade",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -211,7 +211,7 @@
 			"id": "MoveTo",
 			"name": "Move To",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -219,7 +219,7 @@
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
@@ -243,15 +243,15 @@
 			"id": "sharpen",
 			"name": "Sharpen",
 			"author": "Brad Larson",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		},
 		{
 			"type": "effect",
-			"id": "darken",
-			"name": "Darken",
+			"id": "contrast",
+			"name": "Contrast",
 			"author": "Scirra",
-			"version": "r285.3",
+			"version": "r293.3",
 			"bundled": false
 		}
 	],
@@ -315,7 +315,7 @@
 			"PauseBtns",
 			"CursorStyle",
 			"Text",
-			"TestArray",
+			"TestMechanic",
 			"LevelNumber",
 			"btn_GoToMenu",
 			"btn_clear",
@@ -327,7 +327,11 @@
 			"spr_winAlert",
 			"spr_loseAlert",
 			"spr_background",
-			"btn_Gotohome"
+			"btn_Gotohome",
+			"BreadDrag",
+			"Uibar",
+			"Score",
+			"ss"
 		],
 		"subfolders": [
 			{
@@ -426,7 +430,10 @@
 				{
 					"name": "sfx_sample.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 267481171474278
+					"sid": 267481171474278,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -436,12 +443,18 @@
 				{
 					"name": "Rolemusic_w1x.mp3",
 					"type": "audio/mpeg",
-					"sid": 434506748765600
+					"sid": 434506748765600,
+					"file-info": {
+						"purpose": "none"
+					}
 				},
 				{
 					"name": "musicdef.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 856821079886886
+					"sid": 856821079886886,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -455,7 +468,10 @@
 				{
 					"name": "Silver.ttf",
 					"type": "application/font-sfnt",
-					"sid": 661442434627357
+					"sid": 661442434627357,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -526,17 +542,26 @@
 				{
 					"name": "Dialogue.json",
 					"type": "application/json",
-					"sid": 321770849492846
+					"sid": 321770849492846,
+					"file-info": {
+						"purpose": "none"
+					}
 				},
 				{
 					"name": "CurrentSandwich.json",
 					"type": "application/json",
-					"sid": 573272375858840
+					"sid": 573272375858840,
+					"file-info": {
+						"purpose": "none"
+					}
 				},
 				{
 					"name": "StanWich.json",
 					"type": "application/json",
-					"sid": 915615969369553
+					"sid": 915615969369553,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
