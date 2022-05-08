@@ -182,9 +182,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
+					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 451900780624810,
+					"sid": 979213236595285,
 					"parameters": {
 						"object": "spr_loseAlert"
 					}

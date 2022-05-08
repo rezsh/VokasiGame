@@ -289,7 +289,6 @@
 			"SpeechName",
 			"Browser",
 			"Name",
-			"RotiSelect",
 			"Changeroti",
 			"SandwichHitbox",
 			"Sprite",
@@ -335,7 +334,9 @@
 			"Phoneui",
 			"IconArrowBottom3Orange",
 			"btnswitch",
-			"Popupbread"
+			"Popupbread",
+			"ChooseBread2",
+			"ChooseBread"
 		],
 		"subfolders": [
 			{

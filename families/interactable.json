@@ -13,6 +13,7 @@
 	"members": [
 		"Toaster",
 		"Kasir",
-		"Sauce"
+		"Sauce",
+		"ChooseBread"
 	]
 }
