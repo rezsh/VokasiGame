@@ -1,40 +1,29 @@
 {
-	"name": "PSignal",
+	"name": "IconArrowBottom3Orange",
 	"plugin-id": "Sprite",
-	"sid": 668615734022512,
+	"sid": 836825120440310,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 210872914401174
-		},
-		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 625404583055249
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 512,
-						"height": 512,
+						"width": 63,
+						"height": 63,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3875714,
+						"imageSpriteId": 5545049,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 644304843122197,
+				"sid": 651740696378216,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,

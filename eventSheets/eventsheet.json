@@ -175,9 +175,9 @@
 			"eventType": "comment",
 			"text": "MECHANIC",
 			"text-color": [
-				1,
-				1,
-				1,
+				0,
+				0,
+				0,
 				1
 			],
 			"background-color": [
@@ -229,7 +229,19 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "When the layout starts, request the JSON project file and load it into the JSON object"
+			"text": "JSON DIALOGUE",
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.9686274509803922,
+				0,
+				1
+			]
 		},
 		{
 			"eventType": "block",
@@ -322,6 +334,128 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "BUTTON EFFECTS",
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.9686274509803922,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 710802246736197
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Phoneui",
+					"sid": 527820823753830,
+					"parameters": {
+						"instance-variable": "SaveX",
+						"value": "Self.Width"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Phoneui",
+					"sid": 995157949892679,
+					"parameters": {
+						"instance-variable": "SaveY",
+						"value": "Self.Height"
+					}
+				}
+			],
+			"sid": 787362506048148
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 352612743587294,
+					"parameters": {
+						"object": "Phoneui"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "Phone",
+					"sid": 878181691837298,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "position",
+						"end-x": "384",
+						"end-y": "640",
+						"time": "1.2",
+						"ease": "easeoutback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				}
+			],
+			"sid": 690313140423108
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 960208488786611,
+					"parameters": {
+						"object": "Phone"
+					}
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 599237516289880,
+					"parameters": {
+						"object": "btnswitch"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "Phone",
+					"sid": 720820766808821,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "position",
+						"end-x": "384",
+						"end-y": "1546",
+						"time": "0.6",
+						"ease": "easeinback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				}
+			],
+			"sid": 487096910579359
+		},
+		{
+			"eventType": "comment",
 			"text": "When the game is in the \"Dialogue\" state, disable TileMovement to stop the player moving during the conversation.\nAs a simple example of 'pausing' while dialogue is being displayed, setting the [b]PauseTest[/b] object's time scale to 0 will stop it moving."
 		},
 		{
@@ -405,6 +539,24 @@
 					"sid": 243689419284654,
 					"parameters": {
 						"layer": "\"NameInput\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 380140128325364,
+					"parameters": {
+						"object": "Phone"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 416848348643363,
+					"parameters": {
+						"object": "Phoneui"
 					},
 					"isInverted": true
 				}
@@ -4116,6 +4268,414 @@
 				}
 			],
 			"sid": 499779753669244
+		},
+		{
+			"eventType": "variable",
+			"name": "SwitchPhonePage",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 842867028981763
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PhoneSwitch",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "btnswitch",
+							"sid": 245256154540822,
+							"parameters": {
+								"unique-id": "112"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 939319156360712,
+							"parameters": {
+								"variable": "SwitchPhonePage",
+								"comparison": 5,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "btnswitch",
+							"sid": 400700802010955,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 104956128003990
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 872916998015798
+						}
+					],
+					"actions": [],
+					"sid": 910419441082759,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "btnswitch",
+									"sid": 869592419233528,
+									"parameters": {
+										"unique-id": "112"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "btnswitch",
+									"sid": 890771060070753,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 732393874899744
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "btnswitch",
+							"sid": 187160519743860,
+							"parameters": {
+								"unique-id": "113"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 821239319838693,
+							"parameters": {
+								"variable": "SwitchPhonePage",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "btnswitch",
+							"sid": 824352201950728,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 384264842827032
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 739755966379789
+						}
+					],
+					"actions": [],
+					"sid": 463344233906795,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "btnswitch",
+									"sid": 631482040726531,
+									"parameters": {
+										"unique-id": "113"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "btnswitch",
+									"sid": 475503790397814,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 735254368733490
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 772468084736222,
+							"parameters": {
+								"object": "btnswitch"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "btnswitch",
+							"sid": 577851092268516,
+							"parameters": {
+								"unique-id": "112"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "btnswitch",
+							"sid": 822383273149163,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 170529974680989,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 465512736927141,
+									"parameters": {
+										"variable": "SwitchPhonePage",
+										"comparison": 5,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 906105356148577,
+									"parameters": {
+										"variable": "SwitchPhonePage",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 878773882048108
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 180510652720220
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 908473092277758,
+									"parameters": {
+										"variable": "SwitchPhonePage",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 366164651965020
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 533637219481043,
+							"parameters": {
+								"object": "btnswitch"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "btnswitch",
+							"sid": 886966035410092,
+							"parameters": {
+								"unique-id": "113"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "btnswitch",
+							"sid": 381174811132183,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 547349923873535,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 770560946255816,
+									"parameters": {
+										"variable": "SwitchPhonePage",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 718972356515854,
+									"parameters": {
+										"variable": "SwitchPhonePage",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 270023853183975
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 326275501669592
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 605122161636374,
+									"parameters": {
+										"variable": "SwitchPhonePage",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 119984182206401
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 866220527692342
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "PhoneDisplay",
+							"sid": 446471768641709,
+							"parameters": {
+								"frame-number": "SwitchPhonePage"
+							}
+						}
+					],
+					"sid": 513528942703517
+				}
+			],
+			"sid": 848881593914949
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 394479017449042,
+					"parameters": {
+						"object": "InteractAble"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 203910807195059,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Serving\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "InteractAble",
+					"sid": 968828664923280,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 842491878637717
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 422740136959295
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "InteractAble",
+					"sid": 203136267602064,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 293226657444779
 		}
 	],
 	"sid": 149368447884591

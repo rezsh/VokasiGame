@@ -1,0 +1,68 @@
+{
+	"name": "Phoneui",
+	"plugin-id": "Sprite",
+	"sid": 945958374980568,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "SaveX",
+			"type": "number",
+			"desc": "",
+			"sid": 191972954937714
+		},
+		{
+			"name": "SaveY",
+			"type": "number",
+			"desc": "",
+			"sid": 696041111967816
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 298953266400149
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 292,
+						"height": 522,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6595821,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 292,
+						"height": 522,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6516433,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 266503521512398,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

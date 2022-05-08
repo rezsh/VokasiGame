@@ -154,8 +154,8 @@
 					"properties": {
 						"text": "Text",
 						"enable-bbcode": true,
-						"font": "Silver",
-						"size": 32,
+						"font": "at01",
+						"size": 34,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -167,7 +167,7 @@
 						],
 						"horizontal-alignment": "left",
 						"vertical-alignment": "top",
-						"wrapping": "word",
+						"wrapping": "character",
 						"initially-visible": true,
 						"origin": "top-left"
 					},
@@ -196,8 +196,8 @@
 					"properties": {
 						"text": "Text",
 						"enable-bbcode": true,
-						"font": "Silver",
-						"size": 34,
+						"font": "at01",
+						"size": 36,
 						"line-height": -1,
 						"bold": false,
 						"italic": false,
@@ -217,8 +217,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 635,
-						"y": 318,
+						"x": 633,
+						"y": 316,
 						"width": 200,
 						"height": 68,
 						"originX": 0,
@@ -458,7 +458,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 966,
-						"y": 49,
+						"y": 48,
 						"width": 880.6095513781707,
 						"height": 98.97607352674817,
 						"originX": 0.5,
@@ -486,10 +486,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1833,
-						"y": 72,
-						"width": 93.2694552045244,
-						"height": 95.04601625603914,
+						"x": 1823,
+						"y": 82,
+						"width": 105.70538256512765,
+						"height": 105.70538256512765,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -744,10 +744,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 864,
-						"y": 221,
-						"width": 138.55993966927852,
-						"height": 138.55993966927858,
+						"x": 1588,
+						"y": 77,
+						"width": 72.1174647479712,
+						"height": 72.11746474797125,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -773,10 +773,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1049,
-						"y": 221,
-						"width": 138.55993966927852,
-						"height": 138.55993966927858,
+						"x": 1685,
+						"y": 77,
+						"width": 72.1174647479712,
+						"height": 72.11746474797125,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -815,8 +815,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 19,
-						"y": 976,
+						"x": 1158,
+						"y": 978,
 						"width": 301.4236861719857,
 						"height": 34.84259174781976,
 						"originX": 0,
@@ -898,6 +898,44 @@
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Phoneui",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 111,
+					"instanceVariables": {
+						"SaveX": 0,
+						"SaveY": 0
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 376,
+						"y": 1113,
+						"width": 167.07664571274594,
+						"height": 273.8148077698276,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -1000,8 +1038,8 @@
 					"world": {
 						"x": 960,
 						"y": 534,
-						"width": 719.540840021707,
-						"height": 577.1317154340774,
+						"width": 538.2774748987904,
+						"height": 625.6601818628793,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

@@ -1,19 +1,14 @@
 {
-	"name": "PBattery",
+	"name": "btnswitch",
 	"plugin-id": "Sprite",
-	"sid": 410144030640259,
+	"sid": 932129837096916,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 758891103935908
-		},
-		{
 			"behaviorId": "Tween",
 			"name": "Tween",
-			"sid": 510760312357520
+			"sid": 330619564503966
 		}
 	],
 	"effectTypes": [],
@@ -22,31 +17,31 @@
 			{
 				"frames": [
 					{
-						"width": 514,
-						"height": 258,
+						"width": 615,
+						"height": 815,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 663407,
+						"imageSpriteId": 7839789,
 						"collisionPoly": {
 							"points": [
-								0.0019455252918287938,
-								0,
-								0.9980544747081712,
-								0,
-								0.9980544747081712,
-								1,
-								0.0019455252918287938,
-								1
+								0.03902439024390244,
+								0.0392638036809816,
+								0.9609756097560975,
+								0.0392638036809816,
+								0.9609756097560975,
+								0.9607361963190184,
+								0.03902439024390244,
+								0.9607361963190184
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 143758366446867,
+				"sid": 220253060297603,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,

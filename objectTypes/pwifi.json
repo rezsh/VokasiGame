@@ -9,6 +9,11 @@
 			"behaviorId": "Pin",
 			"name": "Pin",
 			"sid": 530958372488283
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 664038694867551
 		}
 	],
 	"effectTypes": [],

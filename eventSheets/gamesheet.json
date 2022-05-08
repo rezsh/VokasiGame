@@ -97,9 +97,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
+					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 540457277686322,
+					"sid": 368125144133218,
 					"parameters": {
 						"object": "spr_menu"
 					}
@@ -130,9 +130,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
+					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 338525966924315,
+					"sid": 753583286611344,
 					"parameters": {
 						"object": "spr_lose"
 					}
@@ -215,9 +215,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
+					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 151037478212099,
+					"sid": 770060366609611,
 					"parameters": {
 						"object": "spr_win"
 					}
@@ -285,9 +285,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
+					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 864348476727936,
+					"sid": 291853868427601,
 					"parameters": {
 						"object": "spr_winAlert"
 					}

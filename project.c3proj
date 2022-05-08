@@ -331,7 +331,11 @@
 			"BreadDrag",
 			"Uibar",
 			"Score",
-			"ss"
+			"ss",
+			"Phoneui",
+			"IconArrowBottom3Orange",
+			"btnswitch",
+			"Popupbread"
 		],
 		"subfolders": [
 			{
@@ -377,7 +381,8 @@
 	"families": {
 		"items": [
 			"SpriteFamilies",
-			"winLoseDrawFamily"
+			"winLoseDrawFamily",
+			"InteractAble"
 		],
 		"subfolders": []
 	},
@@ -469,6 +474,14 @@
 					"name": "Silver.ttf",
 					"type": "application/font-sfnt",
 					"sid": 661442434627357,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "at01.ttf",
+					"type": "application/font-sfnt",
+					"sid": 336774711324271,
 					"file-info": {
 						"purpose": "none"
 					}
