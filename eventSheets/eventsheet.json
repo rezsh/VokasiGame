@@ -5421,6 +5421,7 @@
 									"id": "set-y",
 									"objectClass": "Popupbread",
 									"sid": 479502987051873,
+									"disabled": true,
 									"parameters": {
 										"y": "173"
 									}
