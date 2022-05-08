@@ -155,7 +155,7 @@
 			"eventType": "variable",
 			"name": "GameState",
 			"type": "string",
-			"initialValue": "",
+			"initialValue": "Serving",
 			"comment": "The state of the game - used to determine when dialogue is being shown",
 			"isStatic": false,
 			"isConstant": false,
@@ -389,6 +389,15 @@
 					"parameters": {
 						"object": "Phoneui"
 					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Phoneui",
+					"sid": 336606107336694,
+					"parameters": {
+						"instance-variable": "Pop"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -408,6 +417,15 @@
 						"loop": "no",
 						"ping-pong": "no"
 					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Phoneui",
+					"sid": 979547808181723,
+					"parameters": {
+						"instance-variable": "Pop",
+						"value": "false"
+					}
 				}
 			],
 			"sid": 690313140423108
@@ -418,15 +436,24 @@
 				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 960208488786611,
+					"sid": 177440408940344,
 					"parameters": {
-						"object": "Phone"
+						"object": "Phoneui"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Phoneui",
+					"sid": 897719667659214,
+					"parameters": {
+						"instance-variable": "Pop"
 					}
 				},
 				{
 					"id": "is-touching-object",
 					"objectClass": "Touch",
 					"sid": 599237516289880,
+					"disabled": true,
 					"parameters": {
 						"object": "btnswitch"
 					},
@@ -449,6 +476,15 @@
 						"destroy-on-complete": "no",
 						"loop": "no",
 						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Phoneui",
+					"sid": 529729753185374,
+					"parameters": {
+						"instance-variable": "Pop",
+						"value": "true"
 					}
 				}
 			],
@@ -4699,6 +4735,703 @@
 			],
 			"actions": [],
 			"sid": 931520227280531
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Bread Selection",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "PopupComplete",
+					"type": "number",
+					"initialValue": "100",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 742898153631856
+				},
+				{
+					"eventType": "variable",
+					"name": "Speed",
+					"type": "number",
+					"initialValue": "200",
+					"comment": "Higher number is faster",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 104985458556490
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 168050305545451
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "ChooseBread",
+							"sid": 175676335487270,
+							"parameters": {
+								"instance-variable": "Action",
+								"value": "\"Hide\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ChooseBread2",
+							"sid": 344869131951623,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Popupbread",
+							"sid": 503633945032240,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "ChooseBread2",
+							"sid": 627358224157126,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Popupbread",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 262630793724059
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 664115941659915,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ChooseBread"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 631691844089576,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "ChooseBread",
+							"sid": 676988473131198,
+							"parameters": {
+								"instance-variable": "Action",
+								"value": "\"Popup\""
+							}
+						}
+					],
+					"sid": 701347102155441,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ChooseBread",
+									"sid": 555664907077394,
+									"parameters": {
+										"unique-id": "115"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 600400526802140,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ChooseBread2",
+									"sid": 471245710539759,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Popupbread",
+									"sid": 249979782636411,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 966262917626003,
+									"parameters": {
+										"variable": "PopupComplete",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Popupbread",
+									"sid": 280840096559336,
+									"parameters": {
+										"x": "1289",
+										"y": "773"
+									}
+								}
+							],
+							"sid": 896538902127344,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "ChooseBread2",
+											"sid": 253678203411347,
+											"parameters": {
+												"unique-id": "47"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "ChooseBread2",
+											"sid": 332779978597526,
+											"parameters": {
+												"frame-number": "0"
+											}
+										}
+									],
+									"sid": 986760592133596
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "ChooseBread2",
+											"sid": 808745825292105,
+											"parameters": {
+												"unique-id": "49"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "ChooseBread2",
+											"sid": 987968592188914,
+											"parameters": {
+												"frame-number": "1"
+											}
+										}
+									],
+									"sid": 434234472653214
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ChooseBread",
+									"sid": 969883596281088,
+									"parameters": {
+										"unique-id": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 557210695411724,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ChooseBread2",
+									"sid": 551176026798217,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Popupbread",
+									"sid": 561657728661176,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 747595329442504,
+									"parameters": {
+										"variable": "PopupComplete",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Popupbread",
+									"sid": 367729555159473,
+									"parameters": {
+										"x": "1451",
+										"y": "773"
+									}
+								}
+							],
+							"sid": 229481994976712,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "ChooseBread2",
+											"sid": 668500395911675,
+											"parameters": {
+												"unique-id": "47"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "ChooseBread2",
+											"sid": 448313835961197,
+											"parameters": {
+												"frame-number": "2"
+											}
+										}
+									],
+									"sid": 226252912965639
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "ChooseBread2",
+											"sid": 451170684856962,
+											"parameters": {
+												"unique-id": "49"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "ChooseBread2",
+											"sid": 693964661329150,
+											"parameters": {
+												"frame-number": "3"
+											}
+										}
+									],
+									"sid": 218108069584192
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ChooseBread",
+									"sid": 624845747231671,
+									"parameters": {
+										"unique-id": "116"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 656362352287047,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ChooseBread2",
+									"sid": 486952102193666,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Popupbread",
+									"sid": 789662085966714,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 461855485951601,
+									"parameters": {
+										"variable": "PopupComplete",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Popupbread",
+									"sid": 136434895878733,
+									"parameters": {
+										"x": "1618",
+										"y": "773"
+									}
+								}
+							],
+							"sid": 123546329293146,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "ChooseBread2",
+											"sid": 973290854596199,
+											"parameters": {
+												"unique-id": "47"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "ChooseBread2",
+											"sid": 410732292502780,
+											"parameters": {
+												"frame-number": "4"
+											}
+										}
+									],
+									"sid": 687935045494074
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "ChooseBread2",
+											"sid": 846558889169680,
+											"parameters": {
+												"unique-id": "49"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "ChooseBread2",
+											"sid": 755760061381114,
+											"parameters": {
+												"frame-number": "5"
+											}
+										}
+									],
+									"sid": 543877913654686
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 161705886746584,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ChooseBread"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 395585584719511,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Popupbread",
+							"sid": 532036604777710
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "Popupbread",
+							"sid": 861232516121606
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "ChooseBread",
+							"sid": 789486118409639,
+							"parameters": {
+								"instance-variable": "Action",
+								"value": "\"Hide\""
+							}
+						}
+					],
+					"sid": 262293357552342,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ChooseBread",
+									"sid": 506386038739461,
+									"parameters": {
+										"unique-id": "115"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 259206305573226,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Popupbread",
+									"sid": 790888245571378,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 245644132928161,
+									"parameters": {
+										"variable": "PopupComplete",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ChooseBread2",
+									"sid": 167513185043701,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 809117012919601
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ChooseBread",
+									"sid": 805877001498786,
+									"parameters": {
+										"unique-id": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 808577408268503,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Popupbread",
+									"sid": 726027559180979,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 194297711678274,
+									"parameters": {
+										"variable": "PopupComplete",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ChooseBread2",
+									"sid": 919753704997904,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 493040120670742
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ChooseBread",
+									"sid": 275324879006089,
+									"parameters": {
+										"unique-id": "116"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 657203243064543,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Popupbread",
+									"sid": 892854247797648,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 849538482324278,
+									"parameters": {
+										"variable": "PopupComplete",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ChooseBread2",
+									"sid": 890353176714529,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 191464196160059
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 133730004218377,
+							"parameters": {
+								"variable": "PopupComplete",
+								"comparison": 2,
+								"value": "100"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 383903820730317,
+							"parameters": {
+								"variable": "PopupComplete",
+								"value": "dt * Speed"
+							}
+						}
+					],
+					"sid": 253567101196825,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 395801152291138,
+									"parameters": {
+										"variable": "PopupComplete",
+										"comparison": 5,
+										"value": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "Popupbread",
+									"sid": 479502987051873,
+									"parameters": {
+										"y": "173"
+									}
+								}
+							],
+							"sid": 472837005337266
+						}
+					]
+				}
+			],
+			"sid": 613645732920895
 		}
 	],
 	"sid": 149368447884591

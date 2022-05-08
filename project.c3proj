@@ -291,7 +291,7 @@
 			"Name",
 			"Changeroti",
 			"SandwichHitbox",
-			"Sprite",
+			"PopMask",
 			"Phone",
 			"PhoneDisplay",
 			"TopAndroid",

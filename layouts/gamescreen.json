@@ -920,7 +920,8 @@
 					"uid": 111,
 					"instanceVariables": {
 						"SaveX": 0,
-						"SaveY": 0
+						"SaveY": 0,
+						"Pop": true
 					},
 					"behaviors": {
 						"Tween": {

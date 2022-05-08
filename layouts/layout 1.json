@@ -1024,10 +1024,10 @@
 						}
 					},
 					"world": {
-						"x": 1289,
+						"x": 1618,
 						"y": 773,
 						"width": 354.06770993605585,
-						"height": 173.97695788231826,
+						"height": 173,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -1084,8 +1084,8 @@
 						}
 					},
 					"world": {
-						"x": 1231.059023109059,
-						"y": 681.5094826642093,
+						"x": 1558.150561893063,
+						"y": 686.2807405416644,
 						"width": 105.09116893110787,
 						"height": 102.78653803349566,
 						"originX": 0.5,
@@ -1144,8 +1144,8 @@
 						}
 					},
 					"world": {
-						"x": 1349.9567542040566,
-						"y": 682.168880917186,
+						"x": 1677.0482929880607,
+						"y": 686.9401387946411,
 						"width": 105.09116893110787,
 						"height": 102.78653803349566,
 						"originX": 0.5,
@@ -1170,7 +1170,9 @@
 						"live-preview": false
 					},
 					"uid": 50,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Action": ""
+					},
 					"behaviors": {},
 					"effects": {
 						"Outline": {
@@ -1213,7 +1215,9 @@
 						"live-preview": false
 					},
 					"uid": 115,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Action": ""
+					},
 					"behaviors": {},
 					"effects": {
 						"Outline": {
@@ -1256,7 +1260,9 @@
 						"live-preview": false
 					},
 					"uid": 116,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Action": ""
+					},
 					"behaviors": {},
 					"effects": {
 						"Outline": {

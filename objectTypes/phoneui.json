@@ -15,6 +15,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 696041111967816
+		},
+		{
+			"name": "Pop",
+			"type": "boolean",
+			"desc": "",
+			"sid": 696959018917989
 		}
 	],
 	"behaviorTypes": [
