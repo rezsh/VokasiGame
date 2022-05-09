@@ -1,5 +1,5 @@
 {
-	"name": "BreadDrag",
+	"name": "Draggsble",
 	"plugin-id": "Sprite",
 	"sid": 817290028167825,
 	"isGlobal": false,
@@ -69,7 +69,7 @@
 					}
 				],
 				"sid": 615986117381779,
-				"name": "1",
+				"name": "Roti",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -104,7 +104,93 @@
 					}
 				],
 				"sid": 721682182939718,
-				"name": "11",
+				"name": "Decker",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 504,
+						"height": 214,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8495682,
+						"collisionPoly": {
+							"points": [
+								0.09282178217821782,
+								0.2180232558139535,
+								0.5,
+								0.0872093023255814,
+								0.9158415841584159,
+								0.19476744186046513,
+								0.9715346534653465,
+								0.5,
+								0.9232673267326733,
+								0.8197674418604651,
+								0.5,
+								0.9534883720930233,
+								0.10891089108910891,
+								0.7412790697674418,
+								0.03094059405940594,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 242625716137737,
+				"name": "Sapi",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 494,
+						"height": 185,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6429644,
+						"collisionPoly": {
+							"points": [
+								0.06477732793522267,
+								0.17297297297297298,
+								0.5,
+								0.05945945945945946,
+								0.9190283400809717,
+								0.21081081081081082,
+								0.979757085020243,
+								0.5,
+								0.9068825910931174,
+								0.7513513513513513,
+								0.5,
+								0.9405405405405406,
+								0.09716599190283401,
+								0.7351351351351352,
+								0.010121457489878543,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 990093977426337,
+				"name": "Ayam",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

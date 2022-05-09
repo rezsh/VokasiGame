@@ -1,22 +1,17 @@
 {
-	"name": "Isian",
+	"name": "IsianMeats",
 	"plugin-id": "Sprite",
-	"sid": 797038498581261,
+	"sid": 835489372334592,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Timer",
 			"name": "Timer",
-			"sid": 544811809773949
+			"sid": 775008145561377
 		}
 	],
-	"effectTypes": [
-		{
-			"effectId": "outline",
-			"name": "Outline"
-		}
-	],
+	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
@@ -29,21 +24,21 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7854249,
+						"imageSpriteId": 2112881,
 						"collisionPoly": {
 							"points": [
-								0.11797757639866949,
+								0.49719101123595505,
+								0.005405405405405406,
+								1,
 								0,
-								0.853932450981477,
-								0,
-								0.9382022145386801,
+								1,
 								0.5594594594594594,
 								1,
 								0.9891891891891892,
-								0,
-								1,
-								0.050561796413378775,
-								0.5108106636356702
+								0.5589887640449439,
+								0.9891891891891892,
+								0.05056179775280898,
+								0.5594594594594594
 							]
 						},
 						"useCollisionPoly": true,
@@ -57,7 +52,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2457069,
+						"imageSpriteId": 4079421,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -78,7 +73,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 855370488880290,
+				"sid": 531465201785921,
 				"name": "Keju",
 				"isLooping": false,
 				"isPingPong": false,
@@ -96,28 +91,28 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 67468,
+						"imageSpriteId": 2523107,
 						"collisionPoly": {
 							"points": [
-								0.13314448968396786,
+								0.3371104815864023,
+								0.011049723756906077,
+								1,
 								0,
-								0.8583569788429992,
-								0,
-								0.9121814264754332,
-								0.4447513645012886,
+								1,
+								0.4502762430939227,
 								1,
 								0.9834254143646409,
-								0,
-								1,
-								0.08498578157145892,
-								0.3342539443934656
+								0.28611898016997167,
+								0.9834254143646409,
+								0.0679886685552408,
+								0.4502762430939227
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 649373216634856,
+				"sid": 909099577778594,
 				"name": "Tomat",
 				"isLooping": false,
 				"isPingPong": false,
@@ -135,28 +130,28 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 88430,
+						"imageSpriteId": 8833096,
 						"collisionPoly": {
 							"points": [
-								0.134564543609152,
+								0.27704485488126646,
+								0.00510204081632653,
+								1,
 								0,
-								0.8522427318732928,
-								0,
-								0.9182059196459837,
-								0.5229591718876988,
+								1,
+								0.6658163265306123,
 								1,
 								0.9897959183673469,
-								0,
-								0.948979468356458,
-								0.04749340243578586,
-								0.5484694531445046
+								0.44854881266490765,
+								0.9897959183673469,
+								0.03693931398416887,
+								0.6658163265306123
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 379778235219770,
+				"sid": 254570630619119,
 				"name": "Bawang",
 				"isLooping": false,
 				"isPingPong": false,
@@ -174,12 +169,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3888797,
+						"imageSpriteId": 828247,
 						"collisionPoly": {
 							"points": [
-								0.13199995988210142,
+								0.509684809065063,
 								0,
-								0.8540000526958028,
+								1,
 								0,
 								1,
 								0.9992309423769508,
@@ -195,80 +190,13 @@
 						"duration": 1
 					}
 				],
-				"sid": 311661688521955,
+				"sid": 871310901488158,
 				"name": "Acar",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
 				"speed": 5
-			},
-			{
-				"frames": [
-					{
-						"width": 356,
-						"height": 185,
-						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "png",
-						"exportQuality": 0.8,
-						"imageSpriteId": 4663979,
-						"collisionPoly": {
-							"points": [
-								0.12921341114425364,
-								0,
-								0.8483146107598639,
-								0,
-								0.9213483852691251,
-								0.543243194184863,
-								1,
-								0.9891891891891892,
-								0,
-								1,
-								0.07865161473087488,
-								0.42972948572657776
-							]
-						},
-						"useCollisionPoly": true,
-						"duration": 1
-					},
-					{
-						"width": 354,
-						"height": 256,
-						"originX": 0.5,
-						"originY": 0.640625,
-						"originalSource": "",
-						"exportFormat": "png",
-						"exportQuality": 0.8,
-						"imageSpriteId": 9436829,
-						"collisionPoly": {
-							"points": [
-								0,
-								0.28125,
-								0.7994350282485876,
-								0.003906250000000028,
-								0.9378531073446328,
-								0.681640625,
-								0.536723163841808,
-								0.9921875,
-								0,
-								0.9921875,
-								0,
-								0.681640625
-							]
-						},
-						"useCollisionPoly": true,
-						"duration": 1
-					}
-				],
-				"sid": 755035355234512,
-				"name": "Selada",
-				"isLooping": false,
-				"isPingPong": false,
-				"repeatCount": 1,
-				"repeatTo": 0,
-				"speed": 0
 			},
 			{
 				"frames": [
@@ -280,32 +208,32 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9785334,
+						"imageSpriteId": 4052413,
 						"collisionPoly": {
 							"points": [
-								0,
-								0,
-								0.5169491107136078,
-								0,
-								1,
-								0,
-								1,
-								0.5005730832622491,
-								1,
-								1,
+								0.13394544912062947,
+								0.04906762883899226,
 								0.5,
-								0.9944071588366891,
-								0,
-								1,
-								0,
-								0.5005729335847581
+								0.040268456375838944,
+								0.9347187363464202,
+								0.15011357273846793,
+								0.9361118322124559,
+								0.511472149119001,
+								0.9477616610660855,
+								0.6747496721488722,
+								0.5474577706906268,
+								0.6837804141757142,
+								0.10578019465075496,
+								0.6529512410803864,
+								0.07240505119506546,
+								0.48967386772800625
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 211813306759795,
+				"sid": 891587618743845,
 				"name": "Animation 4",
 				"isLooping": false,
 				"isPingPong": false,
@@ -323,32 +251,32 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5941651,
+						"imageSpriteId": 8781916,
 						"collisionPoly": {
 							"points": [
-								0,
-								0,
-								0.4920001955244224,
-								0,
-								1,
-								0,
-								1,
-								0.5266972305915234,
-								1,
-								1,
-								0.5,
-								0.9943820224719101,
-								0,
-								1,
-								0,
-								0.5137522076107237
+								0.04242002781641168,
+								0.25280898876404495,
+								0.11600015665689699,
+								0.058252425641303694,
+								0.9066314577010103,
+								0.05575434237860542,
+								0.9666203059805285,
+								0.5202247191011236,
+								0.9506092539296068,
+								0.6597577728745523,
+								0.4760001471201539,
+								0.6383949571336884,
+								0.0966952612645697,
+								0.627395393194848,
+								0.021557719054242003,
+								0.5202247191011236
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 613988611231668,
+				"sid": 559263717349051,
 				"name": "Animation 5",
 				"isLooping": false,
 				"isPingPong": false,

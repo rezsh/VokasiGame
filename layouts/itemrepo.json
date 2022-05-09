@@ -82,7 +82,7 @@
 					"type": "Sandwich",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "3",
+						"initial-animation": "1",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -136,10 +136,10 @@
 					"world": {
 						"x": 855,
 						"y": 101,
-						"width": 143.21324906605633,
-						"height": 51.23851799918897,
-						"originX": 0.5027149321266968,
-						"originY": 0.4898989898989899,
+						"width": 182.6764554753697,
+						"height": 69.69711454548064,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -277,10 +277,10 @@
 					}
 				},
 				{
-					"type": "BreadDrag",
+					"type": "Draggsble",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "1",
+						"initial-animation": "Ayam",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -334,8 +334,8 @@
 					"world": {
 						"x": 617,
 						"y": 95,
-						"width": 196.26804112467306,
-						"height": 75.36692779187447,
+						"width": 150.65733453601948,
+						"height": 56.42025686065509,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

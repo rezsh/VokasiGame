@@ -253,6 +253,14 @@
 			"author": "Scirra",
 			"version": "r293.3",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "hardlight",
+			"name": "Hard light",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
 		}
 	],
 	"uniqueId": "lc4u6u4ynz1",
@@ -327,7 +335,7 @@
 			"spr_loseAlert",
 			"spr_background",
 			"btn_Gotohome",
-			"BreadDrag",
+			"Draggsble",
 			"Uibar",
 			"Score",
 			"ss",
@@ -336,7 +344,9 @@
 			"btnswitch",
 			"Popupbread",
 			"ChooseBread2",
-			"ChooseBread"
+			"ChooseBread",
+			"stove",
+			"IsianMeats"
 		],
 		"subfolders": [
 			{

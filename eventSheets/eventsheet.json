@@ -155,7 +155,7 @@
 			"eventType": "variable",
 			"name": "GameState",
 			"type": "string",
-			"initialValue": "Serving",
+			"initialValue": "",
 			"comment": "The state of the game - used to determine when dialogue is being shown",
 			"isStatic": false,
 			"isConstant": false,
@@ -391,27 +391,27 @@
 					}
 				},
 				{
-					"id": "is-boolean-instance-variable-set",
+					"id": "compare-animation-frame",
 					"objectClass": "Phoneui",
-					"sid": 336606107336694,
+					"sid": 927151977578167,
 					"parameters": {
-						"instance-variable": "Pop"
-					},
-					"isInverted": true
+						"comparison": 0,
+						"number": "1"
+					}
 				}
 			],
 			"actions": [
 				{
 					"id": "tween-two-properties",
 					"objectClass": "Phone",
-					"sid": 878181691837298,
+					"sid": 588958663022027,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
 						"property": "position",
 						"end-x": "384",
-						"end-y": "640",
-						"time": "1.2",
+						"end-y": "615",
+						"time": "0.85",
 						"ease": "easeoutback",
 						"destroy-on-complete": "no",
 						"loop": "no",
@@ -419,12 +419,11 @@
 					}
 				},
 				{
-					"id": "set-boolean-instvar",
+					"id": "set-animation-frame",
 					"objectClass": "Phoneui",
-					"sid": 979547808181723,
+					"sid": 771674339292512,
 					"parameters": {
-						"instance-variable": "Pop",
-						"value": "false"
+						"frame-number": "2"
 					}
 				}
 			],
@@ -436,59 +435,96 @@
 				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 177440408940344,
+					"sid": 421979331391584,
 					"parameters": {
 						"object": "Phoneui"
 					}
 				},
 				{
-					"id": "is-boolean-instance-variable-set",
+					"id": "compare-animation-frame",
 					"objectClass": "Phoneui",
-					"sid": 897719667659214,
+					"sid": 674273206104423,
 					"parameters": {
-						"instance-variable": "Pop"
+						"comparison": 0,
+						"number": "2"
 					}
-				},
-				{
-					"id": "is-touching-object",
-					"objectClass": "Touch",
-					"sid": 599237516289880,
-					"disabled": true,
-					"parameters": {
-						"object": "btnswitch"
-					},
-					"isInverted": true
 				}
 			],
 			"actions": [
 				{
 					"id": "tween-two-properties",
 					"objectClass": "Phone",
-					"sid": 720820766808821,
+					"sid": 307761117951387,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
 						"property": "position",
 						"end-x": "384",
 						"end-y": "1546",
-						"time": "0.6",
-						"ease": "easeinback",
+						"time": "0.45",
+						"ease": "noease",
 						"destroy-on-complete": "no",
 						"loop": "no",
 						"ping-pong": "no"
 					}
 				},
 				{
-					"id": "set-boolean-instvar",
+					"id": "set-animation-frame",
 					"objectClass": "Phoneui",
-					"sid": 529729753185374,
+					"sid": 665332489183116,
 					"parameters": {
-						"instance-variable": "Pop",
-						"value": "true"
+						"frame-number": "1"
 					}
 				}
 			],
 			"sid": 487096910579359
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 862702752009656,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Serving\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Phoneui",
+					"sid": 647684483205872,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 198952736105128
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 758688143076902
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Phoneui",
+					"sid": 943124621212755,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 625626251079447
 		},
 		{
 			"eventType": "comment",
@@ -2780,17 +2816,18 @@
 						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
-							"sid": 761472505317666,
+							"sid": 539167358775534,
 							"parameters": {
-								"object": "Isian"
+								"object": "Sauce"
 							}
 						},
 						{
-							"id": "pick-by-unique-id",
-							"objectClass": "Isian",
-							"sid": 506317170892780,
+							"id": "compare-animation-frame",
+							"objectClass": "Sauce",
+							"sid": 452565419355687,
 							"parameters": {
-								"unique-id": "47"
+								"comparison": 0,
+								"number": "2"
 							}
 						},
 						{
@@ -2821,9 +2858,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 365082699706853,
+							"sid": 226998492627789,
 							"parameters": {
-								"animation": "\"2\"",
+								"animation": "\"8\"",
 								"from": "beginning"
 							}
 						}
@@ -2868,17 +2905,105 @@
 						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
+							"sid": 438132133182450,
+							"parameters": {
+								"object": "Isian"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Isian",
+							"sid": 534759594820050,
+							"parameters": {
+								"animation": "\"Keju\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 993402235428678,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 887634414949182,
+							"parameters": {
+								"object-to-create": "Sandwich",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 253091396190327,
+							"parameters": {
+								"animation": "\"3\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 161187992740836,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 631297216377461
+								}
+							],
+							"actions": [],
+							"sid": 778497055831054,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 934144565556542,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Sandwich.AnimationName"
+											}
+										}
+									],
+									"sid": 319079121789072
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
 							"sid": 839735980370728,
 							"parameters": {
 								"object": "Isian"
 							}
 						},
 						{
-							"id": "pick-by-unique-id",
+							"id": "is-animation-playing",
 							"objectClass": "Isian",
-							"sid": 652939720645461,
+							"sid": 988045050587864,
 							"parameters": {
-								"unique-id": "49"
+								"animation": "\"Bawang\""
 							}
 						},
 						{
@@ -2909,9 +3034,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 517605333911470,
+							"sid": 708683958474957,
 							"parameters": {
-								"animation": "\"3\"",
+								"animation": "\"5\"",
 								"from": "beginning"
 							}
 						}
@@ -2962,11 +3087,11 @@
 							}
 						},
 						{
-							"id": "pick-by-unique-id",
+							"id": "is-animation-playing",
 							"objectClass": "Isian",
-							"sid": 892698316170379,
+							"sid": 930453126956374,
 							"parameters": {
-								"unique-id": "50"
+								"animation": "\"Acar\""
 							}
 						},
 						{
@@ -2997,9 +3122,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 792552156597862,
+							"sid": 235198780083361,
 							"parameters": {
-								"animation": "\"4\"",
+								"animation": "\"6\"",
 								"from": "beginning"
 							}
 						}
@@ -3050,11 +3175,11 @@
 							}
 						},
 						{
-							"id": "pick-by-unique-id",
+							"id": "is-animation-playing",
 							"objectClass": "Isian",
-							"sid": 560278731665394,
+							"sid": 543435561602226,
 							"parameters": {
-								"unique-id": "51"
+								"animation": "\"Tomat\""
 							}
 						},
 						{
@@ -3085,9 +3210,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Sandwich",
-							"sid": 808338872577280,
+							"sid": 380032318553424,
 							"parameters": {
-								"animation": "\"5\"",
+								"animation": "\"4\"",
 								"from": "beginning"
 							}
 						}
@@ -3132,6 +3257,94 @@
 						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
+							"sid": 417102488311258,
+							"parameters": {
+								"object": "Isian"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Isian",
+							"sid": 242769456519069,
+							"parameters": {
+								"animation": "\"Selada\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 433819737658972,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 425011623977094,
+							"parameters": {
+								"object-to-create": "Sandwich",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 334696444672670,
+							"parameters": {
+								"animation": "\"2\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 571952825520659,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 208889272111742
+								}
+							],
+							"actions": [],
+							"sid": 614004563627718,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 759357113851927,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Sandwich.AnimationName"
+											}
+										}
+									],
+									"sid": 851108531261138
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
 							"sid": 457768213011324,
 							"parameters": {
 								"object": "ChooseBread2"
@@ -3160,9 +3373,9 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 972236034760999,
+							"sid": 744064209289885,
 							"parameters": {
-								"object-to-create": "Sandwich",
+								"object-to-create": "Bread",
 								"layer": "1",
 								"x": "402",
 								"y": "665",
@@ -3172,8 +3385,8 @@
 						},
 						{
 							"id": "set-animation",
-							"objectClass": "Sandwich",
-							"sid": 955565597531239,
+							"objectClass": "Bread",
+							"sid": 179780875538373,
 							"parameters": {
 								"animation": "\"1\"",
 								"from": "beginning"
@@ -3248,9 +3461,9 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 548709709815002,
+							"sid": 864586080611294,
 							"parameters": {
-								"object-to-create": "Bread",
+								"object-to-create": "Sandwich",
 								"layer": "1",
 								"x": "402",
 								"y": "665",
@@ -3260,8 +3473,8 @@
 						},
 						{
 							"id": "set-animation",
-							"objectClass": "Bread",
-							"sid": 906244419322148,
+							"objectClass": "Sandwich",
+							"sid": 106032628796406,
 							"parameters": {
 								"animation": "\"1\"",
 								"from": "beginning"
@@ -4136,7 +4349,7 @@
 							"objectClass": "System",
 							"sid": 554506537982850,
 							"parameters": {
-								"object-to-create": "BreadDrag",
+								"object-to-create": "Draggsble",
 								"layer": "\"Game\"",
 								"x": "Mouse.X",
 								"y": "Mouse.Y",
@@ -4154,7 +4367,200 @@
 							}
 						}
 					],
-					"sid": 661757200058390
+					"sid": 661757200058390,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 540457062477184,
+									"parameters": {
+										"object": "Draggsble"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Draggsble",
+									"sid": 994710686290138,
+									"parameters": {
+										"animation": "\"Roti\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 811034505198005
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-hold-over-object",
+							"objectClass": "Touch",
+							"sid": 453873760509614,
+							"parameters": {
+								"object": "IsianMeats"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 290437691938505,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "IsianMeats",
+							"sid": 823012325013197,
+							"parameters": {
+								"unique-id": "133"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 645572702748224,
+							"parameters": {
+								"object-to-create": "Draggsble",
+								"layer": "\"Game\"",
+								"x": "Mouse.X",
+								"y": "Mouse.Y",
+								"create-hierarchy": false,
+								"template-name": "\"Dragged\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 256062732533038,
+							"parameters": {
+								"variable": "Drag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 173937131382513,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 428115672713327,
+									"parameters": {
+										"object": "Draggsble"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Draggsble",
+									"sid": 783572296637134,
+									"parameters": {
+										"animation": "\"Sapi\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 732044372461621
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-hold-over-object",
+							"objectClass": "Touch",
+							"sid": 761903635666617,
+							"parameters": {
+								"object": "IsianMeats"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 681788553334380,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "IsianMeats",
+							"sid": 275324410383619,
+							"parameters": {
+								"unique-id": "64"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 280207068203700,
+							"parameters": {
+								"object-to-create": "Draggsble",
+								"layer": "\"Game\"",
+								"x": "Mouse.X",
+								"y": "Mouse.Y",
+								"create-hierarchy": false,
+								"template-name": "\"Dragged\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 992785187966653,
+							"parameters": {
+								"variable": "Drag",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 690111540855484,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 573224310576143,
+									"parameters": {
+										"object": "Draggsble"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Draggsble",
+									"sid": 698289721186079,
+									"parameters": {
+										"animation": "\"Ayam\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 871792735700024
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -4176,7 +4582,7 @@
 					"actions": [
 						{
 							"id": "move-to-position",
-							"objectClass": "BreadDrag",
+							"objectClass": "Draggsble",
 							"sid": 245284737338319,
 							"behaviorType": "MoveTo",
 							"parameters": {
@@ -4193,21 +4599,36 @@
 							"conditions": [
 								{
 									"id": "on-drop",
-									"objectClass": "BreadDrag",
-									"sid": 199675726056136,
+									"objectClass": "Draggsble",
+									"sid": 924563783721780,
 									"behaviorType": "DragDrop"
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "BreadDrag",
-									"sid": 453374923263569,
+									"objectClass": "Draggsble",
+									"sid": 598569956734240,
 									"parameters": {
-										"object": "Toaster"
+										"object": "stove"
 									}
 								}
 							],
-							"actions": [],
-							"sid": 593333233064990
+							"actions": [
+								{
+									"id": "pin-to-object-imagepoint",
+									"objectClass": "Draggsble",
+									"sid": 731167794462756,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "stove",
+										"image-point": "1",
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								}
+							],
+							"sid": 175651084158922
 						}
 					]
 				},
@@ -4231,14 +4652,32 @@
 									"objectClass": "System",
 									"sid": 167342651358020,
 									"parameters": {
-										"object": "BreadDrag"
+										"object": "Draggsble"
 									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Draggsble",
+									"sid": 368636889462257,
+									"parameters": {
+										"object": "stove"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 139064037763264,
+									"parameters": {
+										"variable": "Drag",
+										"value": "false"
+									}
+								},
+								{
 									"id": "destroy",
-									"objectClass": "BreadDrag",
+									"objectClass": "Draggsble",
 									"sid": 330926995809536
 								}
 							],
@@ -4717,6 +5156,63 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 503361426618257,
+					"parameters": {
+						"object": "Isian"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 568344098082890,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Serving\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Isian",
+					"sid": 328468915612796,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 660924171816811
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 553526651245929
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Isian",
+					"sid": 928130624318842,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 288142792171675
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
 					"sid": 293055277441829,
@@ -4820,13 +5316,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 664115941659915,
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 115050938010362,
 							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "ChooseBread"
+								"object": "ChooseBread"
 							}
 						},
 						{

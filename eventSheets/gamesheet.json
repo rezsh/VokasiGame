@@ -45,12 +45,6 @@
 		},
 		{
 			"eventType": "block",
-			"conditions": [],
-			"actions": [],
-			"sid": 719205982118021
-		},
-		{
-			"eventType": "block",
 			"conditions": [
 				{
 					"id": "on-tap",
