@@ -261,6 +261,14 @@
 			"author": "Scirra",
 			"version": "r293.3",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "difference",
+			"name": "Difference",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
 		}
 	],
 	"uniqueId": "lc4u6u4ynz1",
@@ -346,7 +354,8 @@
 			"ChooseBread2",
 			"ChooseBread",
 			"stove",
-			"IsianMeats"
+			"IsianMeats",
+			"Toasted"
 		],
 		"subfolders": [
 			{

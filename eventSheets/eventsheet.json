@@ -155,7 +155,7 @@
 			"eventType": "variable",
 			"name": "GameState",
 			"type": "string",
-			"initialValue": "",
+			"initialValue": "Serving",
 			"comment": "The state of the game - used to determine when dialogue is being shown",
 			"isStatic": false,
 			"isConstant": false,
@@ -3542,6 +3542,11 @@
 								"variable": "CurrentRecipe",
 								"value": "\"\""
 							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Toasted",
+							"sid": 448373824507426
 						}
 					],
 					"sid": 340124981826206,
@@ -3649,6 +3654,21 @@
 								"width-type": "no",
 								"height-type": "no",
 								"z": false
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "Toasted",
+							"sid": 591951523716901,
+							"parameters": {
+								"child": "Sandwich",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": true,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-z-elevation": false,
+								"destroy-with-parent": true
 							}
 						}
 					],
@@ -4598,37 +4618,119 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-drop",
-									"objectClass": "Draggsble",
-									"sid": 924563783721780,
-									"behaviorType": "DragDrop"
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 327830328895872
+								}
+							],
+							"actions": [],
+							"sid": 998024638933069,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Draggsble",
+											"sid": 669905015107256,
+											"parameters": {
+												"object": "Toaster"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Draggsble",
+											"sid": 222073126102203,
+											"parameters": {
+												"animation": "\"Roti\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Toaster",
+											"sid": 345532925482502,
+											"parameters": {
+												"frame-number": "2"
+											}
+										}
+									],
+									"sid": 546230279326394
 								},
 								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Draggsble",
-									"sid": 598569956734240,
-									"parameters": {
-										"object": "stove"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Draggsble",
+											"sid": 175360772661730,
+											"parameters": {
+												"object": "stove"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 455890897544274,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Draggsble",
+													"sid": 359211789255972,
+													"parameters": {
+														"animation": "\"Ayam\""
+													}
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Draggsble",
+													"sid": 962428681351143,
+													"parameters": {
+														"animation": "\"Sapi\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "pin-to-object-properties",
+													"objectClass": "Draggsble",
+													"sid": 420049777310555,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "stove",
+														"x": true,
+														"y": true,
+														"angle": true,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												}
+											],
+											"sid": 971782131964610,
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Draggsble",
+													"sid": 562698354867998,
+													"parameters": {
+														"animation": "\"Roti\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 167881271968832
+										}
+									]
 								}
-							],
-							"actions": [
-								{
-									"id": "pin-to-object-imagepoint",
-									"objectClass": "Draggsble",
-									"sid": 731167794462756,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "stove",
-										"image-point": "1",
-										"angle": true,
-										"width-type": "no",
-										"height-type": "no",
-										"z": false
-									}
-								}
-							],
-							"sid": 175651084158922
+							]
 						}
 					]
 				},
@@ -4654,95 +4756,1019 @@
 									"parameters": {
 										"object": "Draggsble"
 									}
+								}
+							],
+							"actions": [],
+							"sid": 180256864014685,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Draggsble",
+											"sid": 584520849988524,
+											"parameters": {
+												"object": "stove"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Draggsble",
+											"sid": 558040217879372,
+											"parameters": {
+												"object": "stove"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 332083912669447,
+											"parameters": {
+												"variable": "Drag",
+												"value": "false"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Draggsble",
+											"sid": 132152470640851
+										}
+									],
+									"sid": 243533111861647,
+									"isOrBlock": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Toaster Event",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "Clicks",
+							"type": "number",
+							"initialValue": "2",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 950994255071915
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 433790494034616,
+									"parameters": {
+										"object": "Toaster"
+									}
 								},
 								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Draggsble",
-									"sid": 368636889462257,
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 557870278646465,
 									"parameters": {
-										"object": "stove"
-									},
-									"isInverted": true
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Serving\""
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Toaster",
+									"sid": 469810618447409,
+									"parameters": {
+										"comparison": 0,
+										"number": "5"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Toaster",
+									"sid": 754513347579735,
+									"parameters": {
+										"unique-id": "62"
+									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 139064037763264,
+									"id": "set-animation-frame",
+									"objectClass": "Toaster",
+									"sid": 906711362407263,
 									"parameters": {
-										"variable": "Drag",
-										"value": "false"
+										"frame-number": "6"
 									}
 								},
 								{
-									"id": "destroy",
-									"objectClass": "Draggsble",
-									"sid": 330926995809536
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 888980168332492,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Toaster",
+									"sid": 340448823319219,
+									"parameters": {
+										"frame-number": "7"
+									}
 								}
 							],
-							"sid": 180256864014685
+							"sid": 177955019331904
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 897032941714802,
+									"parameters": {
+										"object": "Toaster"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 248721843626597,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Serving\""
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Toaster",
+									"sid": 594246231277976,
+									"parameters": {
+										"comparison": 0,
+										"number": "7"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Toaster",
+									"sid": 137601755951641,
+									"parameters": {
+										"unique-id": "62"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 670936205874213,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ChooseBread2",
+									"sid": 402992452838168,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Popupbread",
+									"sid": 729413492282296,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Popupbread",
+									"sid": 340008842152705,
+									"parameters": {
+										"x": "1611",
+										"y": " 656"
+									}
+								}
+							],
+							"sid": 566481569415110
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 423849694993719,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Serving\""
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 119258145268884,
+									"parameters": {
+										"variable": "Drag"
+									}
+								},
+								{
+									"id": "is-in-touch",
+									"objectClass": "Touch",
+									"sid": 772997044035321
+								}
+							],
+							"actions": [],
+							"sid": 908414065309460,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-any-touch-end",
+											"objectClass": "Touch",
+											"sid": 413297258662659
+										}
+									],
+									"actions": [],
+									"sid": 888281944265567,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Draggsble",
+													"sid": 534054934772319,
+													"parameters": {
+														"object": "Toaster"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Toaster",
+													"sid": 933161124198250,
+													"parameters": {
+														"frame-number": "5"
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "Draggsble",
+													"sid": 853519381817545
+												}
+											],
+											"sid": 856422742518319
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 541712619294250,
+									"parameters": {
+										"object": "ChooseBread2"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ChooseBread2",
+									"sid": 881275712610582,
+									"parameters": {
+										"unique-id": "47"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 977672178824827,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Serving\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 745847418153088,
+									"parameters": {
+										"object-to-create": "Toasted",
+										"layer": "1",
+										"x": "402",
+										"y": "665",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Tambah Animasi Ilangin 1 roti dari toaster",
+									"text-color": [
+										1,
+										0,
+										0,
+										1
+									],
+									"background-color": [
+										0.9882352941176471,
+										1,
+										0.3607843137254902,
+										1
+									]
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Toasted",
+									"sid": 929697997657030,
+									"parameters": {
+										"animation": "\"11\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 121583999512926,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 167125135119631
+										}
+									],
+									"actions": [],
+									"sid": 276775512689467,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 949803534166672,
+													"parameters": {
+														"variable": "CurrentRecipe",
+														"value": "Sandwich.AnimationName"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 721831868665378,
+													"parameters": {
+														"variable": "Clicks",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "ChooseBread2",
+													"sid": 321650002385362,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 417492212642100
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 865535412947542,
+									"parameters": {
+										"object": "ChooseBread2"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ChooseBread2",
+									"sid": 612095926863693,
+									"parameters": {
+										"unique-id": "49"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 383783735148863,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Serving\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 549616184262755,
+									"parameters": {
+										"object-to-create": "Toasted",
+										"layer": "1",
+										"x": "402",
+										"y": "665",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Tambah Animasi Ilangin 1 roti dari toaster",
+									"text-color": [
+										1,
+										0,
+										0,
+										1
+									],
+									"background-color": [
+										0.9882352941176471,
+										1,
+										0.3607843137254902,
+										1
+									]
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Toasted",
+									"sid": 283967774606362,
+									"parameters": {
+										"animation": "\"11\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 905675251892862,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 151402997233021
+										}
+									],
+									"actions": [],
+									"sid": 855537992865970,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 153290310457065,
+													"parameters": {
+														"variable": "CurrentRecipe",
+														"value": "Bread.AnimationName"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 834587186615172,
+													"parameters": {
+														"variable": "Clicks",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "ChooseBread2",
+													"sid": 928905828719939,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 638561698213490
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ChooseBread2",
+									"sid": 356858899055222,
+									"parameters": {
+										"unique-id": "47"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "ChooseBread2",
+									"sid": 335607517609221,
+									"parameters": {
+										"frame-number": "6"
+									}
+								}
+							],
+							"sid": 686122960460061
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "ChooseBread2",
+									"sid": 392117664517066,
+									"parameters": {
+										"unique-id": "49"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "ChooseBread2",
+									"sid": 522398911235257,
+									"parameters": {
+										"frame-number": "7"
+									}
+								}
+							],
+							"sid": 530553803080401
+						},
+						{
+							"eventType": "comment",
+							"text": "gimana cara nya biar button disabled abis di click",
+							"background-color": [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 377097625294153,
+									"parameters": {
+										"variable": "Clicks",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Toaster",
+									"sid": 657924519641507,
+									"parameters": {
+										"frame-number": "4"
+									}
+								}
+							],
+							"sid": 181970669415275
 						}
-					]
+					],
+					"sid": 175552879604061
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Score",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 609302609649843
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Score",
+									"sid": 636633331586371,
+									"parameters": {
+										"text": "TotalScore"
+									}
+								}
+							],
+							"sid": 933284261751546
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-playing",
+									"objectClass": "Score",
+									"sid": 744989037962419,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"v\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Score",
+									"sid": 948370239554602,
+									"parameters": {
+										"text": "round(Self.Tween.Value(\"v\"))"
+									}
+								}
+							],
+							"sid": 687057933130719
+						}
+					],
+					"sid": 249025695379018
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "PhoneSwitch",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "btnswitch",
+									"sid": 908720745375822,
+									"parameters": {
+										"unique-id": "112"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 130409407780873,
+									"parameters": {
+										"variable": "SwitchPhonePage",
+										"comparison": 5,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "btnswitch",
+									"sid": 955013895260762,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 139962309562732
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 432857490166815
+								}
+							],
+							"actions": [],
+							"sid": 575242695392777,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "btnswitch",
+											"sid": 428050171113684,
+											"parameters": {
+												"unique-id": "112"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "btnswitch",
+											"sid": 221764951918214,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 783470217896074
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "btnswitch",
+									"sid": 824278253798218,
+									"parameters": {
+										"unique-id": "113"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 981227644043550,
+									"parameters": {
+										"variable": "SwitchPhonePage",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "btnswitch",
+									"sid": 658512549746034,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 680860932577214
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 116500861998076
+								}
+							],
+							"actions": [],
+							"sid": 887888122343774,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "btnswitch",
+											"sid": 541966231750921,
+											"parameters": {
+												"unique-id": "113"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "btnswitch",
+											"sid": 422175708787627,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 802436985735259
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 949276721354889,
+									"parameters": {
+										"object": "btnswitch"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "btnswitch",
+									"sid": 270238658292088,
+									"parameters": {
+										"unique-id": "112"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "btnswitch",
+									"sid": 809409768698322,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 236353819512100,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 912981923196517,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"comparison": 5,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 814538844717533,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"value": "5"
+											}
+										}
+									],
+									"sid": 970771743607156
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 979895013346101
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 890437412037638,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 497677738995435
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 934123096865100,
+									"parameters": {
+										"object": "btnswitch"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "btnswitch",
+									"sid": 395744314022623,
+									"parameters": {
+										"unique-id": "113"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "btnswitch",
+									"sid": 770182784508301,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 675449474889273,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 338649630999598,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"comparison": 3,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 825781241850728,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 329219591541273
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 143025913528207
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 108362983911110,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 523309359459978
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 932192539509005
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "PhoneDisplay",
+									"sid": 818808805117954,
+									"parameters": {
+										"frame-number": "SwitchPhonePage"
+									}
+								}
+							],
+							"sid": 879098251109191
+						}
+					],
+					"sid": 340348816519732
 				}
 			],
 			"sid": 822396864818403
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Score",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 863410107497547
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "Score",
-							"sid": 798796825159741,
-							"parameters": {
-								"text": "TotalScore"
-							}
-						}
-					],
-					"sid": 610808359141829
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-playing",
-							"objectClass": "Score",
-							"sid": 831830605182811,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"v\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "Score",
-							"sid": 839450954842665,
-							"parameters": {
-								"text": "round(Self.Tween.Value(\"v\"))"
-							}
-						}
-					],
-					"sid": 765048562589412
-				}
-			],
-			"sid": 499779753669244
 		},
 		{
 			"eventType": "variable",
@@ -4753,484 +5779,6 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 842867028981763
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "PhoneSwitch",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "btnswitch",
-							"sid": 245256154540822,
-							"parameters": {
-								"unique-id": "112"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 939319156360712,
-							"parameters": {
-								"variable": "SwitchPhonePage",
-								"comparison": 5,
-								"value": "5"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "btnswitch",
-							"sid": 400700802010955,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 104956128003990
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 872916998015798
-						}
-					],
-					"actions": [],
-					"sid": 910419441082759,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "btnswitch",
-									"sid": 869592419233528,
-									"parameters": {
-										"unique-id": "112"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "btnswitch",
-									"sid": 890771060070753,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 732393874899744
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "btnswitch",
-							"sid": 187160519743860,
-							"parameters": {
-								"unique-id": "113"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 821239319838693,
-							"parameters": {
-								"variable": "SwitchPhonePage",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "btnswitch",
-							"sid": 824352201950728,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 384264842827032
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 739755966379789
-						}
-					],
-					"actions": [],
-					"sid": 463344233906795,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "btnswitch",
-									"sid": 631482040726531,
-									"parameters": {
-										"unique-id": "113"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "btnswitch",
-									"sid": 475503790397814,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 735254368733490
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 772468084736222,
-							"parameters": {
-								"object": "btnswitch"
-							}
-						},
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "btnswitch",
-							"sid": 577851092268516,
-							"parameters": {
-								"unique-id": "112"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "btnswitch",
-							"sid": 822383273149163,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 170529974680989,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 465512736927141,
-									"parameters": {
-										"variable": "SwitchPhonePage",
-										"comparison": 5,
-										"value": "5"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 906105356148577,
-									"parameters": {
-										"variable": "SwitchPhonePage",
-										"value": "5"
-									}
-								}
-							],
-							"sid": 878773882048108
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 180510652720220
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 908473092277758,
-									"parameters": {
-										"variable": "SwitchPhonePage",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 366164651965020
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 533637219481043,
-							"parameters": {
-								"object": "btnswitch"
-							}
-						},
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "btnswitch",
-							"sid": 886966035410092,
-							"parameters": {
-								"unique-id": "113"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "btnswitch",
-							"sid": 381174811132183,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 547349923873535,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 770560946255816,
-									"parameters": {
-										"variable": "SwitchPhonePage",
-										"comparison": 3,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 718972356515854,
-									"parameters": {
-										"variable": "SwitchPhonePage",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 270023853183975
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 326275501669592
-								}
-							],
-							"actions": [
-								{
-									"id": "subtract-from-eventvar",
-									"objectClass": "System",
-									"sid": 605122161636374,
-									"parameters": {
-										"variable": "SwitchPhonePage",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 119984182206401
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 866220527692342
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "PhoneDisplay",
-							"sid": 446471768641709,
-							"parameters": {
-								"frame-number": "SwitchPhonePage"
-							}
-						}
-					],
-					"sid": 513528942703517
-				}
-			],
-			"sid": 848881593914949
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 394479017449042,
-					"parameters": {
-						"object": "InteractAble"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 203910807195059,
-					"parameters": {
-						"variable": "GameState",
-						"comparison": 0,
-						"value": "\"Serving\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-effect-enabled",
-					"objectClass": "InteractAble",
-					"sid": 968828664923280,
-					"parameters": {
-						"mode": "enable",
-						"effect": "\"Outline\""
-					}
-				}
-			],
-			"sid": 842491878637717
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 422740136959295
-				}
-			],
-			"actions": [
-				{
-					"id": "set-effect-enabled",
-					"objectClass": "InteractAble",
-					"sid": 203136267602064,
-					"parameters": {
-						"mode": "disable",
-						"effect": "\"Outline\""
-					}
-				}
-			],
-			"sid": 293226657444779
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 503361426618257,
-					"parameters": {
-						"object": "Isian"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 568344098082890,
-					"parameters": {
-						"variable": "GameState",
-						"comparison": 0,
-						"value": "\"Serving\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-effect-enabled",
-					"objectClass": "Isian",
-					"sid": 328468915612796,
-					"parameters": {
-						"mode": "enable",
-						"effect": "\"Outline\""
-					}
-				}
-			],
-			"sid": 660924171816811
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 553526651245929
-				}
-			],
-			"actions": [
-				{
-					"id": "set-effect-enabled",
-					"objectClass": "Isian",
-					"sid": 928130624318842,
-					"parameters": {
-						"mode": "disable",
-						"effect": "\"Outline\""
-					}
-				}
-			],
-			"sid": 288142792171675
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 293055277441829,
-					"parameters": {
-						"object": "ChooseBread"
-					}
-				},
-				{
-					"id": "pick-by-unique-id",
-					"objectClass": "ChooseBread",
-					"sid": 938949073510147,
-					"parameters": {
-						"unique-id": "115"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 931520227280531
 		},
 		{
 			"eventType": "group",
@@ -5361,45 +5909,12 @@
 							],
 							"actions": [
 								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 600400526802140,
-									"parameters": {
-										"seconds": "0.1"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "ChooseBread2",
-									"sid": 471245710539759,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "Popupbread",
-									"sid": 249979782636411,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
 									"sid": 966262917626003,
 									"parameters": {
 										"variable": "PopupComplete",
 										"value": "0"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "Popupbread",
-									"sid": 280840096559336,
-									"parameters": {
-										"x": "1289",
-										"y": "773"
 									}
 								}
 							],
@@ -5927,6 +6442,143 @@
 				}
 			],
 			"sid": 613645732920895
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 424014604602957,
+					"parameters": {
+						"object": "InteractAble"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 188447855222220,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Serving\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "InteractAble",
+					"sid": 612784280435218,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 928982477576447
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 832458596172696
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "InteractAble",
+					"sid": 711142444312197,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 912059989308395
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 580960045262651,
+					"parameters": {
+						"object": "Isian"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 523690123003990,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Serving\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Isian",
+					"sid": 990719262008436,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 429641924477279
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 147934716390983
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Isian",
+					"sid": 441286270832280,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 538318173560140
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 272053400175951,
+					"parameters": {
+						"object": "ChooseBread"
+					}
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "ChooseBread",
+					"sid": 384778790925269,
+					"parameters": {
+						"unique-id": "115"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 183808913096061
 		}
 	],
 	"sid": 149368447884591

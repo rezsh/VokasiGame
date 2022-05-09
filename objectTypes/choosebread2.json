@@ -87,6 +87,30 @@
 						"imageSpriteId": 8252701,
 						"useCollisionPoly": true,
 						"duration": 1
+					},
+					{
+						"width": 228,
+						"height": 223,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3989379,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 228,
+						"height": 223,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 167395,
+						"useCollisionPoly": true,
+						"duration": 1
 					}
 				],
 				"sid": 623837641894678,
