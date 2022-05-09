@@ -3660,6 +3660,7 @@
 							"id": "add-child",
 							"objectClass": "Toasted",
 							"sid": 591951523716901,
+							"disabled": true,
 							"parameters": {
 								"child": "Sandwich",
 								"transform-x": true,
@@ -4852,14 +4853,6 @@
 										"comparison": 0,
 										"number": "5"
 									}
-								},
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "Toaster",
-									"sid": 754513347579735,
-									"parameters": {
-										"unique-id": "62"
-									}
 								}
 							],
 							"actions": [
@@ -4918,14 +4911,6 @@
 									"parameters": {
 										"comparison": 0,
 										"number": "7"
-									}
-								},
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "Toaster",
-									"sid": 137601755951641,
-									"parameters": {
-										"unique-id": "62"
 									}
 								}
 							],
@@ -5104,9 +5089,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "Toasted",
-									"sid": 929697997657030,
+									"sid": 967266309211553,
 									"parameters": {
-										"animation": "\"11\"",
+										"animation": "\"0\"",
 										"from": "beginning"
 									}
 								}
@@ -5139,20 +5124,20 @@
 													}
 												},
 												{
-													"id": "subtract-from-eventvar",
-													"objectClass": "System",
-													"sid": 721831868665378,
-													"parameters": {
-														"variable": "Clicks",
-														"value": "1"
-													}
-												},
-												{
 													"id": "set-visible",
 													"objectClass": "ChooseBread2",
 													"sid": 321650002385362,
 													"parameters": {
 														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 701524076335562,
+													"parameters": {
+														"variable": "Clicks",
+														"value": "1"
 													}
 												}
 											],
@@ -5208,7 +5193,7 @@
 								},
 								{
 									"type": "comment",
-									"text": "Tambah Animasi Ilangin 1 roti dari toaster",
+									"text": "Tambah Animasi Ilangin 2 roti dari toaster",
 									"text-color": [
 										1,
 										0,
@@ -5225,9 +5210,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "Toasted",
-									"sid": 283967774606362,
+									"sid": 470179090095384,
 									"parameters": {
-										"animation": "\"11\"",
+										"animation": "\"0\"",
 										"from": "beginning"
 									}
 								}
@@ -5260,20 +5245,20 @@
 													}
 												},
 												{
-													"id": "subtract-from-eventvar",
-													"objectClass": "System",
-													"sid": 834587186615172,
-													"parameters": {
-														"variable": "Clicks",
-														"value": "1"
-													}
-												},
-												{
 													"id": "set-visible",
 													"objectClass": "ChooseBread2",
 													"sid": 928905828719939,
 													"parameters": {
 														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 339223864416305,
+													"parameters": {
+														"variable": "Clicks",
+														"value": "1"
 													}
 												}
 											],
@@ -5305,7 +5290,8 @@
 									}
 								}
 							],
-							"sid": 686122960460061
+							"sid": 686122960460061,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -5329,7 +5315,8 @@
 									}
 								}
 							],
-							"sid": 530553803080401
+							"sid": 530553803080401,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -5362,6 +5349,22 @@
 									"sid": 657924519641507,
 									"parameters": {
 										"frame-number": "4"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ChooseBread2",
+									"sid": 256638033777613,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Popupbread",
+									"sid": 479859548920663,
+									"parameters": {
+										"visibility": "invisible"
 									}
 								}
 							],
@@ -5808,6 +5811,16 @@
 					"sid": 104985458556490
 				},
 				{
+					"eventType": "variable",
+					"name": "Clicks",
+					"type": "number",
+					"initialValue": "2",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 656770512906125
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -5824,22 +5837,6 @@
 							"parameters": {
 								"instance-variable": "Action",
 								"value": "\"Hide\""
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "ChooseBread2",
-							"sid": 344869131951623,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Popupbread",
-							"sid": 503633945032240,
-							"parameters": {
-								"visibility": "invisible"
 							}
 						},
 						{
@@ -5915,6 +5912,48 @@
 									"parameters": {
 										"variable": "PopupComplete",
 										"value": "0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 352047172377028,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "ChooseBread2",
+									"sid": 622158613822635,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Popupbread",
+									"sid": 920035344545205,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 679137633680331,
+									"parameters": {
+										"variable": "PopupComplete",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Popupbread",
+									"sid": 378878755487505,
+									"parameters": {
+										"x": "1287",
+										"y": "773"
 									}
 								}
 							],
@@ -6439,6 +6478,224 @@
 							"sid": 472837005337266
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 443343542506014,
+							"parameters": {
+								"object": "ChooseBread2"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "ChooseBread2",
+							"sid": 378187438775188,
+							"parameters": {
+								"unique-id": "47"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 752557430713734,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 375830033736161,
+							"parameters": {
+								"object-to-create": "Sandwich",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 469443961436361,
+							"parameters": {
+								"animation": "\"1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 490407244370791,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 843861431690753
+								}
+							],
+							"actions": [],
+							"sid": 984079022298925,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 534254445926597,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Sandwich.AnimationName"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "ChooseBread2",
+											"sid": 325824243201916,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 926236042231731
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 499974975034720,
+							"parameters": {
+								"object": "ChooseBread2"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "ChooseBread2",
+							"sid": 258508932218412,
+							"parameters": {
+								"unique-id": "49"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 700291223347543,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 108976193887720,
+							"parameters": {
+								"object-to-create": "Sandwich",
+								"layer": "1",
+								"x": "402",
+								"y": "665",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 849738655666749,
+							"parameters": {
+								"animation": "\"1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 559999667601588,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 781520049211506
+								}
+							],
+							"actions": [],
+							"sid": 490365712592963,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 288439945310578,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Bread.AnimationName"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "ChooseBread2",
+											"sid": 825267778743883,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 299099419034183
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 538038522239614,
+							"parameters": {
+								"variable": "Clicks",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Toaster",
+							"sid": 511338730024871,
+							"parameters": {
+								"frame-number": "4"
+							}
+						}
+					],
+					"sid": 227403993587493
 				}
 			],
 			"sid": 613645732920895
@@ -6556,29 +6813,6 @@
 				}
 			],
 			"sid": 538318173560140
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 272053400175951,
-					"parameters": {
-						"object": "ChooseBread"
-					}
-				},
-				{
-					"id": "pick-by-unique-id",
-					"objectClass": "ChooseBread",
-					"sid": 384778790925269,
-					"parameters": {
-						"unique-id": "115"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 183808913096061
 		}
 	],
 	"sid": 149368447884591
