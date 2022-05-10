@@ -333,11 +333,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 710798752216988,
+							"sid": 482240065625550,
 							"parameters": {
 								"variable": "CurrentRecipe",
 								"comparison": 0,
-								"value": "\"RotiTomatKejuBawangSeladaRoti\""
+								"value": "\"RotiMentegaMayoKejuSapiBawangSeladaTomatRoti\""
 							}
 						}
 					],
@@ -3117,6 +3117,104 @@
 						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
+							"sid": 394116804988207,
+							"parameters": {
+								"object": "Sauce"
+							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 212322859696694,
+							"parameters": {
+								"object": "ChooseBread2"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Sauce",
+							"sid": 106820267926048,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 640420255937544,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Serving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 122476239799621,
+							"parameters": {
+								"object-to-create": "Sandwich",
+								"layer": "1",
+								"x": "plate.X",
+								"y": "plate.Y -265",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Sandwich",
+							"sid": 393198093419946,
+							"parameters": {
+								"animation": "\"Mayo\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 580901817707229,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 824151541011261
+								}
+							],
+							"actions": [],
+							"sid": 934004053248379,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 296821625996246,
+											"parameters": {
+												"variable": "CurrentRecipe",
+												"value": "Sandwich.AnimationName"
+											}
+										}
+									],
+									"sid": 520583245357942
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
 							"sid": 438132133182450,
 							"parameters": {
 								"object": "Isian"
@@ -3583,6 +3681,15 @@
 							"id": "destroy",
 							"objectClass": "Toasted",
 							"sid": 448373824507426
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "ChooseBread",
+							"sid": 575512302675460,
+							"parameters": {
+								"instance-variable": "Taken",
+								"value": "2"
+							}
 						}
 					],
 					"sid": 340124981826206,
@@ -5287,11 +5394,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Toaster",
-									"sid": 565754749828003,
+									"sid": 472417626264295,
 									"parameters": {
 										"instance-variable": "OnToast",
-										"comparison": 0,
-										"value": "2"
+										"comparison": 4,
+										"value": "0"
 									}
 								}
 							],
@@ -5902,15 +6009,6 @@
 										"instance-variable": "Action",
 										"value": "\"Popup\""
 									}
-								},
-								{
-									"id": "add-to-instvar",
-									"objectClass": "ChooseBread",
-									"sid": 619569682493304,
-									"parameters": {
-										"instance-variable": "Taken",
-										"value": "2"
-									}
 								}
 							],
 							"sid": 823794406974309,
@@ -6290,15 +6388,6 @@
 									"parameters": {
 										"instance-variable": "Action",
 										"value": "\"Hide\""
-									}
-								},
-								{
-									"id": "subtract-from-instvar",
-									"objectClass": "ChooseBread",
-									"sid": 134046157731335,
-									"parameters": {
-										"instance-variable": "Taken",
-										"value": "2"
 									}
 								}
 							],
@@ -7334,15 +7423,6 @@
 									"parameters": {
 										"visibility": "invisible"
 									}
-								},
-								{
-									"id": "add-to-instvar",
-									"objectClass": "ChooseBread",
-									"sid": 793077962688414,
-									"parameters": {
-										"instance-variable": "Taken",
-										"value": "2"
-									}
 								}
 							],
 							"sid": 643606522693152
@@ -7419,6 +7499,15 @@
 									"isInverted": true
 								},
 								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 361839860435732,
+									"parameters": {
+										"object": "Popupbread"
+									},
+									"isInverted": true
+								},
+								{
 									"id": "is-on-screen",
 									"objectClass": "Popupbread",
 									"sid": 174805907760508
@@ -7427,6 +7516,16 @@
 									"id": "is-visible",
 									"objectClass": "Popupbread",
 									"sid": 951202998187496
+								},
+								{
+									"id": "is-on-screen",
+									"objectClass": "ChooseBread2",
+									"sid": 342082561558941
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "ChooseBread2",
+									"sid": 777735483769431
 								}
 							],
 							"actions": [
@@ -7484,6 +7583,47 @@
 										}
 									],
 									"sid": 106522959542762
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Sandwich",
+									"sid": 653976425779869,
+									"parameters": {
+										"animation": "\"Roti\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 486026100492182,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "ChooseBread2",
+											"sid": 734761435443361,
+											"parameters": {
+												"unique-id": "49"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "ChooseBread2",
+											"sid": 558787376559640,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 157314006790189
 								}
 							]
 						},
