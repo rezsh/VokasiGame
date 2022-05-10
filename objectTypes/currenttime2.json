@@ -1,0 +1,20 @@
+{
+	"name": "CurrentTime2",
+	"plugin-id": "Text",
+	"sid": 961208756995654,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 755233807425924
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 518103441225580
+		}
+	],
+	"effectTypes": []
+}

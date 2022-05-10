@@ -573,14 +573,14 @@
 				{
 					"id": "tween-two-properties",
 					"objectClass": "Phone",
-					"sid": 588958663022027,
+					"sid": 259800534374568,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
 						"property": "position",
-						"end-x": "384",
-						"end-y": "615",
-						"time": "0.85",
+						"end-x": "193",
+						"end-y": "566",
+						"time": "0.70",
 						"ease": "easeoutback",
 						"destroy-on-complete": "no",
 						"loop": "no",
@@ -593,6 +593,14 @@
 					"sid": 771674339292512,
 					"parameters": {
 						"frame-number": "2"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "CurrentTime2",
+					"sid": 632822851249681,
+					"parameters": {
+						"visibility": "invisible"
 					}
 				}
 			],
@@ -623,14 +631,14 @@
 				{
 					"id": "tween-two-properties",
 					"objectClass": "Phone",
-					"sid": 307761117951387,
+					"sid": 235722809978196,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
 						"property": "position",
-						"end-x": "384",
-						"end-y": "1546",
-						"time": "0.45",
+						"end-x": "193",
+						"end-y": "1570",
+						"time": "0.20",
 						"ease": "noease",
 						"destroy-on-complete": "no",
 						"loop": "no",
@@ -643,6 +651,22 @@
 					"sid": 665332489183116,
 					"parameters": {
 						"frame-number": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 606832558422513,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "CurrentTime2",
+					"sid": 478710222243485,
+					"parameters": {
+						"visibility": "visible"
 					}
 				}
 			],
@@ -4108,10 +4132,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 544438037499407,
+							"sid": 998933297188630,
 							"parameters": {
 								"variable": "Hour",
-								"value": "int(unixtime/2600000)%24"
+								"value": "int(unixtime/3100000)%24"
 							}
 						},
 						{
@@ -4156,6 +4180,14 @@
 							"parameters": {
 								"variable": "timeString",
 								"value": "zeropad(Hour,2) & dividerCharacter & zeropad(Minutes,2)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "CurrentTime2",
+							"sid": 526841997557928,
+							"parameters": {
+								"text": "timeString"
 							}
 						}
 					],
