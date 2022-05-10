@@ -3,7 +3,20 @@
 	"plugin-id": "Sprite",
 	"sid": 349554206808152,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "ToasterState",
+			"type": "string",
+			"desc": "",
+			"sid": 521970642876118
+		},
+		{
+			"name": "OnToast",
+			"type": "number",
+			"desc": "",
+			"sid": 424069218211790
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -18,7 +31,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 521470,
+						"imageSpriteId": 7130000,
 						"collisionPoly": {
 							"points": [
 								0.24344569288389514,
@@ -50,7 +63,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2458036,
+						"imageSpriteId": 692914,
 						"collisionPoly": {
 							"points": [
 								0.2944606413994169,
@@ -82,7 +95,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4423604,
+						"imageSpriteId": 9587227,
 						"collisionPoly": {
 							"points": [
 								0.3155430711610487,
@@ -114,7 +127,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2327513,
+						"imageSpriteId": 9525631,
 						"collisionPoly": {
 							"points": [
 								0.3155430711610487,

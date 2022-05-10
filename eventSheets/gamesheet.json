@@ -7,10 +7,6 @@
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "gameSheet"
-		},
-		{
-			"eventType": "include",
 			"includeSheet": "variablesSheet"
 		},
 		{
@@ -75,14 +71,6 @@
 					"id": "destroy",
 					"objectClass": "spr_gameStartSprite",
 					"sid": 962745904077727
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "winLoseDrawFamily",
-					"sid": 548871881356699,
-					"parameters": {
-						"visibility": "visible"
-					}
 				}
 			],
 			"sid": 470222611732232

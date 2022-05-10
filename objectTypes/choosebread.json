@@ -9,6 +9,12 @@
 			"type": "string",
 			"desc": "",
 			"sid": 237530161339494
+		},
+		{
+			"name": "Taken",
+			"type": "number",
+			"desc": "",
+			"sid": 176292174786871
 		}
 	],
 	"behaviorTypes": [

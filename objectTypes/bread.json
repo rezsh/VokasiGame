@@ -69,7 +69,7 @@
 					}
 				],
 				"sid": 830313508844909,
-				"name": "1",
+				"name": "Roti",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -79,14 +79,98 @@
 			{
 				"frames": [
 					{
-						"width": 104,
-						"height": 30,
+						"width": 465,
+						"height": 158,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 58346,
+						"imageSpriteId": 4386506,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.5142857142857142,
+								1,
+								0.5142857142857142,
+								1,
+								0.7383966244725738,
+								0,
+								0.7383966244725738
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Toppings",
+								"x": 0.49523809523809526,
+								"y": 0.2571428571428571
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 631658503277445,
+				"name": "Toast",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 366,
+						"height": 155,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1800480,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.5142857142857142,
+								1,
+								0.5142857142857142,
+								1,
+								0.7383966244725738,
+								0,
+								0.7383966244725738
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Toppings",
+								"x": 0.49523809523809526,
+								"y": 0.2571428571428571
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 899795284739122,
+				"name": "Bun",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 480,
+						"height": 145,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6570590,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -94,9 +178,9 @@
 								1,
 								0.6451612903225806,
 								1,
-								1,
+								0.9017856623918307,
 								0,
-								1
+								0.9196428592715946
 							]
 						},
 						"useCollisionPoly": true,
@@ -104,7 +188,7 @@
 					}
 				],
 				"sid": 964281555633797,
-				"name": "11",
+				"name": "Decker",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

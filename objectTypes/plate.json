@@ -31,12 +31,12 @@
 					{
 						"width": 500,
 						"height": 500,
-						"originX": 0.482,
+						"originX": 0.52,
 						"originY": 0.678,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8136294,
+						"imageSpriteId": 8262557,
 						"collisionPoly": {
 							"points": [
 								0,
