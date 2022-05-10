@@ -1464,7 +1464,9 @@
 						"live-preview": false
 					},
 					"uid": 31,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"OnOff": false
+					},
 					"behaviors": {},
 					"effects": {
 						"HardLight": {
@@ -1498,7 +1500,9 @@
 						"live-preview": false
 					},
 					"uid": 110,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"OnOff": false
+					},
 					"behaviors": {},
 					"effects": {
 						"HardLight": {
@@ -1532,7 +1536,9 @@
 						"live-preview": false
 					},
 					"uid": 131,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"OnOff": false
+					},
 					"behaviors": {},
 					"effects": {
 						"HardLight": {
@@ -1566,7 +1572,9 @@
 						"live-preview": false
 					},
 					"uid": 130,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"OnOff": false
+					},
 					"behaviors": {},
 					"effects": {
 						"HardLight": {

@@ -6964,6 +6964,7 @@
 							],
 							"actions": [],
 							"sid": 675566859094400,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -6987,7 +6988,8 @@
 											}
 										}
 									],
-									"sid": 376344993641719
+									"sid": 376344993641719,
+									"disabled": true
 								}
 							],
 							"isOrBlock": true
@@ -7391,6 +7393,68 @@
 						}
 					],
 					"sid": 340348816519732
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Stove",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-drop",
+									"objectClass": "Draggsble",
+									"sid": 568460300259580,
+									"behaviorType": "DragDrop"
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Draggsble",
+									"sid": 540817107403886,
+									"parameters": {
+										"object": "stove"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Draggsble",
+									"sid": 973595579583723
+								}
+							],
+							"sid": 109399734101085
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "stove",
+									"sid": 146789914837555,
+									"parameters": {
+										"instance-variable": "OnOff"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "stove",
+									"sid": 142503969330115,
+									"parameters": {
+										"instance-variable": "OnOff",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 688583793956097
+						}
+					],
+					"sid": 830951909635492
 				}
 			],
 			"sid": 822396864818403
