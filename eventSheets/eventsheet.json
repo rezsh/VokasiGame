@@ -4439,28 +4439,50 @@
 													}
 												},
 												{
-													"id": "is-animation-playing",
+													"id": "is-overlapping-another-object",
 													"objectClass": "Draggsble",
-													"sid": 479293498530999,
+													"sid": 652662315645933,
 													"parameters": {
-														"animation": "\"Sapi\""
-													}
+														"object": "DragDiStove"
+													},
+													"isInverted": true
 												}
 											],
 											"actions": [
 												{
-													"id": "pin-to-object-properties",
-													"objectClass": "Draggsble",
-													"sid": 921857641345666,
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 243339057753380,
+													"parameters": {
+														"object-to-create": "DragDiStove",
+														"layer": "1",
+														"x": "stove.ImagePointX(1)",
+														"y": "stove.ImagePointY(1)",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "pin-to-object-imagepoint",
+													"objectClass": "DragDiStove",
+													"sid": 443918541608997,
 													"behaviorType": "Pin",
 													"parameters": {
 														"pin-to": "stove",
-														"x": true,
-														"y": true,
+														"image-point": "1",
 														"angle": true,
 														"width-type": "no",
 														"height-type": "no",
 														"z": false
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "DragDiStove",
+													"sid": 979859752167405,
+													"parameters": {
+														"animation": "\"Ayam\"",
+														"from": "beginning"
 													}
 												}
 											],
@@ -4472,7 +4494,7 @@
 														{
 															"id": "is-animation-playing",
 															"objectClass": "Draggsble",
-															"sid": 950589848796262,
+															"sid": 203226092019894,
 															"parameters": {
 																"animation": "\"Roti\""
 															}
@@ -4482,13 +4504,104 @@
 														{
 															"id": "destroy",
 															"objectClass": "Draggsble",
-															"sid": 189118666640758
+															"sid": 534143344756882
 														}
 													],
-													"sid": 171544351444133
+													"sid": 304519572919751
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Draggsble",
+													"sid": 678900545137947,
+													"parameters": {
+														"object": "stove"
+													}
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Draggsble",
+													"sid": 848506733388249,
+													"parameters": {
+														"animation": "\"Sapi\""
+													}
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Draggsble",
+													"sid": 273776683199261,
+													"parameters": {
+														"object": "DragDiStove"
+													},
+													"isInverted": true
 												}
 											],
-											"isOrBlock": true
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 440520439543421,
+													"parameters": {
+														"object-to-create": "DragDiStove",
+														"layer": "1",
+														"x": "stove.ImagePointX(1)",
+														"y": "stove.ImagePointY(1)",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "DragDiStove",
+													"sid": 534125741751759,
+													"parameters": {
+														"animation": "\"Sapi\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "pin-to-object-imagepoint",
+													"objectClass": "DragDiStove",
+													"sid": 414434247561049,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "stove",
+														"image-point": "1",
+														"angle": true,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												}
+											],
+											"sid": 339304185631563,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Draggsble",
+															"sid": 317115062835531,
+															"parameters": {
+																"animation": "\"Roti\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "Draggsble",
+															"sid": 141201505232265
+														}
+													],
+													"sid": 670602686370262
+												}
+											]
 										},
 										{
 											"eventType": "block",
@@ -4602,6 +4715,159 @@
 											],
 											"sid": 848327293779705,
 											"isOrBlock": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "STOVE FUNCTIONS",
+							"text-color": [
+								0,
+								0,
+								0,
+								0
+							],
+							"background-color": [
+								0,
+								0.8823529411764706,
+								1,
+								1
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 783598062174748,
+									"parameters": {
+										"object": "StoveKnob"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "stove",
+									"sid": 194799302578927,
+									"parameters": {
+										"instance-variable": "Nyala",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "StoveKnob",
+									"sid": 818498237686301,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 324151356521564
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "stove",
+									"sid": 186005100348062,
+									"parameters": {
+										"instance-variable": "Nyala"
+									}
+								},
+								{
+									"id": "is-pinned",
+									"objectClass": "DragDiStove",
+									"sid": 721576233869741,
+									"behaviorType": "Pin"
+								}
+							],
+							"actions": [],
+							"sid": 218558882373015,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 492777707612927,
+											"parameters": {
+												"object": "DragDiStove"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 393466475653250,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "DragDiStove",
+													"sid": 840805436846434,
+													"parameters": {
+														"animation": "\"Sapi\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 552059971622625,
+													"parameters": {
+														"seconds": "3"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "DragDiStove",
+													"sid": 499450118203155,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 898545655380569
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "DragDiStove",
+													"sid": 175019212940901,
+													"parameters": {
+														"animation": "\"Ayam\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 773338910375933,
+													"parameters": {
+														"seconds": "3"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "DragDiStove",
+													"sid": 118315094774153,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 118786018069305
 										}
 									]
 								}
@@ -7393,68 +7659,6 @@
 						}
 					],
 					"sid": 340348816519732
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Stove",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-drop",
-									"objectClass": "Draggsble",
-									"sid": 568460300259580,
-									"behaviorType": "DragDrop"
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Draggsble",
-									"sid": 540817107403886,
-									"parameters": {
-										"object": "stove"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Draggsble",
-									"sid": 973595579583723
-								}
-							],
-							"sid": 109399734101085
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "stove",
-									"sid": 146789914837555,
-									"parameters": {
-										"instance-variable": "OnOff"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "stove",
-									"sid": 142503969330115,
-									"parameters": {
-										"instance-variable": "OnOff",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 688583793956097
-						}
-					],
-					"sid": 830951909635492
 				}
 			],
 			"sid": 822396864818403

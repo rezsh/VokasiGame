@@ -355,7 +355,9 @@
 			"ChooseBread",
 			"stove",
 			"IsianMeats",
-			"Toasted"
+			"Toasted",
+			"DragDiStove",
+			"StoveKnob"
 		],
 		"subfolders": [
 			{

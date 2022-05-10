@@ -1,0 +1,267 @@
+{
+	"name": "DragDiStove",
+	"plugin-id": "Sprite",
+	"sid": 528246008540202,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 453761890463832
+		},
+		{
+			"behaviorId": "DragnDrop",
+			"name": "DragDrop",
+			"sid": 525638328610802
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 973702337176246
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 778852819560827
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 572615697738887
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 500,
+						"height": 192,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4743858,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.5142857142857142,
+								1,
+								0.5142857142857142,
+								1,
+								0.7383966244725738,
+								0,
+								0.7383966244725738
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Toppings",
+								"x": 0.49523809523809526,
+								"y": 0.2571428571428571
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 830122722020183,
+				"name": "Roti",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 501,
+						"height": 154,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4658489,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.6451612903225806,
+								1,
+								0.6451612903225806,
+								1,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 327590930057111,
+				"name": "Decker",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 510,
+						"height": 216,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8291358,
+						"collisionPoly": {
+							"points": [
+								0.09282178217821782,
+								0.2180232558139535,
+								0.5,
+								0.0872093023255814,
+								0.9158415841584159,
+								0.19476744186046513,
+								0.9715346534653465,
+								0.5,
+								0.9232673267326733,
+								0.8197674418604651,
+								0.5,
+								0.9534883720930233,
+								0.10891089108910891,
+								0.7412790697674418,
+								0.03094059405940594,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 475,
+						"height": 193,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5882322,
+						"collisionPoly": {
+							"points": [
+								0.07591623036649214,
+								0.1864951768488746,
+								0.5,
+								0.01929260450160772,
+								0.9332460732984293,
+								0.1607717041800643,
+								0.9790575916230366,
+								0.5,
+								0.9227748691099477,
+								0.8102893890675241,
+								0.5,
+								0.9485530546623794,
+								0.10209424083769633,
+								0.7459807073954984,
+								0.01832460732984293,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 368428044570007,
+				"name": "Sapi",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 494,
+						"height": 185,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9596941,
+						"collisionPoly": {
+							"points": [
+								0.06477732793522267,
+								0.17297297297297298,
+								0.5,
+								0.05945945945945946,
+								0.9190283400809717,
+								0.21081081081081082,
+								0.979757085020243,
+								0.5,
+								0.9068825910931174,
+								0.7513513513513513,
+								0.5,
+								0.9405405405405406,
+								0.09716599190283401,
+								0.7351351351351352,
+								0.010121457489878543,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 496,
+						"height": 188,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9906813,
+						"collisionPoly": {
+							"points": [
+								0.06944444444444445,
+								0.18292682926829268,
+								0.5,
+								0.06910569105691057,
+								0.9151234567901234,
+								0.21951219512195122,
+								0.9938271604938271,
+								0.5,
+								0.904320987654321,
+								0.7479674796747967,
+								0.5,
+								0.9390243902439024,
+								0.10185185185185185,
+								0.7276422764227642,
+								0.013888888888888888,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 229077319029633,
+				"name": "Ayam",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
