@@ -11,37 +11,37 @@
 			{
 				"frames": [
 					{
-						"width": 250,
-						"height": 250,
+						"width": 327,
+						"height": 327,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6914985,
+						"imageSpriteId": 8868600,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
 					{
-						"width": 250,
-						"height": 250,
+						"width": 327,
+						"height": 327,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5879398,
+						"imageSpriteId": 9663023,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 525598654234668,
-				"name": "Animation 1",
+				"sid": 376311799642849,
+				"name": "Knob",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 0
+				"speed": 5
 			}
 		],
 		"subfolders": []

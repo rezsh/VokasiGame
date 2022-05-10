@@ -2066,7 +2066,7 @@
 					"type": "StoveKnob",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "Knob",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -2077,8 +2077,8 @@
 					"world": {
 						"x": 2092.885117076165,
 						"y": 998.8879654136274,
-						"width": 33.11886726184104,
-						"height": 33.11886726184104,
+						"width": 43.31947837848808,
+						"height": 43.31947837848808,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
