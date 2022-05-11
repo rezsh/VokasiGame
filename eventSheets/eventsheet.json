@@ -252,10 +252,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 689611941043756,
+							"sid": 427491393017102,
 							"parameters": {
 								"variable": "CorrectRecipe",
-								"value": "\"Regular Sandwich\""
+								"value": "\"Basic Sandwich\""
 							}
 						}
 					],
@@ -327,6 +327,33 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 206709263900117,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"comparison": 0,
+								"value": "\"RotiMentegaSapiKejuSeladaRoti\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 774924718507133,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"value": "\"Basic Sandwich\""
+							}
+						}
+					],
+					"sid": 533869191735501
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -629,9 +656,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-tap-object",
+					"id": "is-touching-object",
 					"objectClass": "Touch",
-					"sid": 352612743587294,
+					"sid": 802330799349712,
 					"parameters": {
 						"object": "Phoneui"
 					}
@@ -650,14 +677,14 @@
 				{
 					"id": "tween-two-properties",
 					"objectClass": "Phone",
-					"sid": 259800534374568,
+					"sid": 350484465971133,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"\"",
 						"property": "position",
 						"end-x": "193",
-						"end-y": "566",
-						"time": "0.70",
+						"end-y": "560",
+						"time": "0.7",
 						"ease": "easeoutback",
 						"destroy-on-complete": "no",
 						"loop": "no",
@@ -667,15 +694,23 @@
 				{
 					"id": "set-animation-frame",
 					"objectClass": "Phoneui",
-					"sid": 771674339292512,
+					"sid": 331096963625249,
 					"parameters": {
 						"frame-number": "2"
 					}
 				},
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 245453897631912,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
 					"id": "set-visible",
 					"objectClass": "CurrentTime2",
-					"sid": 632822851249681,
+					"sid": 572279684344143,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -687,9 +722,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-tap-object",
+					"id": "is-touching-object",
 					"objectClass": "Touch",
-					"sid": 421979331391584,
+					"sid": 214649422668294,
 					"parameters": {
 						"object": "Phoneui"
 					}
@@ -5436,6 +5471,14 @@
 									}
 								},
 								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "DragDiStove",
+									"sid": 398871317772422,
+									"parameters": {
+										"instance-variable": "Cooked"
+									}
+								},
+								{
 									"id": "is-animation-playing",
 									"objectClass": "DragDiStove",
 									"sid": 590026904285808,
@@ -5529,6 +5572,14 @@
 									}
 								},
 								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "DragDiStove",
+									"sid": 203715480582233,
+									"parameters": {
+										"instance-variable": "Cooked"
+									}
+								},
+								{
 									"id": "is-animation-playing",
 									"objectClass": "DragDiStove",
 									"sid": 773339131699765,
@@ -5619,6 +5670,14 @@
 									"sid": 495869901215637,
 									"parameters": {
 										"object": "DragDiStove"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "DragDiStove",
+									"sid": 840447014607695,
+									"parameters": {
+										"instance-variable": "Cooked"
 									}
 								},
 								{
@@ -8993,6 +9052,101 @@
 				{
 					"id": "compare-text",
 					"objectClass": "NPCTextBox",
+					"sid": 824278387412625,
+					"parameters": {
+						"text-to-compare": "\"Untuk melihat resep sandwich yang ingin dibuat kamu bisa lihat di handphone ini.\"",
+						"case-sensitivity": "ignore-case"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 523907296821456,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-typewriter-text-finished",
+							"objectClass": "NPCTextBox",
+							"sid": 591520800004685
+						},
+						{
+							"id": "compare-text",
+							"objectClass": "NPCTextBox",
+							"sid": 605689404489087,
+							"parameters": {
+								"text-to-compare": "\"Untuk melihat resep sandwich yang ingin dibuat kamu bisa lihat di handphone ini.\"",
+								"case-sensitivity": "ignore-case"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 725194328883587,
+							"parameters": {
+								"object-to-create": "HandInstruct",
+								"layer": "1",
+								"x": "197",
+								"y": "882",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 378565500618594,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 517278655039989,
+							"parameters": {
+								"object": "Phoneui"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 749340405362853,
+							"parameters": {
+								"variable": "GameState",
+								"value": "\"Dialogue\""
+							}
+						},
+						{
+							"id": "typewriter-finish",
+							"objectClass": "NPCTextBox",
+							"sid": 743228556453867
+						},
+						{
+							"callFunction": "Advance",
+							"sid": 902562450035669
+						},
+						{
+							"id": "destroy",
+							"objectClass": "HandInstruct",
+							"sid": 279645586968346
+						}
+					],
+					"sid": 668613665877581,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-text",
+					"objectClass": "NPCTextBox",
 					"sid": 721915103689817,
 					"parameters": {
 						"text-to-compare": "\"Ambil roti disini.\"",
@@ -9002,7 +9156,44 @@
 			],
 			"actions": [],
 			"sid": 377667085877369,
+			"disabled": true,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-typewriter-text-finished",
+							"objectClass": "NPCTextBox",
+							"sid": 474718948821873
+						},
+						{
+							"id": "compare-text",
+							"objectClass": "NPCTextBox",
+							"sid": 966623131246594,
+							"parameters": {
+								"text-to-compare": "\"Ambil roti disini.\"",
+								"case-sensitivity": "ignore-case"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 472475633327719,
+							"parameters": {
+								"object-to-create": "HandInstruct",
+								"layer": "1",
+								"x": "1275",
+								"y": "715",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 665466659522147,
+					"disabled": true
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -9034,33 +9225,8 @@
 							"sid": 650141100975020
 						}
 					],
-					"sid": 777725084515896
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 617488213764873
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 966057947766035,
-							"parameters": {
-								"object-to-create": "HandInstruct",
-								"layer": "1",
-								"x": "1275",
-								"y": "715",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						}
-					],
-					"sid": 833797315226056
+					"sid": 777725084515896,
+					"disabled": true
 				}
 			]
 		},
@@ -9070,16 +9236,53 @@
 				{
 					"id": "compare-text",
 					"objectClass": "NPCTextBox",
-					"sid": 626458115255080,
+					"sid": 677234515287009,
 					"parameters": {
-						"text-to-compare": "\"Sekarang pilih roti bagian apa yang kamu inginkan.\"",
+						"text-to-compare": "\"Sekarang pilih roti bagian bawah terlebih dahulu.\"",
 						"case-sensitivity": "ignore-case"
 					}
 				}
 			],
 			"actions": [],
 			"sid": 941947519160504,
+			"disabled": true,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-typewriter-text-finished",
+							"objectClass": "NPCTextBox",
+							"sid": 363786036336860
+						},
+						{
+							"id": "compare-text",
+							"objectClass": "NPCTextBox",
+							"sid": 639216329881824,
+							"parameters": {
+								"text-to-compare": "\"Sekarang pilih roti bagian bawah terlebih dahulu.\"",
+								"case-sensitivity": "ignore-case"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 768244318999875,
+							"parameters": {
+								"object-to-create": "HandInstruct",
+								"layer": "1",
+								"x": "1198",
+								"y": "521",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 349565630026929,
+					"disabled": true
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -9111,33 +9314,8 @@
 							"sid": 448325906499487
 						}
 					],
-					"sid": 976603461787604
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 245735111790286
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 882669417351558,
-							"parameters": {
-								"object-to-create": "HandInstruct",
-								"layer": "1",
-								"x": "1203",
-								"y": "521",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						}
-					],
-					"sid": 668394386452069
+					"sid": 976603461787604,
+					"disabled": true
 				}
 			]
 		}

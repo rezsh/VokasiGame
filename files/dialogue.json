@@ -56,17 +56,50 @@
 					"emotion": "5",
 					"line": "Sebelum kamu mulai bekerja, persilahkan aku memberi arahan cara membuat sandwich dengan benar."
 				},
-				{	
+				{
+								
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "5",
-					"line": "Pertama-tama mari kita siapkan roti terlebih dahulu."
+					"line": "Pertama-tama kita akan mencoba membuat (color=#ef7d57)CorrectRecipe.(/color)"
+				},
+				{
+								
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "5",
+					"line": "Untuk melihat resep sandwich yang ingin dibuat kamu bisa lihat di handphone ini."
+				},
+
+				{		
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "5",
+					"line": "Kalian bisa lihat bermacam resep sandwich yang umum sering dibuat."
+				},
+				{		
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "5",
+					"line": "Untuk Membuat (color=#ef7d57)CorrectRecipe(/color) dan menu lain, ikuti urutan bahan dari atas kebawah."
 				},
 				{	
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "5",
-					"line": "Ambil roti disini."
+					"line": "Mari kita siapkan roti terlebih dahulu."
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "3",
+					"line": "Sekarang pilih roti bagian bawah terlebih dahulu."
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "3",
+					"line": "ikuti resep yang ada di handphone kamu hingga sandwich yang diinginkan jadi."
 				},
 				{
 					"char": "Yumi",
@@ -77,18 +110,7 @@
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "3",
-					"line": "Sekarang pilih roti bagian apa yang kamu inginkan."
-				},
-				{
-					"char": "Yumi",
-					"type": "function",
-					"function": "Serving"
-				},
-				{
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "3",
-					"line": "Bagus."
+					"line": "Kerja Bagus."
 				},
 				{
 					"char": "Yumi",
@@ -124,71 +146,6 @@
 					"char": "Botak",
 					"type": "function",
 					"function": "Leaving"
-				}
-			]
-		},
-		{
-			"id": 2,
-			"dialogs": [
-				{
-					"char": "Botak",
-					"type": "line",
-					"line": "Alright i wanna a (color=#ef7d57)CorrectRecipe.(/color)"
-				},
-				{
-					"char": "Botak",
-					"type": "line",
-					"line": "Better hurry dumbass. "
-				},
-				{
-					"char": "Yumi",
-					"type": "function",
-					"function": "TakeOrder"
-				}
-			]
-		},
-		{
-			"id": 3,
-			"dialogs": [
-				{
-					"char": "Botak",
-					"type": "line",
-					"line": "Damn that sandwich bussin."
-				},
-				{
-					"char": "Botak",
-					"type": "function",
-					"function": "Leaving"
-				}
-			]
-		},
-		{
-			"id": 4,
-			"dialogs": [
-				{
-					"char": "FunctionGuy",
-					"type": "line",
-					"line": "Back for more? Well, how about instead of functions, we talk about timelines?!"
-				},
-				{
-					"char": "FunctionGuy",
-					"type": "line",
-					"line": "Just like with the function, you can store the name of a timeline in the JSON file and then call that specific timeline using a function."
-				},
-				{
-					"char": "FunctionGuy",
-					"type": "line",
-					"line": "How about I go for a little walk?"
-				},				
-				{
-					"char": "FunctionGuy",
-					"type": "timeline",
-					"timeline": "NPCWalkTest"
-				},
-				{
-					"char": "FunctionGuy",
-					"type": "line",
-					"line": "Tada! Now you can really start to do cool stuff during dialogues!"
 				}
 			]
 		}
