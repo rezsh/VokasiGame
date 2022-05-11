@@ -41,6 +41,337 @@
 				}
 			],
 			"sid": 656172309484802
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Sounds",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "KonfirmSFX",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 478978525363133,
+							"parameters": {
+								"audio-file": "confirm_style_2_001 - Copy",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"konfirm\""
+							}
+						}
+					],
+					"sid": 632939893022338
+				},
+				{
+					"functionName": "BreadFX",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "is-in-touch",
+							"objectClass": "Touch",
+							"sid": 503794390538581,
+							"disabled": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 265832975298540,
+							"parameters": {
+								"audio-file": "Minimalist7",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"BS\""
+							}
+						}
+					],
+					"sid": 320452191733408
+				},
+				{
+					"functionName": "StoveFX",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 286567839001791,
+							"parameters": {
+								"audio-file": "l_mixkit-gas-stove-hum-1831",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"StoveON\""
+							}
+						}
+					],
+					"sid": 228729857049302
+				},
+				{
+					"functionName": "StoveOFFFX",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 889036387054868,
+							"parameters": {
+								"audio-file": "Minimalist6",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"StoveOFF\""
+							}
+						}
+					],
+					"sid": 999927714580633
+				},
+				{
+					"functionName": "ToasterLoad",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 784490301614242,
+							"parameters": {
+								"audio-file": "l_mixkit-kitchen-toaster-loading-1820",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 809785194184187
+				},
+				{
+					"functionName": "ToasterPop",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 530127879011173,
+							"parameters": {
+								"audio-file": "l_mixkit-kitchen-toaster-pops-1821",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 891213459446685
+				},
+				{
+					"functionName": "KasirFX",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 160964515818050,
+							"parameters": {
+								"audio-file": "Cash Register (Kaching) - Sound Effect (HD)",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 681575653403315
+				},
+				{
+					"functionName": "IsianFX",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 655284047532497,
+							"parameters": {
+								"audio-file": "Abstract2",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 348243846538013
+				},
+				{
+					"functionName": "EggBreakFX",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 567790464475240,
+							"parameters": {
+								"audio-file": "l_mixkit-break-egg-on-pot-or-pan-3143",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"Telor\""
+							}
+						},
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 670272374993311,
+							"parameters": {
+								"tag": "\"Telor\"",
+								"position": "2.5"
+							}
+						}
+					],
+					"sid": 595810496358173
+				},
+				{
+					"functionName": "TapFX",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 178818261940522,
+							"parameters": {
+								"audio-file": "Retro12",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 442744762863165
+				},
+				{
+					"functionName": "MeatFX",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "IsianMeats",
+							"sid": 202038550658269,
+							"parameters": {
+								"unique-id": "64"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "IsianMeats",
+							"sid": 312463995742634,
+							"parameters": {
+								"unique-id": "133"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 355981853309095,
+							"parameters": {
+								"audio-file": "Meat",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 163091731818167
+				},
+				{
+					"functionName": "BGM",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 634620455029871,
+							"parameters": {
+								"audio-file": "musicdef",
+								"loop": "looping",
+								"volume": "-20",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 496135980019246
+				}
+			],
+			"sid": 602505605698514
 		}
 	],
 	"sid": 779031521875488

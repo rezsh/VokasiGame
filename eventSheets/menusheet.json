@@ -55,6 +55,10 @@
 						"key": "\"Current Level\"",
 						"value": "currentLevel"
 					}
+				},
+				{
+					"callFunction": "KonfirmSFX",
+					"sid": 453668164006618
 				}
 			],
 			"sid": 216288507581072,
@@ -314,6 +318,10 @@
 						"animation": "\"clear\"",
 						"from": "beginning"
 					}
+				},
+				{
+					"callFunction": "KonfirmSFX",
+					"sid": 367901151086154
 				}
 			],
 			"sid": 142796457057806
@@ -338,6 +346,10 @@
 					"parameters": {
 						"layout": "home"
 					}
+				},
+				{
+					"callFunction": "KonfirmSFX",
+					"sid": 534617661194662
 				}
 			],
 			"sid": 613098437495609

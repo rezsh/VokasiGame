@@ -152,6 +152,10 @@
 					"parameters": {
 						"layout": "menu"
 					}
+				},
+				{
+					"callFunction": "KonfirmSFX",
+					"sid": 634381803458996
 				}
 			],
 			"sid": 364984231463686

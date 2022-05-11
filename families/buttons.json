@@ -7,6 +7,10 @@
 	"effectTypes": [],
 	"members": [
 		"BtnTrash",
-		"PauseBTN"
+		"PauseBTN",
+		"btn_clear",
+		"btn_Gotohome",
+		"btn_GoToMenu",
+		"levelButton"
 	]
 }

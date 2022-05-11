@@ -155,7 +155,7 @@
 			"eventType": "variable",
 			"name": "GameState",
 			"type": "string",
-			"initialValue": "",
+			"initialValue": "Serving",
 			"comment": "The state of the game - used to determine when dialogue is being shown",
 			"isStatic": false,
 			"isConstant": false,
@@ -601,6 +601,10 @@
 						"variable": "OrderanKe",
 						"value": "\"1\""
 					}
+				},
+				{
+					"callFunction": "BGM",
+					"sid": 154526485843901
 				}
 			],
 			"sid": 106383978476691
@@ -1395,6 +1399,10 @@
 						{
 							"callFunction": "Advance",
 							"sid": 215086236867729
+						},
+						{
+							"callFunction": "KasirFX",
+							"sid": 833640948357979
 						}
 					],
 					"sid": 143381364190354
@@ -3005,6 +3013,10 @@
 							"parameters": {
 								"visibility": "invisible"
 							}
+						},
+						{
+							"callFunction": "KonfirmSFX",
+							"sid": 128064481234641
 						}
 					],
 					"sid": 627221607768008
@@ -3045,6 +3057,10 @@
 							"parameters": {
 								"frame-number": "0"
 							}
+						},
+						{
+							"callFunction": "KonfirmSFX",
+							"sid": 169693380794536
 						}
 					],
 					"sid": 969683755525164
@@ -3086,6 +3102,10 @@
 							"parameters": {
 								"visibility": "visible"
 							}
+						},
+						{
+							"callFunction": "KonfirmSFX",
+							"sid": 981165669247827
 						}
 					],
 					"sid": 657378394810298
@@ -3135,6 +3155,10 @@
 							"parameters": {
 								"layout": "home"
 							}
+						},
+						{
+							"callFunction": "KonfirmSFX",
+							"sid": 937382419839906
 						}
 					],
 					"sid": 548147149584520
@@ -3313,6 +3337,10 @@
 								"animation": "\"Mentega\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "IsianFX",
+							"sid": 983900963966764
 						}
 					],
 					"sid": 948498035053766,
@@ -3411,6 +3439,10 @@
 								"animation": "\"Mayo\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "IsianFX",
+							"sid": 417850159247129
 						}
 					],
 					"sid": 580901817707229,
@@ -3499,6 +3531,10 @@
 								"animation": "\"Keju\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "IsianFX",
+							"sid": 242354574356476
 						}
 					],
 					"sid": 161187992740836,
@@ -3587,6 +3623,10 @@
 								"animation": "\"Bawang\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "IsianFX",
+							"sid": 968072384739237
 						}
 					],
 					"sid": 704749360342758,
@@ -3675,6 +3715,10 @@
 								"animation": "\"Acar\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "IsianFX",
+							"sid": 926128041113405
 						}
 					],
 					"sid": 943917573769213,
@@ -3763,6 +3807,10 @@
 								"animation": "\"Tomat\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "IsianFX",
+							"sid": 452004707540331
 						}
 					],
 					"sid": 749735271669069,
@@ -3851,6 +3899,10 @@
 								"animation": "\"Selada\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "IsianFX",
+							"sid": 531238430465978
 						}
 					],
 					"sid": 571952825520659,
@@ -4099,6 +4151,10 @@
 					"sid": 122756248284886
 				},
 				{
+					"eventType": "comment",
+					"text": "Real Time Clock"
+				},
+				{
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
@@ -4171,19 +4227,353 @@
 					"text": "Animate the phone then tapped"
 				},
 				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "group",
+					"disabled": false,
+					"title": "PhoneSwitch",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 187923193654755,
-							"parameters": {
-								"object": "Phone"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "btnswitch",
+									"sid": 372269522858042,
+									"parameters": {
+										"unique-id": "112"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 968858367515681,
+									"parameters": {
+										"variable": "SwitchPhonePage",
+										"comparison": 5,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "btnswitch",
+									"sid": 355570432922219,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 197973351403593
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 120274611891404
+								}
+							],
+							"actions": [],
+							"sid": 535467386856592,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "btnswitch",
+											"sid": 278981915462109,
+											"parameters": {
+												"unique-id": "112"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "btnswitch",
+											"sid": 661045814811985,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 704029472613155
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "btnswitch",
+									"sid": 554923348621305,
+									"parameters": {
+										"unique-id": "113"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 666393758949585,
+									"parameters": {
+										"variable": "SwitchPhonePage",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "btnswitch",
+									"sid": 430446736211957,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 874816524321837
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 739144725596735
+								}
+							],
+							"actions": [],
+							"sid": 877406620047478,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "btnswitch",
+											"sid": 135945663229839,
+											"parameters": {
+												"unique-id": "113"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "btnswitch",
+											"sid": 751016231590651,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 742541797855566
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 894502924498937,
+									"parameters": {
+										"object": "btnswitch"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "btnswitch",
+									"sid": 380494957003940,
+									"parameters": {
+										"unique-id": "112"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "btnswitch",
+									"sid": 822933108851584,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"callFunction": "TapFX",
+									"sid": 916113322755027
+								}
+							],
+							"sid": 212589853013951,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 420623382682746,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"comparison": 5,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 369548769313874,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"value": "5"
+											}
+										}
+									],
+									"sid": 865362619835722
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 807612043990866
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 871446214451274,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 956637018976596
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 724309768256616,
+									"parameters": {
+										"object": "btnswitch"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "btnswitch",
+									"sid": 863882674738211,
+									"parameters": {
+										"unique-id": "113"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "btnswitch",
+									"sid": 541265108592071,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"callFunction": "TapFX",
+									"sid": 191565273673876
+								}
+							],
+							"sid": 896456642699627,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 905151322707587,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"comparison": 3,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 360716965502507,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 933416105089991
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 385669615056394
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 983597209032581,
+											"parameters": {
+												"variable": "SwitchPhonePage",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 853530026550586
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 763180576886920
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "PhoneDisplay",
+									"sid": 246573046202807,
+									"parameters": {
+										"frame-number": "SwitchPhonePage"
+									}
+								}
+							],
+							"sid": 838757711751566
 						}
 					],
-					"actions": [],
-					"sid": 874343060594549
+					"sid": 200000401701129
 				}
 			],
 			"sid": 704100326348157
@@ -4875,6 +5265,10 @@
 														"height-type": "no",
 														"z": false
 													}
+												},
+												{
+													"callFunction": "EggBreakFX",
+													"sid": 354624019277571
 												}
 											],
 											"sid": 314910029383642,
@@ -5097,6 +5491,10 @@
 										"instance-variable": "Nyala",
 										"value": "true"
 									}
+								},
+								{
+									"callFunction": "StoveFX",
+									"sid": 295406780540748
 								}
 							],
 							"sid": 981370568409600
@@ -5130,6 +5528,18 @@
 									"parameters": {
 										"instance-variable": "Nyala",
 										"value": "false"
+									}
+								},
+								{
+									"callFunction": "StoveOFFFX",
+									"sid": 952515659031916
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 216683375987227,
+									"parameters": {
+										"tag": "\"StoveON\""
 									}
 								}
 							],
@@ -5418,6 +5828,18 @@
 									"id": "destroy",
 									"objectClass": "Particles",
 									"sid": 646619118845443
+								},
+								{
+									"callFunction": "StoveOFFFX",
+									"sid": 638692427975626
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 542114950128237,
+									"parameters": {
+										"tag": "\"StoveON\""
+									}
 								}
 							],
 							"sid": 575797210762282
@@ -5825,6 +6247,10 @@
 							],
 							"actions": [
 								{
+									"callFunction": "ToasterLoad",
+									"sid": 299868854034968
+								},
+								{
 									"id": "set-animation-frame",
 									"objectClass": "Toaster",
 									"sid": 906711362407263,
@@ -5847,6 +6273,10 @@
 									"parameters": {
 										"frame-number": "7"
 									}
+								},
+								{
+									"callFunction": "ToasterPop",
+									"sid": 858627018573413
 								}
 							],
 							"sid": 177955019331904
@@ -6081,6 +6511,10 @@
 										"animation": "\"Toast\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"callFunction": "BreadFX",
+									"sid": 524562373942621
 								}
 							],
 							"sid": 121583999512926,
@@ -6211,6 +6645,10 @@
 										"animation": "\"Toast\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"callFunction": "BreadFX",
+									"sid": 180436797668243
 								}
 							],
 							"sid": 905675251892862,
@@ -7174,6 +7612,10 @@
 										"animation": "\"Roti\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"callFunction": "BreadFX",
+									"sid": 567301231449656
 								}
 							],
 							"sid": 860090137624811,
@@ -7300,6 +7742,10 @@
 										"animation": "\"Roti\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"callFunction": "BreadFX",
+									"sid": 463984964224250
 								}
 							],
 							"sid": 366584214080854,
@@ -7439,6 +7885,10 @@
 										"animation": "\"Bun\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"callFunction": "BreadFX",
+									"sid": 806024550284910
 								}
 							],
 							"sid": 550534242978474,
@@ -7565,6 +8015,10 @@
 										"animation": "\"Bun\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"callFunction": "BreadFX",
+									"sid": 909821048597763
 								}
 							],
 							"sid": 887341443950245,
@@ -7704,6 +8158,10 @@
 										"animation": "\"Decker\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"callFunction": "BreadFX",
+									"sid": 637271438157785
 								}
 							],
 							"sid": 826579936543885,
@@ -7830,6 +8288,10 @@
 										"animation": "\"Decker\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"callFunction": "BreadFX",
+									"sid": 624116594337658
 								}
 							],
 							"sid": 718566556454644,
@@ -8034,6 +8496,10 @@
 									"parameters": {
 										"visibility": "invisible"
 									}
+								},
+								{
+									"callFunction": "BreadFX",
+									"sid": 356167182404465
 								}
 							],
 							"sid": 903812550751647
@@ -8240,347 +8706,6 @@
 						}
 					],
 					"sid": 249025695379018
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "PhoneSwitch",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "btnswitch",
-									"sid": 908720745375822,
-									"parameters": {
-										"unique-id": "112"
-									}
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 130409407780873,
-									"parameters": {
-										"variable": "SwitchPhonePage",
-										"comparison": 5,
-										"value": "5"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "btnswitch",
-									"sid": 955013895260762,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 139962309562732
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 432857490166815
-								}
-							],
-							"actions": [],
-							"sid": 575242695392777,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-unique-id",
-											"objectClass": "btnswitch",
-											"sid": 428050171113684,
-											"parameters": {
-												"unique-id": "112"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "btnswitch",
-											"sid": 221764951918214,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 783470217896074
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "btnswitch",
-									"sid": 824278253798218,
-									"parameters": {
-										"unique-id": "113"
-									}
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 981227644043550,
-									"parameters": {
-										"variable": "SwitchPhonePage",
-										"comparison": 3,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "btnswitch",
-									"sid": 658512549746034,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 680860932577214
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 116500861998076
-								}
-							],
-							"actions": [],
-							"sid": 887888122343774,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-unique-id",
-											"objectClass": "btnswitch",
-											"sid": 541966231750921,
-											"parameters": {
-												"unique-id": "113"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "btnswitch",
-											"sid": 422175708787627,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 802436985735259
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-tap-object",
-									"objectClass": "Touch",
-									"sid": 949276721354889,
-									"parameters": {
-										"object": "btnswitch"
-									}
-								},
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "btnswitch",
-									"sid": 270238658292088,
-									"parameters": {
-										"unique-id": "112"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "btnswitch",
-									"sid": 809409768698322,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 236353819512100,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 912981923196517,
-											"parameters": {
-												"variable": "SwitchPhonePage",
-												"comparison": 5,
-												"value": "5"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 814538844717533,
-											"parameters": {
-												"variable": "SwitchPhonePage",
-												"value": "5"
-											}
-										}
-									],
-									"sid": 970771743607156
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 979895013346101
-										}
-									],
-									"actions": [
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 890437412037638,
-											"parameters": {
-												"variable": "SwitchPhonePage",
-												"value": "1"
-											}
-										}
-									],
-									"sid": 497677738995435
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-tap-object",
-									"objectClass": "Touch",
-									"sid": 934123096865100,
-									"parameters": {
-										"object": "btnswitch"
-									}
-								},
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "btnswitch",
-									"sid": 395744314022623,
-									"parameters": {
-										"unique-id": "113"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "btnswitch",
-									"sid": 770182784508301,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 675449474889273,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 338649630999598,
-											"parameters": {
-												"variable": "SwitchPhonePage",
-												"comparison": 3,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 825781241850728,
-											"parameters": {
-												"variable": "SwitchPhonePage",
-												"value": "0"
-											}
-										}
-									],
-									"sid": 329219591541273
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 143025913528207
-										}
-									],
-									"actions": [
-										{
-											"id": "subtract-from-eventvar",
-											"objectClass": "System",
-											"sid": 108362983911110,
-											"parameters": {
-												"variable": "SwitchPhonePage",
-												"value": "1"
-											}
-										}
-									],
-									"sid": 523309359459978
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 932192539509005
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "PhoneDisplay",
-									"sid": 818808805117954,
-									"parameters": {
-										"frame-number": "SwitchPhonePage"
-									}
-								}
-							],
-							"sid": 879098251109191
-						}
-					],
-					"sid": 340348816519732
 				}
 			],
 			"sid": 822396864818403
