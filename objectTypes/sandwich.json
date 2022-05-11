@@ -207,8 +207,8 @@
 					{
 						"width": 450,
 						"height": 161,
-						"originX": 0.5027149321266968,
-						"originY": 0.4898989898989899,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
@@ -249,8 +249,8 @@
 					{
 						"width": 410,
 						"height": 155,
-						"originX": 0.49878048780487805,
-						"originY": 0.4774193548387097,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
@@ -314,7 +314,7 @@
 					}
 				],
 				"sid": 803406296357139,
-				"name": "Telur",
+				"name": "Telor",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

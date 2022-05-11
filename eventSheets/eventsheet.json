@@ -155,7 +155,7 @@
 			"eventType": "variable",
 			"name": "GameState",
 			"type": "string",
-			"initialValue": "",
+			"initialValue": "Serving",
 			"comment": "The state of the game - used to determine when dialogue is being shown",
 			"isStatic": false,
 			"isConstant": false,
@@ -4236,10 +4236,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 998933297188630,
+							"sid": 415298058924504,
 							"parameters": {
 								"variable": "Hour",
-								"value": "int(unixtime/3100000)%24"
+								"value": "int(unixtime/3100000)%12"
 							}
 						},
 						{
@@ -4622,6 +4622,89 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-hold-over-object",
+									"objectClass": "Touch",
+									"sid": 176027945225985,
+									"parameters": {
+										"object": "IsianMeats"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 864371704390976,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Serving\""
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "IsianMeats",
+									"sid": 311306171843605,
+									"parameters": {
+										"unique-id": "71"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 317790131756401,
+									"parameters": {
+										"object-to-create": "Draggsble",
+										"layer": "\"Game\"",
+										"x": "Mouse.X",
+										"y": "Mouse.Y",
+										"create-hierarchy": false,
+										"template-name": "\"Dragged\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 313570549354474,
+									"parameters": {
+										"variable": "Drag",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 113022607916497,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-last-created",
+											"objectClass": "System",
+											"sid": 289463495519406,
+											"parameters": {
+												"object": "Draggsble"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Draggsble",
+											"sid": 638208953181140,
+											"parameters": {
+												"animation": "\"Telor\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 603948937471361
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 317891367376444,
@@ -4662,6 +4745,10 @@
 									"actions": [],
 									"sid": 732260473662237,
 									"children": [
+										{
+											"eventType": "comment",
+											"text": "Daging Ayam"
+										},
 										{
 											"eventType": "block",
 											"conditions": [
@@ -4755,6 +4842,10 @@
 											]
 										},
 										{
+											"eventType": "comment",
+											"text": "Daging Sapi"
+										},
+										{
 											"eventType": "block",
 											"conditions": [
 												{
@@ -4843,6 +4934,102 @@
 														}
 													],
 													"sid": 670602686370262
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "Telor"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Draggsble",
+													"sid": 318970919967854,
+													"parameters": {
+														"object": "stove"
+													}
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Draggsble",
+													"sid": 289131336901070,
+													"parameters": {
+														"animation": "\"Telor\""
+													}
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Draggsble",
+													"sid": 662490068870788,
+													"parameters": {
+														"object": "DragDiStove"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 978343859539092,
+													"parameters": {
+														"object-to-create": "DragDiStove",
+														"layer": "1",
+														"x": "stove.ImagePointX(1)",
+														"y": "stove.ImagePointY(1)",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "DragDiStove",
+													"sid": 762256417107364,
+													"parameters": {
+														"animation": "\"Telor\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "pin-to-object-imagepoint",
+													"objectClass": "DragDiStove",
+													"sid": 658618151062369,
+													"behaviorType": "Pin",
+													"parameters": {
+														"pin-to": "stove",
+														"image-point": "1",
+														"angle": true,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												}
+											],
+											"sid": 314910029383642,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Draggsble",
+															"sid": 131198782219890,
+															"parameters": {
+																"animation": "\"Roti\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "Draggsble",
+															"sid": 596067889823435
+														}
+													],
+													"sid": 514194217671570
 												}
 											]
 										},
@@ -5244,6 +5431,76 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "stove",
+									"sid": 625766478811416,
+									"parameters": {
+										"instance-variable": "Nyala"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "DragDiStove",
+									"sid": 935614334452367,
+									"parameters": {
+										"instance-variable": "Cooked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 317603087646856,
+									"disabled": true,
+									"parameters": {
+										"seconds": "2"
+									}
+								}
+							],
+							"sid": 549531103496119,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 115211817696087
+										}
+									],
+									"actions": [],
+									"sid": 691644360272657,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 823824679869855,
+													"parameters": {
+														"object": "DragDiStove"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Particles",
+													"sid": 935223874292356
+												}
+											],
+											"sid": 924872922522109
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "on-timer",
 									"objectClass": "DragDiStove",
 									"sid": 348016614393696,
@@ -5514,6 +5771,99 @@
 												}
 											],
 											"sid": 403386815372696
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 495869901215637,
+									"parameters": {
+										"object": "DragDiStove"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "DragDiStove",
+									"sid": 100726083516517,
+									"parameters": {
+										"animation": "\"Telor\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 711502460336620,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Serving\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "DragDiStove",
+									"sid": 695830257583895
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 302990139150509,
+									"parameters": {
+										"object-to-create": "Sandwich",
+										"layer": "1",
+										"x": "plate.X",
+										"y": "plate.Y -265",
+										"create-hierarchy": true,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Sandwich",
+									"sid": 164900811149896,
+									"parameters": {
+										"animation": "\"Telor\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 755733285103637,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 289166167709993
+										}
+									],
+									"actions": [],
+									"sid": 632482451363921,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 743497699776462,
+													"parameters": {
+														"variable": "CurrentRecipe",
+														"value": "Sandwich.AnimationName"
+													}
+												}
+											],
+											"sid": 922225731399852
 										}
 									]
 								}
