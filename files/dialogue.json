@@ -12,13 +12,25 @@
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "2",
-					"line": "Hi, so youre the new recruit."
+					"line": "Selamat datang di SandwichKu ada yang bisa saya bantu di pagi hari ini?."
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "5",
-					"line": "whats your name?.."
+					"line": "Oh sebentar, kamu pegawai baru yang kemarin daftar disini bukan?"
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "5",
+					"line": "Wah selamat bergabung disini!"
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "5",
+					"line": "Siapa nama kamu?"
 				},
 				{
 					"char": "Yumi",
@@ -29,45 +41,54 @@
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "5",
-					"line": "I see (color=#ef7d57)PlayerName(/color) huh."
+					"line": "Namaku Yumi, salam kenal (color=#ef7d57)PlayerName(/color)!."
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "5",
+					"line": "Selamat bergabung di Toko Sandwichku."
 				},
 				{
 								
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "5",
-					"line": "Welcome to epic sandvich shop."
+					"line": "Sebelum kamu mulai bekerja, persilahkan aku memberi arahan cara membuat sandwich dengan benar."
 				},
-				{
-								
+				{	
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "5",
-					"line": "lets try actually make something bruh."
+					"line": "Pertama-tama mari kita siapkan roti terlebih dahulu."
 				},
-				{
-								
+				{	
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "5",
-					"line": "can you make me a (color=#ef7d57)CorrectRecipe?(/color)."
+					"line": "Ambil roti disini."
 				},
 				{
 					"char": "Yumi",
 					"type": "function",
-					"function": "TakeOrder"
+					"function": "Serving"
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "3",
-					"line": "Thanks Fam."
+					"line": "Sekarang pilih roti bagian apa yang kamu inginkan."
+				},
+				{
+					"char": "Yumi",
+					"type": "function",
+					"function": "Serving"
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "3",
-					"line": "Lets Try different order."
+					"line": "Bagus."
 				},
 				{
 					"char": "Yumi",

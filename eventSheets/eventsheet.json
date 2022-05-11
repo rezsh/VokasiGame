@@ -155,7 +155,7 @@
 			"eventType": "variable",
 			"name": "GameState",
 			"type": "string",
-			"initialValue": "Serving",
+			"initialValue": "",
 			"comment": "The state of the game - used to determine when dialogue is being shown",
 			"isStatic": false,
 			"isConstant": false,
@@ -451,10 +451,10 @@
 				{
 					"id": "map-function",
 					"objectClass": "Functions",
-					"sid": 939652704217461,
+					"sid": 453095244721660,
 					"parameters": {
 						"name": "\"JSONFunctions\"",
-						"string": "\"TakeOrder\"",
+						"string": "\"Serving\"",
 						"function": "Serve"
 					}
 				},
@@ -466,6 +466,16 @@
 						"name": "\"JSONFunctions\"",
 						"string": "\"Coming\"",
 						"function": "Coming"
+					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 136752074038867,
+					"parameters": {
+						"name": "\"JSONFunctions\"",
+						"string": "\"Objectiv\"",
+						"function": "Objective"
 					}
 				},
 				{
@@ -763,7 +773,8 @@
 					}
 				}
 			],
-			"sid": 198952736105128
+			"sid": 198952736105128,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -784,7 +795,8 @@
 					}
 				}
 			],
-			"sid": 625626251079447
+			"sid": 625626251079447,
+			"disabled": true
 		},
 		{
 			"eventType": "comment",
@@ -912,6 +924,17 @@
 								"variable": "GameState",
 								"comparison": 0,
 								"value": "\"Serving\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 296767001797220,
+							"parameters": {
+								"variable": "GameState",
+								"comparison": 0,
+								"value": "\"Objective\""
 							},
 							"isInverted": true
 						}
@@ -2520,9 +2543,49 @@
 										"variable": "GameState",
 										"value": "\"Serving\""
 									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 139361739956830,
+									"parameters": {
+										"layer": "\"Dialogue\"",
+										"visibility": "visible"
+									}
 								}
 							],
 							"sid": 632682390575833
+						},
+						{
+							"functionName": "Objective",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 387365024331093,
+									"parameters": {
+										"layer": "\"Dialogue\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 718339392213835,
+									"parameters": {
+										"variable": "GameState",
+										"value": "\"Objective\""
+									}
+								}
+							],
+							"sid": 284988395164199
 						},
 						{
 							"functionName": "Coming",
@@ -3946,235 +4009,6 @@
 					],
 					"sid": 520182212348497,
 					"isOrBlock": true
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "CheckArrayForRecipe",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-at-x",
-									"objectClass": "StanWich",
-									"sid": 650038988305832,
-									"parameters": {
-										"x": "StanWich.CurX",
-										"comparison": 1,
-										"value": "CurrentSandwich.CurX"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "TestMechanic",
-									"sid": 418783773920393,
-									"parameters": {
-										"text": "\"Topping Salah\""
-									}
-								}
-							],
-							"sid": 353474653824775,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-at-x",
-											"objectClass": "StanWich",
-											"sid": 725937847249496,
-											"parameters": {
-												"x": "StanWich.CurX",
-												"comparison": 0,
-												"value": "CurrentSandwich.CurX"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "TestMechanic",
-											"sid": 633621594121395,
-											"parameters": {
-												"text": "\"Topping Benar\""
-											}
-										}
-									],
-									"sid": 816226660178197,
-									"disabled": true
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for",
-									"objectClass": "System",
-									"sid": 705618734758958,
-									"parameters": {
-										"name": "StanWich.CurValue",
-										"start-index": "1",
-										"end-index": "15"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 560034015447101,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 491439670542620,
-											"parameters": {
-												"first-value": "CurrentSandwich.CurX",
-												"comparison": 1,
-												"second-value": "StanWich.CurX"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "TestMechanic",
-											"sid": 930333645652422,
-											"parameters": {
-												"text": "\"Topping Salah\""
-											}
-										}
-									],
-									"sid": 426727663005264,
-									"disabled": true,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 541535378929052,
-													"parameters": {
-														"first-value": "CurrentSandwich.CurX",
-														"comparison": 0,
-														"second-value": "StanWich.CurX"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "TestMechanic",
-													"sid": 478110417842139,
-													"parameters": {
-														"text": "\"Topping Benar\""
-													}
-												}
-											],
-											"sid": 303300965055841,
-											"disabled": true
-										}
-									]
-								}
-							]
-						}
-					],
-					"sid": 347320983822280
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 986195804974624,
-							"parameters": {
-								"name": "\"StanWich\"",
-								"start-index": "0",
-								"end-index": "StanWich.Width - 1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-at-xy",
-							"objectClass": "StanWich",
-							"sid": 794394316994886,
-							"parameters": {
-								"x": "loopindex(\"StanWich\")",
-								"y": "0",
-								"value": "-1"
-							}
-						}
-					],
-					"sid": 432295090364801,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-at-x",
-									"objectClass": "StanWich",
-									"sid": 412697088613415,
-									"parameters": {
-										"x": "0",
-										"comparison": 1,
-										"value": "CurrentSandwich.Width -1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "TestMechanic",
-									"sid": 275459062051345,
-									"parameters": {
-										"text": "\"Topping Salah\""
-									}
-								}
-							],
-							"sid": 442258396610776,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-at-x",
-											"objectClass": "StanWich",
-											"sid": 517059543017033,
-											"parameters": {
-												"x": "0",
-												"comparison": 0,
-												"value": "CurrentSandwich.Width-1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "TestMechanic",
-											"sid": 205116120921474,
-											"parameters": {
-												"text": "\"Topping Benar\""
-											}
-										}
-									],
-									"sid": 836486878171269,
-									"disabled": true
-								}
-							]
-						}
-					]
 				}
 			],
 			"sid": 529870817654698
@@ -6027,9 +5861,9 @@
 								{
 									"id": "set-position",
 									"objectClass": "Popupbread",
-									"sid": 340008842152705,
+									"sid": 556182214467448,
 									"parameters": {
-										"x": "1611",
+										"x": "1540",
 										"y": " 656"
 									}
 								}
@@ -6668,9 +6502,9 @@
 										{
 											"id": "set-position",
 											"objectClass": "Popupbread",
-											"sid": 782417675019302,
+											"sid": 594172486541630,
 											"parameters": {
-												"x": "1345",
+												"x": "1275",
 												"y": "798"
 											}
 										}
@@ -6776,9 +6610,9 @@
 										{
 											"id": "set-position",
 											"objectClass": "Popupbread",
-											"sid": 895477917198051,
+											"sid": 602126894446574,
 											"parameters": {
-												"x": "1504.089947",
+												"x": "1440",
 												"y": "798"
 											}
 										}
@@ -6884,9 +6718,9 @@
 										{
 											"id": "set-position",
 											"objectClass": "Popupbread",
-											"sid": 798403700023074,
+											"sid": 382897224622174,
 											"parameters": {
-												"x": "1668.162272",
+												"x": "1600",
 												"y": "798"
 											}
 										}
@@ -8708,7 +8542,7 @@
 				{
 					"id": "cursor-is-over-object",
 					"objectClass": "Mouse",
-					"sid": 424014604602957,
+					"sid": 197563115036009,
 					"parameters": {
 						"object": "InteractAble"
 					}
@@ -8716,7 +8550,7 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 188447855222220,
+					"sid": 934179924097387,
 					"parameters": {
 						"variable": "GameState",
 						"comparison": 0,
@@ -8728,14 +8562,95 @@
 				{
 					"id": "set-effect-enabled",
 					"objectClass": "InteractAble",
-					"sid": 612784280435218,
+					"sid": 577220149701247,
 					"parameters": {
 						"mode": "enable",
 						"effect": "\"Outline\""
 					}
 				}
 			],
-			"sid": 928982477576447
+			"sid": 901920287748234
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 285679159522071
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "InteractAble",
+					"sid": 414846926685833,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 870989034371248
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 980665019475345,
+					"parameters": {
+						"object": "InteractAble"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 695962170478674,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Objective\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "InteractAble",
+					"sid": 602826113711537,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 773044687450352,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 847770295320829
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "InteractAble",
+					"sid": 665072075410044,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 323713914417799,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -8778,29 +8693,8 @@
 					}
 				}
 			],
-			"sid": 235801972744828
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 832458596172696
-				}
-			],
-			"actions": [
-				{
-					"id": "set-effect-enabled",
-					"objectClass": "DragDiStove",
-					"sid": 725389775128622,
-					"parameters": {
-						"mode": "disable",
-						"effect": "\"Outline\""
-					}
-				}
-			],
-			"sid": 912059989308395
+			"sid": 235801972744828,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -8858,6 +8752,394 @@
 				}
 			],
 			"sid": 538318173560140
+		},
+		{
+			"eventType": "comment",
+			"text": "tutor"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 447898208819923,
+					"parameters": {
+						"variable": "curDialogue",
+						"comparison": 0,
+						"value": "10"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 551940845947691,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 343975283364265
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 692495231357966,
+							"parameters": {
+								"object-to-create": "HandInstruct",
+								"layer": "1",
+								"x": "1275",
+								"y": "715",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 465226548143164,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 374393336138259,
+					"parameters": {
+						"object": "ChooseBread"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 862901101743318,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Serving\""
+					}
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "ChooseBread",
+					"sid": 655867471403643,
+					"parameters": {
+						"unique-id": "115"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 907015454162531,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 679885303472606
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "HandInstruct",
+							"sid": 811310305422474
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 221902129824395,
+							"parameters": {
+								"variable": "GameState",
+								"value": "\"Serving\""
+							}
+						},
+						{
+							"callFunction": "Advance",
+							"sid": 618743234742444
+						}
+					],
+					"sid": 224592137644274,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 375366652718617,
+					"parameters": {
+						"variable": "curDialogue",
+						"comparison": 0,
+						"value": "12"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 476459876849149,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 297888672901556
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 986350822085001,
+							"parameters": {
+								"object-to-create": "HandInstruct",
+								"layer": "1",
+								"x": "1196",
+								"y": "519",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 411391042108504,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 377206654676496,
+					"parameters": {
+						"object": "ChooseBread2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 515213650433269,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Serving\""
+					}
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "ChooseBread2",
+					"sid": 635824120210034,
+					"parameters": {
+						"unique-id": "47"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 369772074279498,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 485731054909703
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "HandInstruct",
+							"sid": 663564524965316
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 129147982930708,
+							"parameters": {
+								"variable": "GameState",
+								"value": "\"Serving\""
+							}
+						},
+						{
+							"callFunction": "Advance",
+							"sid": 138218497676962
+						}
+					],
+					"sid": 936772187338689,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-text",
+					"objectClass": "NPCTextBox",
+					"sid": 721915103689817,
+					"parameters": {
+						"text-to-compare": "\"Ambil roti disini.\"",
+						"case-sensitivity": "ignore-case"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 377667085877369,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 208479546453626,
+							"parameters": {
+								"object": "ChooseBread"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "ChooseBread",
+							"sid": 445061986053578,
+							"parameters": {
+								"unique-id": "115"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "HandInstruct",
+							"sid": 902227025519594
+						},
+						{
+							"callFunction": "Advance",
+							"sid": 650141100975020
+						}
+					],
+					"sid": 777725084515896
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 617488213764873
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 966057947766035,
+							"parameters": {
+								"object-to-create": "HandInstruct",
+								"layer": "1",
+								"x": "1275",
+								"y": "715",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 833797315226056
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-text",
+					"objectClass": "NPCTextBox",
+					"sid": 626458115255080,
+					"parameters": {
+						"text-to-compare": "\"Sekarang pilih roti bagian apa yang kamu inginkan.\"",
+						"case-sensitivity": "ignore-case"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 941947519160504,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 319507043034060,
+							"parameters": {
+								"object": "ChooseBread2"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "ChooseBread2",
+							"sid": 343717054261436,
+							"parameters": {
+								"unique-id": "47"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Advance",
+							"sid": 666852258269750
+						},
+						{
+							"id": "destroy",
+							"objectClass": "HandInstruct",
+							"sid": 448325906499487
+						}
+					],
+					"sid": 976603461787604
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 245735111790286
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 882669417351558,
+							"parameters": {
+								"object-to-create": "HandInstruct",
+								"layer": "1",
+								"x": "1203",
+								"y": "521",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 668394386452069
+				}
+			]
 		}
 	],
 	"sid": 149368447884591
