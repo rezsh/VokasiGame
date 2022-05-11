@@ -3,7 +3,14 @@
 	"plugin-id": "Sprite",
 	"sid": 528246008540202,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Cooked",
+			"type": "boolean",
+			"desc": "",
+			"sid": 874768873372294
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Pin",
@@ -29,6 +36,11 @@
 			"behaviorId": "MoveTo",
 			"name": "MoveTo",
 			"sid": 572615697738887
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 583302809134011
 		}
 	],
 	"effectTypes": [],

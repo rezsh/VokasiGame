@@ -143,6 +143,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -256,16 +272,24 @@
 		},
 		{
 			"type": "effect",
-			"id": "hardlight",
-			"name": "Hard light",
+			"id": "multiply",
+			"name": "Multiply",
 			"author": "Scirra",
 			"version": "r293.3",
 			"bundled": false
 		},
 		{
 			"type": "effect",
-			"id": "difference",
-			"name": "Difference",
+			"id": "overlay",
+			"name": "Overlay",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "softlight",
+			"name": "Soft light",
 			"author": "Scirra",
 			"version": "r293.3",
 			"bundled": false
@@ -301,7 +325,7 @@
 			"Mouse",
 			"Bread",
 			"TextInput",
-			"Background",
+			"BgGame",
 			"SpeechName",
 			"Browser",
 			"Name",
@@ -341,7 +365,6 @@
 			"spr_gameStartSprite",
 			"spr_winAlert",
 			"spr_loseAlert",
-			"spr_background",
 			"btn_Gotohome",
 			"Draggsble",
 			"Uibar",
@@ -355,10 +378,16 @@
 			"ChooseBread",
 			"stove",
 			"IsianMeats",
-			"Toasted",
 			"DragDiStove",
 			"StoveKnob",
-			"CurrentTime2"
+			"CurrentTime2",
+			"Background",
+			"uihome",
+			"Particles",
+			"BtnTrash",
+			"9patch",
+			"uirev",
+			"Star"
 		],
 		"subfolders": [
 			{
@@ -396,7 +425,8 @@
 		{
 			"members": [
 				"levelButton",
-				"LevelNumber"
+				"LevelNumber",
+				"Star"
 			],
 			"selectMode": "normal"
 		}
@@ -405,7 +435,8 @@
 		"items": [
 			"SpriteFamilies",
 			"winLoseDrawFamily",
-			"InteractAble"
+			"InteractAble",
+			"Buttons"
 		],
 		"subfolders": []
 	},
@@ -431,7 +462,8 @@
 	"eventSheets": {
 		"items": [
 			"EventSheet",
-			"Audio"
+			"Audio",
+			"GameFx"
 		],
 		"subfolders": [
 			{
@@ -621,12 +653,12 @@
 		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
-		"pixelRounding": false,
+		"pixelRounding": true,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
-		"fullscreenQuality": "low",
+		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,

@@ -1,0 +1,12 @@
+{
+	"name": "Buttons",
+	"plugin-id": "Sprite",
+	"sid": 220437177580573,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"BtnTrash",
+		"PauseBTN"
+	]
+}

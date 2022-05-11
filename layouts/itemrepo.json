@@ -358,7 +358,9 @@
 						"live-preview": false
 					},
 					"uid": 127,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Cooked": false
+					},
 					"behaviors": {
 						"Pin": {
 							"properties": {
@@ -400,6 +402,23 @@
 								"set-angle": false,
 								"stop-on-solids": false,
 								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"effects": {
+						"Outline": {
+							"parameters": {
+								"width": 1,
+								"cl": [
+									0,
+									0,
+									0,
+									1
+								],
+								"diag": 1
 							}
 						}
 					},

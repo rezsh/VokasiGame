@@ -155,7 +155,7 @@
 			"eventType": "variable",
 			"name": "GameState",
 			"type": "string",
-			"initialValue": "Serving",
+			"initialValue": "",
 			"comment": "The state of the game - used to determine when dialogue is being shown",
 			"isStatic": false,
 			"isConstant": false,
@@ -496,6 +496,73 @@
 						"name": "\"JSONFunctions\"",
 						"string": "\"RegularSandwich\"",
 						"function": "RegularSandwich"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "VariablesSetup"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 240668443245822,
+					"parameters": {
+						"variable": "curDialogue",
+						"value": "\"-1\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 652850825877209,
+					"parameters": {
+						"variable": "curScene",
+						"value": "\"0\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 173127777869724,
+					"parameters": {
+						"variable": "NextLine",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 758708615201620,
+					"parameters": {
+						"variable": "TotalScore",
+						"value": "\"0\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 403101221262865,
+					"parameters": {
+						"variable": "CorrectRecipe",
+						"value": "\"1\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 759623714287643,
+					"parameters": {
+						"variable": "CurrentRecipe",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 680479092131170,
+					"parameters": {
+						"variable": "OrderanKe",
+						"value": "\"1\""
 					}
 				}
 			],
@@ -2806,12 +2873,21 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-touching-object",
+							"id": "on-touched-object",
 							"objectClass": "Touch",
-							"sid": 244362555576941,
+							"sid": 124157240774862,
 							"parameters": {
 								"object": "PauseBTN"
 							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 330272039956694,
+							"parameters": {
+								"layer": "\"Pause\""
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -2834,6 +2910,46 @@
 						}
 					],
 					"sid": 627221607768008
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 853069365922819,
+							"parameters": {
+								"object": "Buttons"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Buttons",
+							"sid": 337340194343065,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 264525956886888,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Buttons",
+							"sid": 979770395130865,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 969683755525164
 				},
 				{
 					"eventType": "block",
@@ -3684,6 +3800,14 @@
 								"mouse-button": "right",
 								"click-type": "clicked"
 							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 212242038010636,
+							"parameters": {
+								"object": "BtnTrash"
+							}
 						}
 					],
 					"actions": [
@@ -3700,11 +3824,6 @@
 								"variable": "CurrentRecipe",
 								"value": "\"\""
 							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Toasted",
-							"sid": 448373824507426
 						},
 						{
 							"id": "add-to-instvar",
@@ -3753,7 +3872,8 @@
 							],
 							"sid": 208979822434080
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -3821,22 +3941,6 @@
 								"width-type": "no",
 								"height-type": "no",
 								"z": false
-							}
-						},
-						{
-							"id": "add-child",
-							"objectClass": "Toasted",
-							"sid": 591951523716901,
-							"disabled": true,
-							"parameters": {
-								"child": "Sandwich",
-								"transform-x": true,
-								"transform-y": true,
-								"transform-w": true,
-								"transform-h": false,
-								"transform-a": false,
-								"transform-z-elevation": false,
-								"destroy-with-parent": true
 							}
 						}
 					],
@@ -4913,96 +5017,137 @@
 								{
 									"id": "on-tap-object",
 									"objectClass": "Touch",
-									"sid": 177397335836939,
+									"sid": 886228439602336,
 									"parameters": {
 										"object": "StoveKnob"
 									}
-								}
-							],
-							"actions": [],
-							"sid": 315862719529874,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "stove",
-											"sid": 585718653024018,
-											"parameters": {
-												"instance-variable": "Nyala"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "stove",
-											"sid": 591846176408978,
-											"parameters": {
-												"instance-variable": "Nyala",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "StoveKnob",
-											"sid": 946188811780486,
-											"parameters": {
-												"frame-number": "1"
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "stove",
-											"sid": 950697495976504,
-											"parameters": {
-												"frame-number": "1"
-											}
-										}
-									],
-									"sid": 501500564913241
 								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 227885817844898
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "stove",
-											"sid": 171557809554031,
-											"parameters": {
-												"instance-variable": "Nyala",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "StoveKnob",
-											"sid": 363472311513725,
-											"parameters": {
-												"frame-number": "0"
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "stove",
-											"sid": 365106433066148,
-											"parameters": {
-												"frame-number": "0"
-											}
-										}
-									],
-									"sid": 848861851684636
+									"id": "compare-animation-frame",
+									"objectClass": "StoveKnob",
+									"sid": 451695297832797,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
 								}
-							]
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "stove",
+									"sid": 304991104103693,
+									"parameters": {
+										"instance-variable": "Nyala",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 981370568409600
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 612276450360493,
+									"parameters": {
+										"object": "StoveKnob"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "StoveKnob",
+									"sid": 198683091594796,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "stove",
+									"sid": 764998955701620,
+									"parameters": {
+										"instance-variable": "Nyala",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 798304759737240
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "stove",
+									"sid": 240297654395249,
+									"parameters": {
+										"instance-variable": "Nyala"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "StoveKnob",
+									"sid": 469748479262940,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "stove",
+									"sid": 778272003175654,
+									"parameters": {
+										"mode": "enable",
+										"effect": "\"SoftLight\""
+									}
+								}
+							],
+							"sid": 315862719529874
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 566369302281139
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "StoveKnob",
+									"sid": 364187889331462,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "stove",
+									"sid": 989615634748797,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"SoftLight\""
+									}
+								}
+							],
+							"sid": 325393637049321
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 110353760271728
 						},
 						{
 							"eventType": "block",
@@ -5016,10 +5161,13 @@
 									}
 								},
 								{
-									"id": "is-pinned",
+									"id": "is-boolean-instance-variable-set",
 									"objectClass": "DragDiStove",
-									"sid": 887809318328703,
-									"behaviorType": "Pin"
+									"sid": 263555968956687,
+									"parameters": {
+										"instance-variable": "Cooked"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -5039,84 +5187,151 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "for-each",
+											"id": "trigger-once-while-true",
 											"objectClass": "System",
-											"sid": 659606034429301,
+											"sid": 503800664750011
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "DragDiStove",
+											"sid": 810271942906516,
+											"behaviorType": "Timer",
 											"parameters": {
-												"object": "DragDiStove"
+												"duration": "8",
+												"type": "once",
+												"tag": "\"cooking\""
 											}
 										}
 									],
-									"actions": [],
-									"sid": 495714775389544,
+									"sid": 191497226970633,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-animation-playing",
-													"objectClass": "DragDiStove",
-													"sid": 869427703776111,
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 240421731140306,
 													"parameters": {
-														"animation": "\"Sapi\""
+														"object": "DragDiStove"
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "wait",
+													"id": "create-object",
 													"objectClass": "System",
-													"sid": 329483507855016,
+													"sid": 693625681884893,
 													"parameters": {
-														"seconds": "3"
-													}
-												},
-												{
-													"id": "set-animation-frame",
-													"objectClass": "DragDiStove",
-													"sid": 222004059768382,
-													"parameters": {
-														"frame-number": "1"
+														"object-to-create": "Particles",
+														"layer": "1",
+														"x": "DragDiStove.X",
+														"y": "DragDiStove.Y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
 													}
 												}
 											],
-											"sid": 151365723212582
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-animation-playing",
-													"objectClass": "DragDiStove",
-													"sid": 708384153411930,
-													"parameters": {
-														"animation": "\"Ayam\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 921287144148759,
-													"parameters": {
-														"seconds": "3"
-													}
-												},
-												{
-													"id": "set-animation-frame",
-													"objectClass": "DragDiStove",
-													"sid": 824694236210106,
-													"parameters": {
-														"frame-number": "1"
-													}
-												}
-											],
-											"sid": 849471327305492
+											"sid": 662563963568362
 										}
 									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "DragDiStove",
+									"sid": 348016614393696,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"cooking\""
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 391808181808240,
+									"parameters": {
+										"object": "DragDiStove"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "stove",
+									"sid": 881826491558426,
+									"parameters": {
+										"instance-variable": "Nyala",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "DragDiStove",
+									"sid": 324616870393428,
+									"parameters": {
+										"instance-variable": "Cooked",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "DragDiStove",
+									"sid": 467307820063367,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Particles",
+									"sid": 646619118845443
+								}
+							],
+							"sid": 575797210762282
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "stove",
+									"sid": 432817510386160,
+									"parameters": {
+										"instance-variable": "Nyala"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-pinned",
+									"objectClass": "DragDiStove",
+									"sid": 394699214506114,
+									"behaviorType": "Pin"
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-timer",
+									"objectClass": "DragDiStove",
+									"sid": 783122713001642,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"cooking\""
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Particles",
+									"sid": 546235996199510
+								}
+							],
+							"sid": 686494373921284
 						},
 						{
 							"eventType": "block",
@@ -6103,10 +6318,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "Popupbread",
-											"sid": 907722796003448,
+											"sid": 782417675019302,
 											"parameters": {
-												"x": "1287",
-												"y": "773"
+												"x": "1345",
+												"y": "798"
 											}
 										}
 									],
@@ -6211,10 +6426,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "Popupbread",
-											"sid": 587460716672191,
+											"sid": 895477917198051,
 											"parameters": {
-												"x": "1451",
-												"y": "773"
+												"x": "1504.089947",
+												"y": "798"
 											}
 										}
 									],
@@ -6319,10 +6534,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "Popupbread",
-											"sid": 507436886504425,
+											"sid": 798403700023074,
 											"parameters": {
-												"x": "1618",
-												"y": "773"
+												"x": "1668.162272",
+												"y": "798"
 											}
 										}
 									],
@@ -8176,6 +8391,49 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 334256035945046,
+					"parameters": {
+						"object": "DragDiStove"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "DragDiStove",
+					"sid": 807317409811026,
+					"parameters": {
+						"instance-variable": "Cooked"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 572297553091119,
+					"parameters": {
+						"variable": "GameState",
+						"comparison": 0,
+						"value": "\"Serving\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "DragDiStove",
+					"sid": 693100461600800,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"Outline\""
+					}
+				}
+			],
+			"sid": 235801972744828
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "else",
 					"objectClass": "System",
 					"sid": 832458596172696
@@ -8184,8 +8442,8 @@
 			"actions": [
 				{
 					"id": "set-effect-enabled",
-					"objectClass": "InteractAble",
-					"sid": 711142444312197,
+					"objectClass": "DragDiStove",
+					"sid": 725389775128622,
 					"parameters": {
 						"mode": "disable",
 						"effect": "\"Outline\""

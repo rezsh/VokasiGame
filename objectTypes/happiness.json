@@ -44,6 +44,38 @@
 					},
 					{
 						"width": 68,
+						"height": 68,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3886680,
+						"collisionPoly": {
+							"points": [
+								0.5844155844155844,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1,
+								0.16883116883116883,
+								1,
+								1,
+								1,
+								0.12987012987012986,
+								1,
+								1,
+								0.14285714285714285,
+								0.16883116883116883
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 68,
 						"height": 70,
 						"originX": 0.5,
 						"originY": 0.5,

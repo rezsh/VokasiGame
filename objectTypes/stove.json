@@ -20,8 +20,8 @@
 	"behaviorTypes": [],
 	"effectTypes": [
 		{
-			"effectId": "hardlight",
-			"name": "HardLight"
+			"effectId": "softlight",
+			"name": "SoftLight"
 		}
 	],
 	"animations": {
@@ -29,23 +29,23 @@
 			{
 				"frames": [
 					{
-						"width": 1128,
+						"width": 1058,
 						"height": 380,
-						"originX": 0.5181737588652482,
+						"originX": 0.4862948960302457,
 						"originY": 0.46710526315789475,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5025928,
+						"imageSpriteId": 9924079,
 						"collisionPoly": {
 							"points": [
-								0.05230496115718328,
+								0,
 								0.05000024221096154,
 								1,
 								0.018420910193909595,
 								1,
 								0.9684210651799255,
-								0.04521274111983024,
+								0,
 								0.9578947175455381
 							]
 						},
@@ -53,7 +53,7 @@
 						"imagePoints": [
 							{
 								"name": "Image Point 1",
-								"x": 0.5381205673758866,
+								"x": 0.5075614366729679,
 								"y": 0.33157894736842103
 							}
 						],

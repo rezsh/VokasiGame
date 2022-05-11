@@ -1,36 +1,30 @@
 {
-	"name": "Popupbread",
+	"name": "uirev",
 	"plugin-id": "Sprite",
-	"sid": 577714060376339,
+	"sid": 487523282669924,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 895657742221258
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 793,
-						"height": 464,
-						"originX": 0.5,
-						"originY": 0.9978448275862069,
+						"width": 1021,
+						"height": 528,
+						"originX": 0.3819784524975514,
+						"originY": 0.9981060606060606,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3040996,
+						"imageSpriteId": 2144197,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 940155526451944,
-				"name": "Animation 1",
+				"sid": 464935326892693,
+				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

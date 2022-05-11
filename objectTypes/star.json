@@ -1,53 +1,24 @@
 {
-	"name": "Sauce",
+	"name": "Star",
 	"plugin-id": "Sprite",
-	"sid": 733251965664054,
+	"sid": 768083660873395,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
-	"effectTypes": [
-		{
-			"effectId": "sharpen",
-			"name": "Sharpen"
-		}
-	],
+	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 110,
-						"height": 398,
-						"originX": -0.9409090909090909,
-						"originY": 1,
-						"originalSource": "",
-						"exportFormat": "png",
-						"exportQuality": 0.8,
-						"imageSpriteId": 8040853,
-						"useCollisionPoly": true,
-						"duration": 1
-					},
-					{
-						"width": 110,
-						"height": 398,
+						"width": 222,
+						"height": 132,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9598248,
-						"useCollisionPoly": true,
-						"duration": 1
-					},
-					{
-						"width": 176,
-						"height": 213,
-						"originX": 0.5,
-						"originY": 1,
-						"originalSource": "",
-						"exportFormat": "png",
-						"exportQuality": 0.8,
-						"imageSpriteId": 7149217,
+						"imageSpriteId": 2050973,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -57,23 +28,55 @@
 								1,
 								0,
 								1,
-								1,
-								1,
-								1,
-								1,
+								0,
 								1,
 								0,
 								1,
 								0,
-								1
+								0,
+								1,
+								0,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 249,
+						"height": 697,
+						"originX": 1.5542168674698795,
+						"originY": -0.1563845050215208,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3871947,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1,
+								0.6901004304160688,
+								1,
+								0.19225251076040173,
+								0,
+								1,
+								0,
+								0
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 364471067702129,
-				"name": "Default",
+				"sid": 438551989296718,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

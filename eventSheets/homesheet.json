@@ -9,6 +9,117 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 515849210639419
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "btn_GoToMenu",
+					"sid": 951045031630593,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 516385607226242,
+					"parameters": {
+						"variable": "play",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 488219370363426,
+					"parameters": {
+						"variable": "curDialogue",
+						"value": "\"-1\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 335381361196654,
+					"parameters": {
+						"variable": "curScene",
+						"value": "\"0\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 729113509949699,
+					"parameters": {
+						"variable": "NextLine",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 878650874847561,
+					"parameters": {
+						"variable": "GameState",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 282216435160518,
+					"parameters": {
+						"variable": "CorrectRecipe",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 367982993551641,
+					"parameters": {
+						"variable": "CurrentRecipe",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 585597192797043,
+					"parameters": {
+						"variable": "curDialogue",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 305703768672160,
+					"parameters": {
+						"variable": "OrderanKe",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 877157193420285,
+					"parameters": {
+						"variable": "TotalScore",
+						"value": "\"\""
+					}
+				}
+			],
+			"sid": 126068165898596
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-touched-object",
 					"objectClass": "Touch",
 					"sid": 154741412144327,
@@ -18,6 +129,22 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "btn_GoToMenu",
+					"sid": 560477976411009,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 118557076366504,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
@@ -33,13 +160,119 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 645019554512887
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 538996354630795,
+					"parameters": {
+						"object": "btn_GoToMenu"
+					}
 				}
 			],
-			"actions": [],
-			"sid": 774651423658307
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "btn_GoToMenu",
+					"sid": 201232137519648,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 670489546923382
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 786874574718495
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "btn_GoToMenu",
+					"sid": 502837730184216,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 435559564149495
+		},
+		{
+			"eventType": "variable",
+			"name": "TARGETFRAMERATE",
+			"type": "number",
+			"initialValue": "60",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 873570162274131
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ScrollingBackground",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "HORIZONTALSPEED",
+					"type": "number",
+					"initialValue": "0.5",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 141157633038018
+				},
+				{
+					"eventType": "variable",
+					"name": "VERTICALSPEED",
+					"type": "number",
+					"initialValue": "0.5",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 765331967697099
+				},
+				{
+					"eventType": "comment",
+					"text": "Constantly scroll the background."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 567428106332925
+						}
+					],
+					"actions": [
+						{
+							"id": "set-image-offset-x",
+							"objectClass": "Background",
+							"sid": 800472382408431,
+							"parameters": {
+								"offset-x": "Self.ImageOffsetX + HORIZONTALSPEED * TARGETFRAMERATE * dt"
+							}
+						},
+						{
+							"id": "set-image-offset-y",
+							"objectClass": "Background",
+							"sid": 421001132670237,
+							"parameters": {
+								"offset-y": "Self.ImageOffsetY + VERTICALSPEED * TARGETFRAMERATE * dt"
+							}
+						}
+					],
+					"sid": 179966753247188
+				}
+			],
+			"sid": 792849317050155
 		}
 	],
 	"sid": 285868986059166

@@ -1,20 +1,20 @@
 {
-	"name": "Background",
-	"plugin-id": "TiledBg",
-	"sid": 139830223333836,
+	"name": "Particles",
+	"plugin-id": "Particles",
+	"sid": 341558399688340,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 1920,
-		"height": 1920,
+		"width": 250,
+		"height": 250,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "png",
 		"exportQuality": 0.8,
-		"imageSpriteId": 1211991,
+		"imageSpriteId": 2594452,
 		"useCollisionPoly": true
 	}
 }

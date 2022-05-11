@@ -81,8 +81,8 @@
 					{
 						"width": 423,
 						"height": 243,
-						"originX": 0.5245664739884393,
-						"originY": 0.49,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
@@ -94,9 +94,9 @@
 								1,
 								0.22012244897959163,
 								1,
-								0.823045267489712,
+								0.7818930041152263,
 								0,
-								0.823045267489712
+								0.7818930041152263
 							]
 						},
 						"useCollisionPoly": true,

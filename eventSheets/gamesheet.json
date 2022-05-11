@@ -14,10 +14,6 @@
 			"includeSheet": "levelsSheet"
 		},
 		{
-			"eventType": "include",
-			"includeSheet": "menuSheet"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -48,6 +44,11 @@
 					"sid": 331023861732367
 				},
 				{
+					"id": "is-visible",
+					"objectClass": "spr_gameStartSprite",
+					"sid": 259576316314768
+				},
+				{
 					"id": "layer-is-visible",
 					"objectClass": "System",
 					"sid": 675731133960882,
@@ -68,9 +69,20 @@
 					}
 				},
 				{
-					"id": "destroy",
+					"id": "set-visible",
 					"objectClass": "spr_gameStartSprite",
-					"sid": 962745904077727
+					"sid": 114421901701939,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "winLoseDrawFamily",
+					"sid": 973889097693280,
+					"parameters": {
+						"visibility": "visible"
+					}
 				}
 			],
 			"sid": 470222611732232

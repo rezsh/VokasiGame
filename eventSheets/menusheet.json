@@ -128,6 +128,14 @@
 							"parameters": {
 								"visibility": "invisible"
 							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Star",
+							"sid": 508989636492042,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						}
 					],
 					"sid": 898895428475614
