@@ -635,10 +635,6 @@
 					}
 				},
 				{
-					"callFunction": "BGM",
-					"sid": 154526485843901
-				},
-				{
 					"type": "comment",
 					"text": "Effect"
 				},

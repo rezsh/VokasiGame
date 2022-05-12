@@ -398,7 +398,9 @@
 			"Money",
 			"Tutorial",
 			"PopupToast",
-			"ChooseToast"
+			"ChooseToast",
+			"OptionCredit",
+			"BtnClose"
 		],
 		"subfolders": [
 			{

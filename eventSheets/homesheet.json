@@ -16,6 +16,10 @@
 			],
 			"actions": [
 				{
+					"callFunction": "BGM",
+					"sid": 765475996600558
+				},
+				{
 					"id": "set-visible",
 					"objectClass": "btn_GoToMenu",
 					"sid": 951045031630593,
@@ -143,6 +147,14 @@
 					"sid": 154741412144327,
 					"parameters": {
 						"object": "btn_GoToMenu"
+					}
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "btn_GoToMenu",
+					"sid": 588662233913153,
+					"parameters": {
+						"unique-id": "42"
 					}
 				}
 			],
@@ -295,6 +307,173 @@
 				}
 			],
 			"sid": 792849317050155
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 814593163730733,
+					"parameters": {
+						"object": "btn_GoToMenu"
+					}
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "btn_GoToMenu",
+					"sid": 161548099339537,
+					"parameters": {
+						"unique-id": "99"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 447218475474128,
+					"parameters": {
+						"layer": "\"Layer 0\"\n",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "OptionCredit",
+					"sid": 777103142611435,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"callFunction": "KonfirmSFX",
+					"sid": 241072424601828
+				}
+			],
+			"sid": 374082581160470
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 654192148065391,
+					"parameters": {
+						"object": "btn_GoToMenu"
+					}
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "btn_GoToMenu",
+					"sid": 598780943662129,
+					"parameters": {
+						"unique-id": "98"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 281211310793962,
+					"parameters": {
+						"layer": "\"Layer 0\"\n",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "OptionCredit",
+					"sid": 644553355900590,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"callFunction": "KonfirmSFX",
+					"sid": 871625426890420
+				}
+			],
+			"sid": 944699441661450
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 769170596218028,
+					"parameters": {
+						"object": "btn_GoToMenu"
+					}
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "btn_GoToMenu",
+					"sid": 342959615883552,
+					"parameters": {
+						"unique-id": "100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "KonfirmSFX",
+					"sid": 362938652040863
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 295426309898228,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "close",
+					"objectClass": "Browser",
+					"sid": 479995613937543
+				}
+			],
+			"sid": 895804633181088
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 671455395468451,
+					"parameters": {
+						"object": "BtnClose"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 361450222615439,
+					"parameters": {
+						"layer": "\"Layer 0\"\n",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 762982662473989,
+					"parameters": {
+						"audio-file": "back_style_2_001",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 579053625729777
 		}
 	],
 	"sid": 285868986059166

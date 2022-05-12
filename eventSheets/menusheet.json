@@ -429,8 +429,15 @@
 					}
 				},
 				{
-					"callFunction": "KonfirmSFX",
-					"sid": 534617661194662
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 455602808572645,
+					"parameters": {
+						"audio-file": "back_style_2_001",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 613098437495609

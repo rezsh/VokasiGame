@@ -40,7 +40,8 @@
 					}
 				}
 			],
-			"sid": 656172309484802
+			"sid": 656172309484802,
+			"disabled": true
 		},
 		{
 			"eventType": "group",
@@ -352,11 +353,11 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 634620455029871,
+							"sid": 296466983308148,
 							"parameters": {
 								"audio-file": "musicdef",
 								"loop": "looping",
-								"volume": "-20",
+								"volume": "-10",
 								"tag-optional": "\"\""
 							}
 						}
