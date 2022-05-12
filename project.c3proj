@@ -208,6 +208,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Persist",
+			"name": "Persist",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
@@ -400,7 +408,8 @@
 			"PopupToast",
 			"ChooseToast",
 			"OptionCredit",
-			"BtnClose"
+			"BtnClose",
+			"OptionText"
 		],
 		"subfolders": [
 			{
@@ -768,6 +777,30 @@
 					"name": "LEVEL2.json",
 					"type": "application/json",
 					"sid": 979918472247991,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LEVEL3.json",
+					"type": "application/json",
+					"sid": 896583055858090,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LEVEL4.json",
+					"type": "application/json",
+					"sid": 214926069848916,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LEVEL5.json",
+					"type": "application/json",
+					"sid": 231485096869935,
 					"file-info": {
 						"purpose": "none"
 					}

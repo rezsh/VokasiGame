@@ -6,6 +6,10 @@
 			"includeSheet": "menuSheet"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "Audio"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -15,10 +19,6 @@
 				}
 			],
 			"actions": [
-				{
-					"callFunction": "BGM",
-					"sid": 765475996600558
-				},
 				{
 					"id": "set-visible",
 					"objectClass": "btn_GoToMenu",
@@ -136,7 +136,30 @@
 					}
 				}
 			],
-			"sid": 126068165898596
+			"sid": 126068165898596,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 155984822083078,
+							"parameters": {
+								"tag": "\"mainmusic\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "BGM",
+							"sid": 690600048563235
+						}
+					],
+					"sid": 511919995290241
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -332,9 +355,9 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 447218475474128,
+					"sid": 828475247642756,
 					"parameters": {
-						"layer": "\"Layer 0\"\n",
+						"layer": "\"OptionNCredits\"",
 						"visibility": "visible"
 					}
 				},
@@ -377,9 +400,9 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 281211310793962,
+					"sid": 602274081987775,
 					"parameters": {
-						"layer": "\"Layer 0\"\n",
+						"layer": "\"OptionNCredits\"",
 						"visibility": "visible"
 					}
 				},
@@ -455,25 +478,92 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 361450222615439,
+					"sid": 793599768073079,
 					"parameters": {
-						"layer": "\"Layer 0\"\n",
+						"layer": "\"OptionNCredits\"",
 						"visibility": "invisible"
 					}
 				},
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 762982662473989,
+					"sid": 440458571152020,
 					"parameters": {
 						"audio-file": "back_style_2_001",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "-10",
 						"tag-optional": "\"\""
 					}
 				}
 			],
 			"sid": 579053625729777
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-visible",
+					"objectClass": "OptionCredit",
+					"sid": 262448003696096
+				},
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "OptionCredit",
+					"sid": 607305104807700,
+					"parameters": {
+						"comparison": 0,
+						"number": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "SliderBar",
+					"sid": 843356024983538,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "OptionText",
+					"sid": 140287450755920,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 512705801485401
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 806577341458739
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "SliderBar",
+					"sid": 880358927221463,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "OptionText",
+					"sid": 526626681114927,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 556961321893997
 		}
 	],
 	"sid": 285868986059166

@@ -748,6 +748,141 @@
 						}
 					],
 					"sid": 478830409482682
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 157996463821660,
+							"parameters": {
+								"variable": "LEVEL",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 525133181979049
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 866996648526072,
+							"parameters": {
+								"tag": "\"loaddialogue\"",
+								"file": "LEVEL3.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 532685682666129
+						},
+						{
+							"id": "parse",
+							"objectClass": "JSON",
+							"sid": 372365930779328,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 173913329100276
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 729339338270074,
+							"parameters": {
+								"variable": "LEVEL",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 931191154467275
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 326694831829843,
+							"parameters": {
+								"tag": "\"loaddialogue\"",
+								"file": "LEVEL4.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 521304816744452
+						},
+						{
+							"id": "parse",
+							"objectClass": "JSON",
+							"sid": 152243382065405,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 732156306006601
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 590980709316500,
+							"parameters": {
+								"variable": "LEVEL",
+								"comparison": 0,
+								"value": "5"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 617358078691692
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 979724037934720,
+							"parameters": {
+								"tag": "\"loaddialogue\"",
+								"file": "LEVEL5.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 268769873116643
+						},
+						{
+							"id": "parse",
+							"objectClass": "JSON",
+							"sid": 285518017405800,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 803222133577537
 				}
 			]
 		},
@@ -3407,6 +3542,15 @@
 							"parameters": {
 								"object": "PauseBtns"
 							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "PauseOverlay",
+							"sid": 487895020770564,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
 						}
 					],
 					"actions": [
@@ -3451,6 +3595,15 @@
 							"sid": 319531399005308,
 							"parameters": {
 								"object": "PauseBtns"
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "PauseOverlay",
+							"sid": 267912308367027,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
 							}
 						},
 						{
@@ -3508,10 +3661,221 @@
 						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
-							"sid": 354427741881533,
+							"sid": 906592628007187,
 							"parameters": {
 								"object": "PauseBtns"
 							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "PauseOverlay",
+							"sid": 288893605707027,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 251588997759464,
+							"parameters": {
+								"layer": "\"Pause\""
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "PauseBtns",
+							"sid": 379234654815001,
+							"parameters": {
+								"unique-id": "141"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 231835431676864,
+							"parameters": {
+								"audio-file": "back_style_2_001",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 850544941891847,
+							"parameters": {
+								"variable": "Paused",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "PauseBTN",
+							"sid": 539990928296128,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 735228623459072
+						}
+					],
+					"sid": 415084366039844
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 249209948788276,
+							"parameters": {
+								"object": "PauseBtns"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 323284309441426,
+							"parameters": {
+								"layer": "\"Pause\""
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "PauseBtns",
+							"sid": 195784765801719,
+							"parameters": {
+								"unique-id": "140"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 725382003953473,
+							"parameters": {
+								"audio-file": "back_style_2_001",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "PauseOverlay",
+							"sid": 298075152707058,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BtnClose",
+							"sid": 374968763265585,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 274892605674983
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 753288113688606,
+							"parameters": {
+								"object": "BtnClose"
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "PauseOverlay",
+							"sid": 970787261760011,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 649761402641641,
+							"parameters": {
+								"layer": "\"Pause\""
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "BtnClose",
+							"sid": 122962021644435,
+							"parameters": {
+								"unique-id": "142"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 431731352783682,
+							"parameters": {
+								"audio-file": "back_style_2_001",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "PauseOverlay",
+							"sid": 593796346391264,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BtnClose",
+							"sid": 370695677651635,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 374902339897152
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 112905292942208,
+							"parameters": {
+								"object": "PauseBtns"
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "PauseOverlay",
+							"sid": 942537270379027,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							},
+							"isInverted": true
 						},
 						{
 							"id": "layer-is-visible",
@@ -3528,6 +3892,11 @@
 							"parameters": {
 								"unique-id": "81"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "PauseBtns",
+							"sid": 620789741066854
 						}
 					],
 					"actions": [
@@ -3561,6 +3930,68 @@
 						}
 					],
 					"sid": 548147149584520
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "PauseOverlay",
+							"sid": 464552427570809,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "OptionText",
+							"sid": 611120777774705,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "SliderBar",
+							"sid": 760604354033401,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 807482015302030
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 559092467952267
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "OptionText",
+							"sid": 431656761473021,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "SliderBar",
+							"sid": 754917113960069,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 534922092883595
 				},
 				{
 					"eventType": "block",

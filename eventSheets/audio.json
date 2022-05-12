@@ -9,7 +9,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 846127179154919
+			"sid": 225331643029265
 		},
 		{
 			"eventType": "block",
@@ -17,14 +17,14 @@
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 773295816100358
+					"sid": 522143274609571
 				}
 			],
 			"actions": [
 				{
 					"id": "set-volume",
 					"objectClass": "Audio",
-					"sid": 156799124140721,
+					"sid": 177662160249809,
 					"parameters": {
 						"tag": "\"music\"",
 						"db": "music_volume"
@@ -33,15 +33,20 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 436138018259739,
+					"sid": 296905842421017,
 					"parameters": {
 						"variable": "music_volume",
 						"value": "SliderBar.Value"
 					}
 				}
 			],
-			"sid": 656172309484802,
-			"disabled": true
+			"sid": 773901706211155
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 832363557300209
 		},
 		{
 			"eventType": "group",
@@ -353,12 +358,12 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 296466983308148,
+							"sid": 170548206179903,
 							"parameters": {
 								"audio-file": "musicdef",
 								"loop": "looping",
 								"volume": "-10",
-								"tag-optional": "\"\""
+								"tag-optional": "\"music\""
 							}
 						}
 					],
