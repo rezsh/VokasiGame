@@ -250,26 +250,89 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 273007826525557,
+							"sid": 645221512967523,
 							"parameters": {
-								"variable": "OrderanKe",
+								"variable": "LEVEL",
 								"comparison": 0,
 								"value": "1"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 271831957234161,
+					"children": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 427491393017102,
-							"parameters": {
-								"variable": "CorrectRecipe",
-								"value": "\"Basic Sandwich\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 315980582779050,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 946729428953013,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Basic Sandwich\""
+									}
+								}
+							],
+							"sid": 495184973387979
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 879349987617141,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 464967008057693,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Fancy Sandwich\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 642048304774235,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "NPC",
+									"sid": 546271786832152,
+									"parameters": {
+										"animation": "\"Botak\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 166274151441578
 						}
-					],
-					"sid": 563528313779739
+					]
 				},
 				{
 					"eventType": "block",
@@ -277,43 +340,491 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 303381859753154,
+							"sid": 534948905050836,
 							"parameters": {
-								"variable": "OrderanKe",
+								"variable": "LEVEL",
 								"comparison": 0,
 								"value": "2"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 198929090801426,
+					"children": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 390807060010580,
-							"parameters": {
-								"variable": "CorrectRecipe",
-								"value": "\"Jumbo Sandwich\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 640313287156718,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 347959460173034,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Beef Burger\""
+									}
+								}
+							],
+							"sid": 391554590587067
 						},
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 412867727456748,
-							"parameters": {
-								"seconds": "1"
-							}
-						},
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 545694020354743,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 534160123419728,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Deker Sandwich\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 191990100003980,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "NPC",
+									"sid": 796829910964335,
+									"parameters": {
+										"animation": "\"Mom\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 409162459197071
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
 						{
-							"id": "set-animation",
-							"objectClass": "NPC",
-							"sid": 296987753507292,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 567993353108872,
 							"parameters": {
-								"animation": "\"Botak\"",
-								"from": "beginning"
+								"variable": "LEVEL",
+								"comparison": 0,
+								"value": "3"
 							}
 						}
 					],
-					"sid": 913409813167147
+					"actions": [],
+					"sid": 645931976920615,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 174631617450020,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 221593524752792,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Standard Sandwich\""
+									}
+								}
+							],
+							"sid": 555844499949990
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 843364039880625,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 521461240444475,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Grilled Cheese\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 589336869423837,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "NPC",
+									"sid": 469509617936228,
+									"parameters": {
+										"animation": "\"Ojek\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 473786216214559
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 562119149165617,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 651212204166369,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Chicken Sandwich\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 104681968914545,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "NPC",
+									"sid": 345319301859465,
+									"parameters": {
+										"animation": "\"Botak\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 638711301592432
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 155868425589664,
+							"parameters": {
+								"variable": "LEVEL",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 201848149011589,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 720764988150413,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 397981247734925,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Standard Sandwich\""
+									}
+								}
+							],
+							"sid": 819216281397629
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 134229506926717,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 514258445172976,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Deker Sandwich\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 259340343042322,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "NPC",
+									"sid": 845698180443225,
+									"parameters": {
+										"animation": "\"Mom\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 625367969701740
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 830045030089014,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 757105343929706,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Beef Burger\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 754478543975313,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "NPC",
+									"sid": 292452469196027,
+									"parameters": {
+										"animation": "\"Ojek\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 344694522577597
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 587237742709384,
+							"parameters": {
+								"variable": "LEVEL",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 617286365828167,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 175566226723921,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 233932761584173,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Grilled Cheese\""
+									}
+								}
+							],
+							"sid": 102165795905121
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 533496931276167,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 594952300786042,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"Beef Burger\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 615029698618369,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "NPC",
+									"sid": 460593061688374,
+									"parameters": {
+										"animation": "\"Ojek\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 538306907531680
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 725311359988262,
+									"parameters": {
+										"variable": "OrderanKe",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 278879663781531,
+									"parameters": {
+										"variable": "CorrectRecipe",
+										"value": "\"The Great Burger\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 651108905938147,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "NPC",
+									"sid": 515670189022406,
+									"parameters": {
+										"animation": "\"Bocah\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 446195149319047
+						}
+					]
 				}
 			],
 			"sid": 318929607417693,
@@ -397,11 +908,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 296575735283483,
+							"sid": 398814406272229,
 							"parameters": {
 								"variable": "CurrentRecipe",
 								"comparison": 0,
-								"value": "\"13453451\""
+								"value": "\"DeckerMentegaKejuAyamTomatSeladaMayoBawanDecker\""
 							}
 						}
 					],
@@ -409,14 +920,149 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 695393913683483,
+							"sid": 501494522749728,
 							"parameters": {
 								"variable": "CurrentRecipe",
-								"value": "\"Jumbo Sandwich\""
+								"value": "\"Deker Sandwich\""
 							}
 						}
 					],
-					"sid": 446102070615956
+					"sid": 568543454853721
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 983104940353775,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"comparison": 0,
+								"value": "\"BunKejuBawangSeladaTomatSapiTelorAcarMayoBun\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 343629152029708,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"value": "\"Beef Burger\""
+							}
+						}
+					],
+					"sid": 831016708739912
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 175893566472595,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"comparison": 0,
+								"value": "\"BunKejuKejuSeladaMayoSapiSapiTomatAcarBun\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 689327609670244,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"value": "\"The Great Burger\""
+							}
+						}
+					],
+					"sid": 301838685344437
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 692017757552690,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"comparison": 0,
+								"value": "\"RotiMentegaKejuBawangAyamSeladaTelorRoti\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 642031041625258,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"value": "\"Fancy Sandwich\""
+							}
+						}
+					],
+					"sid": 391346089242155
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 693905839767640,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"comparison": 0,
+								"value": "\"ToastMentegaAcarKejuMayoToast\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 309837034628567,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"value": "\"Grilled Cheese\""
+							}
+						}
+					],
+					"sid": 190162471899885
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 543484836357969,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"comparison": 0,
+								"value": "\"BunKejuBawanSeladaAyamTomatMayoAcarBun\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 438772355454326,
+							"parameters": {
+								"variable": "CurrentRecipe",
+								"value": "\"Chicken Sandwich\""
+							}
+						}
+					],
+					"sid": 667702426958505
 				}
 			],
 			"sid": 187662223016719,
@@ -5965,6 +6611,10 @@
 														"animation": "\"Ayam\"",
 														"from": "beginning"
 													}
+												},
+												{
+													"callFunction": "MeatFX",
+													"sid": 350058468185749
 												}
 											],
 											"sid": 251850847181476,
@@ -6061,6 +6711,10 @@
 														"height-type": "no",
 														"z": false
 													}
+												},
+												{
+													"callFunction": "MeatFX",
+													"sid": 617513442569943
 												}
 											],
 											"sid": 339304185631563,

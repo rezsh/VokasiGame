@@ -38,9 +38,85 @@
 					"function": "Leaving"
 				},
 				{
-					"char": "Yumi",
+					"char": "Bocah",
+					"type": "function",
+					"function": "Coming"
+				},
+				{
+					"char": "Bocah",
+					"type": "line",
+					"emotion": "1",
+					"line": "CorrectRecipe 1 ya kak."
+				},
+				{
+					"char": "Bocah",
 					"type": "function",
 					"function": "Serving"
+				},
+				{
+					"char": "Bocah",
+					"type": "line",
+					"emotion": "2",
+					"line": "Horee terima kasih kak"
+				},
+				{
+					"char": "Bocah",
+					"type": "function",
+					"function": "Leaving"
+				},
+				{
+					"char": "Ojek",
+					"type": "function",
+					"function": "Coming"
+				},
+				{
+					"char": "Ojek",
+					"type": "line",
+					"emotion": "1",
+					"line": "Boleh saya  memesan CorrectRecipe?"
+				},
+				{
+					"char": "Ojek",
+					"type": "function",
+					"function": "Serving"
+				},
+				{
+					"char": "Ojek",
+					"type": "line",
+					"emotion": "2",
+					"line": "Terima kasih!.."
+				},
+				{
+					"char": "Ojek",
+					"type": "function",
+					"function": "Leaving"
+				},
+				{
+					"char": "Botak",
+					"type": "function",
+					"function": "Coming"
+				},
+				{
+					"char": "Botak",
+					"type": "line",
+					"emotion": "1",
+					"line": "CorrectRecipe nya 1 ya kak"
+				},
+				{
+					"char": "Botak",
+					"type": "function",
+					"function": "Serving"
+				},
+				{
+					"char": "Botak",
+					"type": "line",
+					"emotion": "2",
+					"line": "Terima kasih!.."
+				},
+				{
+					"char": "Botak",
+					"type": "function",
+					"function": "Leaving"
 				},
 				{
 					"char": "Yumi",
