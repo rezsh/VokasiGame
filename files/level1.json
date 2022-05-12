@@ -12,7 +12,7 @@
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
-					"line": "Selamat datang di SandwichKu ada yang bisa saya bantu di pagi hari ini?."
+					"line": "Hai selamat datang di Toko Sandwich ku."
 				},
 				{
 					"char": "Yumi",
@@ -47,21 +47,28 @@
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "1",
-					"line": "Selamat bergabung di Toko Sandwichku."
+					"line": "Selamat bergabung di Toko Sandwich ku."
 				},
 				{
 								
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
-					"line": "Sebelum kamu mulai bekerja, persilahkan aku memberi arahan cara membuat sandwich dengan benar."
+					"line": "Baik (color=#ef7d57)PlayerName(/color), sebelum kamu mulai bekerja,"
 				},
 				{
 								
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
-					"line": "Pertama-tama kita akan mencoba membuat (color=#ef7d57)CorrectRecipe.(/color)"
+					"line": "persilahkan aku /brmemberi arahan cara membuat sandwich dengan benar."
+				},
+				{
+								
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Pertama-tama kamu akan mencoba membuat /br(color=#ef7d57)CorrectRecipe.(/color)"
 				},
 				{
 								
@@ -74,7 +81,7 @@
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
-					"line": "Untuk Membuat (color=#ef7d57)CorrectRecipe(/color) dan menu lain, ikuti urutan bahan dari atas kebawah."
+					"line": "Untuk membuat (color=#ef7d57)CorrectRecipe(/color) dan menu lain, /brikuti urutan bahan dari atas kebawah."
 				},
 				{
 					"char": "Yumi",
@@ -90,20 +97,26 @@
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "0",
-					"line": "Kerja Bagus."
+					"emotion": "1",
+					"line": "Kerja Bagus, kamu sangat cepat dalam mempelajari hal ini."
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
-					"line": "Dengan begini kamu sudah terbukti dapat membuat sandwich."
+					"line": "Dengan begini kamu sudah terbukti dapat /brmembuat sandwich."
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Mulai besok kamu akan mulai melayanin pelanggan."
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "1",
-					"line": "Kamu akan mulai melayani pelanggan esok hari."
+					"line": "Semoga Berhasil."
 				},
 				{
 					"char": "Yumi",

@@ -12,73 +12,30 @@
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
-					"line": "level 2 nih boss."
+					"line": "Hai, selamat pagi (color=#ef7d57)PlayerName(/color)!"
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
-					"line": "Oh sebentar, kamu pegawai baru yang kemarin daftar disini bukan?"
+					"line": "Apakah kamu sudah bersiap untuk hari kedua mu?"
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
-					"line": "Wah selamat bergabung disini!"
+					"line": "Aku suka semangat mu!"
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "0",
-					"line": "Siapa nama kamu?"
+					"emotion": "1",
+					"line": "Semoga berhasil (color=#ef7d57)PlayerName(/color)!"
 				},
 				{
 					"char": "Yumi",
 					"type": "function",
-					"function": "Name"
-				},
-				{		
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "1",
-					"line": "Namaku Yumi, salam kenal (color=#ef7d57)PlayerName(/color)!."
-				},
-				{
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "1",
-					"line": "Selamat bergabung di Toko Sandwichku."
-				},
-				{		
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Sebelum kamu mulai bekerja, persilahkan aku memberi arahan cara membuat sandwich dengan benar."
-				},
-				{
-								
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Pertama-tama kita akan mencoba membuat (color=#ef7d57)CorrectRecipe.(/color)"
-				},
-				{	
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Untuk melihat resep sandwich yang ingin dibuat kamu bisa lihat di handphone kamu."
-				},
-				{
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Untuk Membuat (color=#ef7d57)CorrectRecipe(/color) dan menu lain, ikuti urutan bahan dari atas kebawah."
-				},
-				{
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "ikuti resep yang ada di handphone kamu hingga menjadi (color=#ef7d57)CorrectRecipe(/color)."
+					"function": "Leaving"
 				},
 				{
 					"char": "Yumi",
@@ -87,16 +44,39 @@
 				},
 				{
 					"char": "Yumi",
+					"type": "function",
+					"function": "Coming"
+				},
+				{		
+					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
-					"line": "Kerja Bagus."
+					"line": "Kamu handal sekali dalam membuat sandwich!."
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
+					"emotion": "1",
+					"line": "Kerja yang bagus (color=#ef7d57)PlayerName(/color)!."
+				},
+				{		
+					"char": "Yumi",
+					"type": "line",
 					"emotion": "0",
-					"line": "Mari kita tunggu seorang pelanggan."
+					"line": "Besok akan menjadi hari yang berat, jangan patah semangat yaaa."
+				},
+				{			
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Sampai Jumpa esok pagi"
+				},
+				{
+					"char": "Yumi",
+					"type": "function",
+					"function": "GameFinish"
 				}
+				
 			]
 		}
 	]

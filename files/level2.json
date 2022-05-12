@@ -11,91 +11,116 @@
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "0",
-					"line": "level 2 nih boss."
-				},
-				{
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Oh sebentar, kamu pegawai baru yang kemarin daftar disini bukan?"
-				},
-				{
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Wah selamat bergabung disini!"
-				},
-				{
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Siapa nama kamu?"
-				},
-				{
-					"char": "Yumi",
-					"type": "function",
-					"function": "Name"
-				},
-				{		
-					"char": "Yumi",
-					"type": "line",
 					"emotion": "1",
-					"line": "Namaku Yumi, salam kenal (color=#ef7d57)PlayerName(/color)!."
-				},
-				{
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "1",
-					"line": "Selamat bergabung di Toko Sandwichku."
-				},
-				{		
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Sebelum kamu mulai bekerja, persilahkan aku memberi arahan cara membuat sandwich dengan benar."
-				},
-				{		
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Pertama-tama kita akan mencoba membuat (color=#ef7d57)CorrectRecipe.(/color)"
-				},
-				{	
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Untuk melihat resep sandwich yang ingin dibuat kamu bisa lihat di handphone kamu."
+					"line": "Hai (color=#ef7d57)PlayerName(/color)!, Selamat Pagi!."
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
-					"line": "Untuk Membuat (color=#ef7d57)CorrectRecipe(/color) dan menu lain, ikuti urutan bahan dari atas kebawah."
+					"line": "Hari ini adalah hari pertama mu melayani pelanggan"
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "0",
-					"line": "ikuti resep yang ada di handphone kamu hingga menjadi (color=#ef7d57)CorrectRecipe(/color)."
-				},
-				{
-					"char": "Yumi",
-					"type": "function",
-					"function": "Serving"
-				},
-				{
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "0",
-					"line": "Kerja Bagus."
+					"emotion": "2",
+					"line": "Persiapkan dirimu beserta bahan-bahan nya untuk membuat sandwich"
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
 					"emotion": "0",
 					"line": "Mari kita tunggu seorang pelanggan."
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "1",
+					"line": "Baiklah, Semoga Berhasil (color=#ef7d57)PlayerName(/color)!"
+				},
+				{
+					"char": "Yumi",
+					"type": "function",
+					"function": "Leaving"
+				},
+				{
+					"char": "Botak",
+					"type": "function",
+					"function": "Coming"
+				},
+				{
+					"char": "Botak",
+					"type": "line",
+					"emotion": "1",
+					"line": "CorrectRecipe ya dek."
+				},
+				{
+					"char": "Botak",
+					"type": "function",
+					"function": "Serving"
+				},
+				{
+					"char": "Botak",
+					"type": "line",
+					"emotion": "2",
+					"line": "Terimakasih"
+				},
+				{
+					"char": "Botak",
+					"type": "function",
+					"function": "Leaving"
+				},
+				{
+					"char": "Mom",
+					"type": "function",
+					"function": "Coming"
+				},
+				{
+					"char": "Mom",
+					"type": "line",
+					"emotion": "1",
+					"line": "Boleh saya saya mesan CorrectRecipe?"
+				},
+				{
+					"char": "Mom",
+					"type": "function",
+					"function": "Serving"
+				},
+				{
+					"char": "Mom",
+					"type": "line",
+					"emotion": "2",
+					"line": "Terima kasih!.."
+				},
+				{
+					"char": "Yumi",
+					"type": "function",
+					"function": "Coming"
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Kerja bagus di hari pertama mu bekerja"
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "1",
+					"line": "Pertahankan semangat mu untuk esok hari!"
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "1",
+					"line": "Sampai Jumpa (color=#ef7d57)PlayerName(/color)!"
+				},
+				{
+					"char": "Yumi",
+					"type": "function",
+					"function": "GameFinish"
 				}
+				
 			]
 		}
 	]
