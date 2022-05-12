@@ -396,7 +396,9 @@
 			"Preview4Orange",
 			"Gamefinishtxt",
 			"Money",
-			"Tutorial"
+			"Tutorial",
+			"PopupToast",
+			"ChooseToast"
 		],
 		"subfolders": [
 			{
