@@ -71,28 +71,6 @@
 					"function": "Leaving"
 				},
 				{
-					"char": "Mom",
-					"type": "function",
-					"function": "Coming"
-				},
-				{
-					"char": "Mom",
-					"type": "line",
-					"emotion": "1",
-					"line": "Boleh saya saya mesan CorrectRecipe?"
-				},
-				{
-					"char": "Mom",
-					"type": "function",
-					"function": "Serving"
-				},
-				{
-					"char": "Mom",
-					"type": "line",
-					"emotion": "2",
-					"line": "Terima kasih!.."
-				},
-				{
 					"char": "Yumi",
 					"type": "function",
 					"function": "Coming"

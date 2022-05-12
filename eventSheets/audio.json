@@ -368,6 +368,73 @@
 						}
 					],
 					"sid": 496135980019246
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 134403196246897,
+							"parameters": {
+								"object": "ONOFFAUDIO"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 900573959294782,
+							"parameters": {
+								"mode": "toggle-silent"
+							}
+						}
+					],
+					"sid": 706500913284850
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-silent",
+							"objectClass": "Audio",
+							"sid": 400485591299220
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "ONOFFAUDIO",
+							"sid": 543686129224708,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 814192269503068
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-silent",
+							"objectClass": "Audio",
+							"sid": 718425189505362,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "ONOFFAUDIO",
+							"sid": 737753542595944,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 130710050613523
 				}
 			],
 			"sid": 602505605698514

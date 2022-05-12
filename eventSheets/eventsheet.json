@@ -413,9 +413,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "NPC",
-									"sid": 796829910964335,
+									"sid": 898346315191269,
 									"parameters": {
-										"animation": "\"Mom\"",
+										"animation": "\"Botak\"",
 										"from": "beginning"
 									}
 								}
@@ -1873,6 +1873,13 @@
 					"parameters": {
 						"object": "Phoneui"
 					},
+					"isInverted": true
+				},
+				{
+					"id": "is-any-playing",
+					"objectClass": "NPC",
+					"sid": 312224735230409,
+					"behaviorType": "Tween",
 					"isInverted": true
 				}
 			],
@@ -6711,10 +6718,6 @@
 														"height-type": "no",
 														"z": false
 													}
-												},
-												{
-													"callFunction": "MeatFX",
-													"sid": 617513442569943
 												}
 											],
 											"sid": 339304185631563,

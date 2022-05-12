@@ -409,7 +409,8 @@
 			"ChooseToast",
 			"OptionCredit",
 			"BtnClose",
-			"OptionText"
+			"OptionText",
+			"ONOFFAUDIO"
 		],
 		"subfolders": [
 			{
