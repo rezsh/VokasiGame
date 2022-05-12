@@ -144,14 +144,6 @@
 					"parameters": {
 						"object": "btn_GoToMenu"
 					}
-				},
-				{
-					"id": "pick-by-unique-id",
-					"objectClass": "btn_GoToMenu",
-					"sid": 420814361560324,
-					"parameters": {
-						"unique-id": "42"
-					}
 				}
 			],
 			"actions": [
@@ -303,64 +295,6 @@
 				}
 			],
 			"sid": 792849317050155
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 329796553661176,
-					"parameters": {
-						"object": "btn_GoToMenu"
-					}
-				},
-				{
-					"id": "pick-by-unique-id",
-					"objectClass": "btn_GoToMenu",
-					"sid": 458878398131541,
-					"parameters": {
-						"unique-id": "99"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 658313021200584,
-					"parameters": {
-						"layer": "\"Layer 0\"\n",
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 322769571517598
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 838868939992680,
-					"parameters": {
-						"object": "BtnClose"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 855568273733229,
-					"parameters": {
-						"layer": "\"Layer 0\"\n",
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 369251081092696
 		}
 	],
 	"sid": 285868986059166
