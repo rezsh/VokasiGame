@@ -77,7 +77,7 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Yumi",
-						"initial-frame": 0,
+						"initial-frame": 2,
 						"enable-collisions": true,
 						"live-preview": false
 					},
@@ -86,7 +86,9 @@
 						"SceneId": 0,
 						"TimesSpokenTo": 0,
 						"SceneId2": 1,
-						"MultiLine": true
+						"MultiLine": true,
+						"SaveX": 0,
+						"SaveY": 0
 					},
 					"behaviors": {
 						"Solid": {
@@ -102,29 +104,15 @@
 						},
 						"Timer": {
 							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "vertical",
-								"wave": "sine",
-								"period": 5,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 10,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
 						}
 					},
 					"world": {
-						"x": 1414,
-						"y": 1168,
-						"width": 1061.0276454084435,
-						"height": 1006.8233658785325,
-						"originX": 0.5460992907801419,
-						"originY": 0.9928057553956835,
+						"x": 1402,
+						"y": 1154,
+						"width": 1014.638387957571,
+						"height": 1000.2463540858323,
+						"originX": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -148,10 +136,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 504,
-						"y": 540,
+						"x": 503,
+						"y": 587,
 						"width": 664.0157477785192,
-						"height": 754.4111689046706,
+						"height": 636.1159264432873,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -309,6 +297,122 @@
 							1
 						],
 						"angle": 6.282134530300194,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GameTitle",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 82,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 1,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 2,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 494,
+						"y": 291,
+						"width": 649.8400439000834,
+						"height": 233.6503528629513,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "skkni_2removebgpreview",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 48,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1796,
+						"y": 95,
+						"width": 103.97552363382488,
+						"height": 87.845148898179,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "kemnaker_3removebgpreview",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 83,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1676,
+						"y": 98,
+						"width": 96.64645691596047,
+						"height": 120.64591266019227,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				}

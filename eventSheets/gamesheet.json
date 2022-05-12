@@ -56,6 +56,15 @@
 						"layer": "\"Pause\""
 					},
 					"isInverted": true
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 294370618159833,
+					"parameters": {
+						"layer": "\"GameTutor\""
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -298,6 +307,14 @@
 						"layer": "\"Pause\""
 					},
 					"isInverted": true
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 122491351937555,
+					"parameters": {
+						"layer": "\"GameFinish\""
+					}
 				}
 			],
 			"actions": [

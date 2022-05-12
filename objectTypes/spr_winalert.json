@@ -18,6 +18,18 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
+						"imageSpriteId": 8269181,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
 						"imageSpriteId": 7552014,
 						"useCollisionPoly": true,
 						"duration": 1
@@ -29,7 +41,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			}
 		],
 		"subfolders": []

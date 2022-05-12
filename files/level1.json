@@ -11,25 +11,25 @@
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "2",
+					"emotion": "0",
 					"line": "Selamat datang di SandwichKu ada yang bisa saya bantu di pagi hari ini?."
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "5",
+					"emotion": "0",
 					"line": "Oh sebentar, kamu pegawai baru yang kemarin daftar disini bukan?"
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "5",
+					"emotion": "0",
 					"line": "Wah selamat bergabung disini!"
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "5",
+					"emotion": "0",
 					"line": "Siapa nama kamu?"
 				},
 				{
@@ -40,66 +40,47 @@
 				{		
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "5",
+					"emotion": "1",
 					"line": "Namaku Yumi, salam kenal (color=#ef7d57)PlayerName(/color)!."
 				},
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "5",
+					"emotion": "1",
 					"line": "Selamat bergabung di Toko Sandwichku."
 				},
 				{
 								
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "5",
+					"emotion": "0",
 					"line": "Sebelum kamu mulai bekerja, persilahkan aku memberi arahan cara membuat sandwich dengan benar."
 				},
 				{
 								
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "5",
+					"emotion": "0",
 					"line": "Pertama-tama kita akan mencoba membuat (color=#ef7d57)CorrectRecipe.(/color)"
 				},
 				{
 								
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "5",
-					"line": "Untuk melihat resep sandwich yang ingin dibuat kamu bisa lihat di handphone ini."
+					"emotion": "0",
+					"line": "Untuk melihat resep sandwich yang ingin dibuat kamu bisa lihat di handphone kamu."
 				},
-
-				{		
+				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "5",
-					"line": "Kalian bisa lihat bermacam resep sandwich yang umum sering dibuat."
-				},
-				{		
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "5",
+					"emotion": "0",
 					"line": "Untuk Membuat (color=#ef7d57)CorrectRecipe(/color) dan menu lain, ikuti urutan bahan dari atas kebawah."
 				},
-				{	
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "5",
-					"line": "Mari kita siapkan roti terlebih dahulu."
-				},
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "3",
-					"line": "Sekarang pilih roti bagian bawah terlebih dahulu."
-				},
-				{
-					"char": "Yumi",
-					"type": "line",
-					"emotion": "3",
-					"line": "ikuti resep yang ada di handphone kamu hingga sandwich yang diinginkan jadi."
+					"emotion": "0",
+					"line": "ikuti resep yang ada di handphone kamu hingga menjadi (color=#ef7d57)CorrectRecipe(/color)."
 				},
 				{
 					"char": "Yumi",
@@ -109,43 +90,25 @@
 				{
 					"char": "Yumi",
 					"type": "line",
-					"emotion": "3",
+					"emotion": "0",
 					"line": "Kerja Bagus."
 				},
 				{
 					"char": "Yumi",
-					"type": "function",
-					"function": "Leaving"
-				},
-				{
-					"char": "Botak",
-					"type": "function",
-					"function": "Coming"
-				},
-				{
-					"char": "Botak",
 					"type": "line",
-					"line": "Alright i wanna a (color=#ef7d57)CorrectRecipe.(/color)"
+					"emotion": "0",
+					"line": "Dengan begini kamu sudah terbukti dapat membuat sandwich."
 				},
 				{
-					"char": "Botak",
+					"char": "Yumi",
 					"type": "line",
-					"line": "Better hurry dumbass. "
+					"emotion": "1",
+					"line": "Kamu akan mulai melayani pelanggan esok hari."
 				},
 				{
 					"char": "Yumi",
 					"type": "function",
-					"function": "TakeOrder"
-				},
-				{
-					"char": "Botak",
-					"type": "line",
-					"line": "Damn that sandwich bussin."
-				},
-				{
-					"char": "Botak",
-					"type": "function",
-					"function": "Leaving"
+					"function": "GameFinish"
 				}
 			]
 		}

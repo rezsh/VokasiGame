@@ -1,0 +1,105 @@
+{
+	"scene": [
+		{
+			"id": 0,
+			"dialogs": [
+				{
+					"char": "Yumi",
+					"type": "function",
+					"function": "Coming"
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "level 2 nih boss."
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Oh sebentar, kamu pegawai baru yang kemarin daftar disini bukan?"
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Wah selamat bergabung disini!"
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Siapa nama kamu?"
+				},
+				{
+					"char": "Yumi",
+					"type": "function",
+					"function": "Name"
+				},
+				{		
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "1",
+					"line": "Namaku Yumi, salam kenal (color=#ef7d57)PlayerName(/color)!."
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "1",
+					"line": "Selamat bergabung di Toko Sandwichku."
+				},
+				{
+								
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Sebelum kamu mulai bekerja, persilahkan aku memberi arahan cara membuat sandwich dengan benar."
+				},
+				{
+								
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Pertama-tama kita akan mencoba membuat (color=#ef7d57)CorrectRecipe.(/color)"
+				},
+				{
+								
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Untuk melihat resep sandwich yang ingin dibuat kamu bisa lihat di handphone kamu."
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Untuk Membuat (color=#ef7d57)CorrectRecipe(/color) dan menu lain, ikuti urutan bahan dari atas kebawah."
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "ikuti resep yang ada di handphone kamu hingga menjadi (color=#ef7d57)CorrectRecipe(/color)."
+				},
+				{
+					"char": "Yumi",
+					"type": "function",
+					"function": "Serving"
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Kerja Bagus."
+				},
+				{
+					"char": "Yumi",
+					"type": "line",
+					"emotion": "0",
+					"line": "Mari kita tunggu seorang pelanggan."
+				}
+			]
+		}
+	]
+}

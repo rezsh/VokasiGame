@@ -388,7 +388,15 @@
 			"9patch",
 			"uirev",
 			"Star",
-			"HandInstruct"
+			"HandInstruct",
+			"GameTitle",
+			"skkni",
+			"skkni_2removebgpreview",
+			"kemnaker_3removebgpreview",
+			"Preview4Orange",
+			"Gamefinishtxt",
+			"Money",
+			"Tutorial"
 		],
 		"subfolders": [
 			{
@@ -422,16 +430,7 @@
 		]
 	},
 	"autosaveData": null,
-	"containers": [
-		{
-			"members": [
-				"levelButton",
-				"LevelNumber",
-				"Star"
-			],
-			"selectMode": "normal"
-		}
-	],
+	"containers": [],
 	"families": {
 		"items": [
 			"SpriteFamilies",
@@ -616,6 +615,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Abstract1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 895859102686390,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -730,7 +737,7 @@
 		"general": {
 			"items": [
 				{
-					"name": "Dialogue.json",
+					"name": "LEVEL1.json",
 					"type": "application/json",
 					"sid": 321770849492846,
 					"file-info": {
@@ -749,6 +756,14 @@
 					"name": "StanWich.json",
 					"type": "application/json",
 					"sid": 915615969369553,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LEVEL2.json",
+					"type": "application/json",
+					"sid": 979918472247991,
 					"file-info": {
 						"purpose": "none"
 					}

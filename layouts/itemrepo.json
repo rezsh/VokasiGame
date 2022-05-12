@@ -164,7 +164,9 @@
 						"SceneId": 0,
 						"TimesSpokenTo": 0,
 						"SceneId2": 1,
-						"MultiLine": true
+						"MultiLine": true,
+						"SaveX": 0,
+						"SaveY": 0
 					},
 					"behaviors": {
 						"Solid": {
@@ -180,29 +182,15 @@
 						},
 						"Timer": {
 							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
 						}
 					},
 					"world": {
 						"x": 364,
 						"y": 1078,
-						"width": 663.4799917506352,
-						"height": 629.58506442147,
-						"originX": 0.5460992907801419,
-						"originY": 0.9928057553956835,
+						"width": 615,
+						"height": 1134,
+						"originX": 0.5739837398373984,
+						"originY": 1.001763668430335,
 						"color": [
 							1,
 							1,
@@ -227,7 +215,9 @@
 						"SceneId": 0,
 						"TimesSpokenTo": 0,
 						"SceneId2": 1,
-						"MultiLine": true
+						"MultiLine": true,
+						"SaveX": 0,
+						"SaveY": 0
 					},
 					"behaviors": {
 						"Solid": {
@@ -243,27 +233,13 @@
 						},
 						"Timer": {
 							"properties": {}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 4,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 50,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
 						}
 					},
 					"world": {
 						"x": 992,
 						"y": 1088,
-						"width": 409.53132386346437,
-						"height": 647.8300152876564,
+						"width": 492.4224335031635,
+						"height": 867.2704118290893,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [

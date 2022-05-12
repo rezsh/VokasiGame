@@ -81,14 +81,7 @@
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
-					"conditions": [
-						{
-							"id": "is-in-touch",
-							"objectClass": "Touch",
-							"sid": 503794390538581,
-							"disabled": true
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"id": "play",
@@ -237,11 +230,11 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 655284047532497,
+							"sid": 233531750259075,
 							"parameters": {
 								"audio-file": "Abstract2",
 								"loop": "not-looping",
-								"volume": "-10",
+								"volume": "10",
 								"tag-optional": "\"\""
 							}
 						}

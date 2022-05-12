@@ -155,7 +155,7 @@
 			"eventType": "variable",
 			"name": "GameState",
 			"type": "string",
-			"initialValue": "Serving",
+			"initialValue": "",
 			"comment": "The state of the game - used to determine when dialogue is being shown",
 			"isStatic": false,
 			"isConstant": false,
@@ -226,6 +226,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 748069474449611
+		},
+		{
+			"eventType": "variable",
+			"name": "LEVEL",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 813121364695194
 		},
 		{
 			"eventType": "group",
@@ -453,20 +463,23 @@
 					"id": "request-project-file",
 					"objectClass": "AJAX",
 					"sid": 667695274215237,
+					"disabled": true,
 					"parameters": {
 						"tag": "\"loaddialogue\"",
-						"file": "Dialogue.json"
+						"file": "LEVEL1.json"
 					}
 				},
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 706931836474534
+					"sid": 706931836474534,
+					"disabled": true
 				},
 				{
 					"id": "parse",
 					"objectClass": "JSON",
 					"sid": 154366671600842,
+					"disabled": true,
 					"parameters": {
 						"data": "AJAX.LastData"
 					}
@@ -523,6 +536,16 @@
 						"name": "\"JSONFunctions\"",
 						"string": "\"Name\"",
 						"function": "NameInput"
+					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 772423462445195,
+					"parameters": {
+						"name": "\"JSONFunctions\"",
+						"string": "\"GameFinish\"",
+						"function": "GameFinish"
 					}
 				},
 				{
@@ -603,11 +626,134 @@
 					}
 				},
 				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 697887041711157,
+					"parameters": {
+						"layer": "\"Dialogue\"",
+						"visibility": "invisible"
+					}
+				},
+				{
 					"callFunction": "BGM",
 					"sid": 154526485843901
+				},
+				{
+					"type": "comment",
+					"text": "Effect"
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "NPC",
+					"sid": 771152199887187,
+					"parameters": {
+						"instance-variable": "SaveX",
+						"value": "Self.Width"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "NPC",
+					"sid": 542908633710220,
+					"parameters": {
+						"instance-variable": "SaveY",
+						"value": "Self.Height"
+					}
 				}
 			],
-			"sid": 106383978476691
+			"sid": 106383978476691,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 830575358418624,
+							"parameters": {
+								"variable": "LEVEL",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 337471159376151
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 367546292659671,
+							"parameters": {
+								"tag": "\"loaddialogue\"",
+								"file": "LEVEL1.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 858147861352740
+						},
+						{
+							"id": "parse",
+							"objectClass": "JSON",
+							"sid": 193327710262709,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 610694181045209
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 611708376513358,
+							"parameters": {
+								"variable": "LEVEL",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 156606217581434
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 330948053329892,
+							"parameters": {
+								"tag": "\"loaddialogue\"",
+								"file": "LEVEL2.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 865579284616759
+						},
+						{
+							"id": "parse",
+							"objectClass": "JSON",
+							"sid": 454813617416485,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 478830409482682
+				}
+			]
 		},
 		{
 			"eventType": "comment",
@@ -922,6 +1068,15 @@
 					"sid": 243689419284654,
 					"parameters": {
 						"layer": "\"NameInput\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 492279549599479,
+					"parameters": {
+						"layer": "\"GameTutor\""
 					},
 					"isInverted": true
 				},
@@ -1305,12 +1460,75 @@
 			]
 		},
 		{
+			"functionName": "NPCPopup",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 389684801097542,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "NPC",
+							"sid": 414050043788952,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"pop\"",
+								"property": "size",
+								"end-x": "Self.SaveX + 25",
+								"end-y": "Self.SaveY + 25",
+								"time": "0.3",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "yes"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 371375991314197,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "NPC",
+							"sid": 317562856232404,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"pop\"",
+								"property": "size",
+								"end-x": "Self.SaveX",
+								"end-y": "Self.SaveY",
+								"time": "0.3",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						}
+					],
+					"sid": 875062216274032
+				}
+			]
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-touching-object",
+					"id": "on-touched-object",
 					"objectClass": "Touch",
-					"sid": 718811479232958,
+					"sid": 190927226767936,
 					"parameters": {
 						"object": "Kasir"
 					}
@@ -1339,6 +1557,19 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 326473573600922,
+							"parameters": {
+								"object-to-create": "Money",
+								"layer": "1",
+								"x": "206",
+								"y": "699",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
 						{
 							"id": "tween-value",
 							"objectClass": "Score",
@@ -1403,6 +1634,10 @@
 						{
 							"callFunction": "KasirFX",
 							"sid": 833640948357979
+						},
+						{
+							"callFunction": "NPCPopup",
+							"sid": 910943681044544
 						}
 					],
 					"sid": 143381364190354
@@ -1998,6 +2233,15 @@
 									"id": "every-tick",
 									"objectClass": "System",
 									"sid": 115841873483523
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 566769281518256,
+									"parameters": {
+										"layer": "\"GameTutor\""
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -2724,6 +2968,102 @@
 							"sid": 895444378204277
 						},
 						{
+							"functionName": "GameFinish",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "NPC",
+									"sid": 726789626107925,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"come\"",
+										"property": "position",
+										"end-x": "-330",
+										"end-y": "797",
+										"time": "0.7",
+										"ease": "easeinquad",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 809340722783566,
+									"parameters": {
+										"variable": "GameState",
+										"value": "\"GameFinish\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 200802997730082,
+									"parameters": {
+										"seconds": "1"
+									}
+								}
+							],
+							"sid": 564484991693389
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 929350080980036,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"GameFinish\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 615615182545592,
+									"parameters": {
+										"layer": "\"GameFinish\"",
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 703147069556827
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 389777859886125
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 921200895689415,
+									"parameters": {
+										"layer": "\"GameFinish\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 608496045076126
+						},
+						{
 							"functionName": "NameInput",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -3013,10 +3353,6 @@
 							"parameters": {
 								"visibility": "invisible"
 							}
-						},
-						{
-							"callFunction": "KonfirmSFX",
-							"sid": 128064481234641
 						}
 					],
 					"sid": 627221607768008
@@ -3069,11 +3405,64 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 557218316776547,
+							"parameters": {
+								"object": "PauseBtns"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "PauseBtns",
+							"sid": 670485206333272,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 690744269976435
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 480089391280286
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "PauseBtns",
+							"sid": 240420556123300,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 407516605432318
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-tap-object",
 							"objectClass": "Touch",
 							"sid": 319531399005308,
 							"parameters": {
 								"object": "PauseBtns"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 986062297863001,
+							"parameters": {
+								"layer": "\"Pause\""
 							}
 						},
 						{
@@ -3087,6 +3476,17 @@
 					],
 					"actions": [
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 835512353526831,
+							"parameters": {
+								"audio-file": "back_style_2_001",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 465106425908546,
@@ -3098,14 +3498,10 @@
 						{
 							"id": "set-visible",
 							"objectClass": "PauseBTN",
-							"sid": 556054725545404,
+							"sid": 273453161333743,
 							"parameters": {
 								"visibility": "visible"
 							}
-						},
-						{
-							"callFunction": "KonfirmSFX",
-							"sid": 981165669247827
 						}
 					],
 					"sid": 657378394810298
@@ -3132,13 +3528,24 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "PauseBtns",
-							"sid": 296724158780486,
+							"sid": 373862920075494,
 							"parameters": {
-								"unique-id": "103"
+								"unique-id": "81"
 							}
 						}
 					],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 839225237844341,
+							"parameters": {
+								"audio-file": "back_style_2_001",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -3155,10 +3562,6 @@
 							"parameters": {
 								"layout": "home"
 							}
-						},
-						{
-							"callFunction": "KonfirmSFX",
-							"sid": 937382419839906
 						}
 					],
 					"sid": 548147149584520
@@ -3241,9 +3644,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "Text",
-							"sid": 850436635030404,
+							"sid": 329791973609416,
 							"parameters": {
-								"text": "CorrectRecipe"
+								"text": "\"Day: \" & (LEVEL)"
 							}
 						}
 					],
@@ -4603,12 +5006,22 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "Dragtimer",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 682004736032492
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-hold-over-object",
+									"id": "on-touched-object",
 									"objectClass": "Touch",
-									"sid": 365169513946273,
+									"sid": 265759627308149,
 									"parameters": {
 										"object": "ChooseBread"
 									}
@@ -4660,6 +5073,14 @@
 							],
 							"actions": [
 								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 331635006106191,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
 									"id": "create-object",
 									"objectClass": "System",
 									"sid": 730913811885933,
@@ -4679,6 +5100,17 @@
 									"parameters": {
 										"variable": "Drag",
 										"value": "true"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 268710615936712,
+									"parameters": {
+										"audio-file": "Abstract1",
+										"loop": "not-looping",
+										"volume": "10",
+										"tag-optional": "\"sfx\""
 									}
 								}
 							],
@@ -4715,9 +5147,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-hold-over-object",
+									"id": "on-touched-object",
 									"objectClass": "Touch",
-									"sid": 128905914953308,
+									"sid": 250448885964357,
 									"parameters": {
 										"object": "IsianMeats"
 									}
@@ -4742,6 +5174,17 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 327887689981918,
+									"parameters": {
+										"audio-file": "Abstract1",
+										"loop": "not-looping",
+										"volume": "10",
+										"tag-optional": "\"sfx\""
+									}
+								},
 								{
 									"id": "create-object",
 									"objectClass": "System",
@@ -4798,9 +5241,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-hold-over-object",
+									"id": "on-touched-object",
 									"objectClass": "Touch",
-									"sid": 291624846320376,
+									"sid": 299782394699298,
 									"parameters": {
 										"object": "IsianMeats"
 									}
@@ -4825,6 +5268,17 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 762019928400306,
+									"parameters": {
+										"audio-file": "Abstract1",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"sfx\""
+									}
+								},
 								{
 									"id": "create-object",
 									"objectClass": "System",
@@ -4881,9 +5335,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-hold-over-object",
+									"id": "on-touched-object",
 									"objectClass": "Touch",
-									"sid": 176027945225985,
+									"sid": 137040558585653,
 									"parameters": {
 										"object": "IsianMeats"
 									}
@@ -4908,6 +5362,17 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 456197228103744,
+									"parameters": {
+										"audio-file": "Abstract1",
+										"loop": "not-looping",
+										"volume": "10",
+										"tag-optional": "\"sfx\""
+									}
+								},
 								{
 									"id": "create-object",
 									"objectClass": "System",
@@ -5662,10 +6127,10 @@
 										{
 											"id": "start-timer",
 											"objectClass": "DragDiStove",
-											"sid": 810271942906516,
+											"sid": 915438138716674,
 											"behaviorType": "Timer",
 											"parameters": {
-												"duration": "8",
+												"duration": "5",
 												"type": "once",
 												"tag": "\"cooking\""
 											}
@@ -9443,6 +9908,262 @@
 					"disabled": true
 				}
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Gamefinish",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 203008606729519
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Gamefinishtxt",
+							"sid": 765617478347762,
+							"parameters": {
+								"unique-id": "86"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Gamefinishtxt",
+							"sid": 546836559968700,
+							"parameters": {
+								"text": "\"Score: \" & TotalScore"
+							}
+						}
+					],
+					"sid": 621402708895987
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 112654833573072
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 709506107392202,
+							"parameters": {
+								"object": "spr_winAlert"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "spr_winAlert",
+							"sid": 791762864467589,
+							"parameters": {
+								"opacity": "30"
+							}
+						}
+					],
+					"sid": 972505366525201
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 186452018659381
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "spr_winAlert",
+							"sid": 609257098838573,
+							"parameters": {
+								"opacity": "0"
+							}
+						}
+					],
+					"sid": 644629649661360
+				}
+			],
+			"sid": 335067636917928
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Tutorial",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Tutor",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 964326137302556
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 945138942157971
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Tutorial",
+							"sid": 330491411085927,
+							"parameters": {
+								"frame-number": "Tutor"
+							}
+						}
+					],
+					"sid": 164637161911946
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 361173117444423,
+							"parameters": {
+								"object": "Tutorial"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 507773234370633,
+							"parameters": {
+								"variable": "Tutor",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 916488529455714
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 157655597815058,
+							"parameters": {
+								"variable": "Tutor",
+								"comparison": 0,
+								"value": "11"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 963817227700197,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 522108390470439
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 434295849481822,
+									"parameters": {
+										"layer": "\"GameTutor\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 344822431646045,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 850281811770865,
+									"parameters": {
+										"layer": "\"UI Game\"",
+										"interactive": true
+									}
+								}
+							],
+							"sid": 885632880670781
+						}
+					]
+				}
+			],
+			"sid": 825525016387985
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 638091377441460
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 190555276780937,
+					"parameters": {
+						"variable": "LEVEL",
+						"comparison": 0,
+						"value": "1"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 547520486819184,
+					"parameters": {
+						"group-name": "\"Tutorial\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 689161871174086,
+					"parameters": {
+						"layer": "\"GameTutor\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 689179799334979
 		}
 	],
 	"sid": 149368447884591

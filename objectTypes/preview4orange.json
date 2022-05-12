@@ -1,0 +1,37 @@
+{
+	"name": "Preview4Orange",
+	"plugin-id": "Sprite",
+	"sid": 970662755939059,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 335,
+						"height": 179,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9703644,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 589230019101629,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

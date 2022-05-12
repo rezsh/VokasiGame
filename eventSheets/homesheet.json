@@ -24,6 +24,15 @@
 					}
 				},
 				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 532310972751497,
+					"parameters": {
+						"layer": "\"GameFinish\"",
+						"visibility": "visible"
+					}
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
 					"sid": 516385607226242,
@@ -111,6 +120,15 @@
 					"parameters": {
 						"variable": "TotalScore",
 						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 431528743577654,
+					"parameters": {
+						"variable": "LEVEL",
+						"value": "0"
 					}
 				}
 			],

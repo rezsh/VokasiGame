@@ -67,12 +67,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-animation-frame",
+							"id": "compare-instance-variable",
 							"objectClass": "levelButton",
-							"sid": 532467169271175,
+							"sid": 571707266024612,
 							"parameters": {
+								"instance-variable": "levelINST",
 								"comparison": 0,
-								"number": "1"
+								"value": "1"
 							}
 						}
 					],
@@ -80,15 +81,95 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 551235889786263,
+							"sid": 551278948910133,
 							"parameters": {
 								"layout": "Layout 1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 125157019437363,
+							"parameters": {
+								"variable": "LEVEL",
+								"value": "1"
 							}
 						}
 					],
 					"sid": 450568757676046
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "levelButton",
+							"sid": 695742570912808,
+							"parameters": {
+								"instance-variable": "levelINST",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 652369667229434,
+							"parameters": {
+								"layout": "Layout 1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 761526163771578,
+							"parameters": {
+								"variable": "LEVEL",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 139879303614050
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 355339972571344,
+					"parameters": {
+						"object": "levelButton"
+					}
+				},
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "levelButton",
+					"sid": 706162859709164,
+					"parameters": {
+						"comparison": 0,
+						"number": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 499210331238573,
+					"parameters": {
+						"audio-file": "error_style_4_001",
+						"loop": "not-looping",
+						"volume": "-10",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 208106554696042
 		},
 		{
 			"eventType": "block",
@@ -353,6 +434,62 @@
 				}
 			],
 			"sid": 613098437495609
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 769802122013210,
+					"parameters": {
+						"object": "levelButton"
+					}
+				},
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "levelButton",
+					"sid": 712813597978953,
+					"parameters": {
+						"comparison": 0,
+						"number": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "levelButton",
+					"sid": 919456984535009,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"Contrast\""
+					}
+				}
+			],
+			"sid": 934294538930069
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 472865621369323
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "levelButton",
+					"sid": 706216548838284,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"Contrast\""
+					}
+				}
+			],
+			"sid": 433256891903493
 		}
 	],
 	"sid": 426922688688513
