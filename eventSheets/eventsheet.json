@@ -155,7 +155,7 @@
 			"eventType": "variable",
 			"name": "GameState",
 			"type": "string",
-			"initialValue": "Serving",
+			"initialValue": "",
 			"comment": "The state of the game - used to determine when dialogue is being shown",
 			"isStatic": false,
 			"isConstant": false,
@@ -323,9 +323,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "NPC",
-									"sid": 546271786832152,
+									"sid": 724649686833513,
 									"parameters": {
-										"animation": "\"Botak\"",
+										"animation": "\"Udin\"",
 										"from": "beginning"
 									}
 								}
@@ -413,9 +413,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "NPC",
-									"sid": 898346315191269,
+									"sid": 549241623866608,
 									"parameters": {
-										"animation": "\"Botak\"",
+										"animation": "\"Udin\"",
 										"from": "beginning"
 									}
 								}
@@ -547,9 +547,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "NPC",
-									"sid": 345319301859465,
+									"sid": 132719381638911,
 									"parameters": {
-										"animation": "\"Botak\"",
+										"animation": "\"Udin\"",
 										"from": "beginning"
 									}
 								}
@@ -5878,6 +5878,14 @@
 									"parameters": {
 										"unique-id": "112"
 									}
+								},
+								{
+									"id": "pick-topbottom",
+									"objectClass": "btnswitch",
+									"sid": 374131650933112,
+									"parameters": {
+										"which": "top"
+									}
 								}
 							],
 							"actions": [
@@ -5964,6 +5972,14 @@
 									"sid": 863882674738211,
 									"parameters": {
 										"unique-id": "113"
+									}
+								},
+								{
+									"id": "pick-topbottom",
+									"objectClass": "btnswitch",
+									"sid": 201704750366240,
+									"parameters": {
+										"which": "top"
 									}
 								}
 							],

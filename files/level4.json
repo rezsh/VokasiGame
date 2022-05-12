@@ -44,29 +44,29 @@
 					"function": "Leaving"
 				},
 				{
-					"char": "Botak",
+					"char": "Udin",
 					"type": "function",
 					"function": "Coming"
 				},
 				{
-					"char": "Botak",
+					"char": "Udin",
 					"type": "line",
 					"emotion": "1",
 					"line": "Saya ingin 1 CorrectRecipe dong kak"
 				},
 				{
-					"char": "Botak",
+					"char": "Udin",
 					"type": "function",
 					"function": "Serving"
 				},
 				{
-					"char": "Botak",
+					"char": "Udin",
 					"type": "line",
 					"emotion": "2",
 					"line": "Terima kasih banyak"
 				},
 				{
-					"char": "Botak",
+					"char": "Udin",
 					"type": "function",
 					"function": "Leaving"
 				},

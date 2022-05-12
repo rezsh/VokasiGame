@@ -3317,7 +3317,7 @@
 			"sid": 951242631522133,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
-			"isInitiallyInteractive": false,
+			"isInitiallyInteractive": true,
 			"color": [
 				1,
 				1,
